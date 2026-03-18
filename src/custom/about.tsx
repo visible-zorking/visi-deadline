@@ -133,6 +133,16 @@ export function AboutPage()
                     Deadline&#x2019;s implementation. Notes, trivia, whatever came
                     into my head as I was building the Visible Zorker!
                 </p>
+                <h2>The evidence file</h2>
+                <p>
+                    The <a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'feelies') }>Feelies</a>{' '}
+                    tab is particularly important. Deadline originally came
+                    with a &#x201C;Documentary Evidence&#x201D; file.
+                    This provided your introduction to the mystery,
+                    the background of many of the characters, and evidence
+                    you need to begin your investigation. The Feelies tab
+                    contains links to these documents.
+                </p>
                 <h2>Which version is this?</h2>
                 <p>
                     Deadline was the first non-Zork game created by Infocom.
@@ -144,7 +154,7 @@ export function AboutPage()
                 <p>
                     The game was originally released in 1982.
                     The version you see here dates from 1983. (The serial number
-                    &#x201C;840727&#x201D; shows the compile date.)
+                    &#x201C;831005&#x201D; shows the compile date.)
                 </p>
                 <p>
                     This 1983 release is
