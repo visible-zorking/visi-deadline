@@ -13,7 +13,7 @@ function gamedat_ids_general(gamedat_ids)
     gamedat_ids.GAMEID = 'deadline-r27-s831005';
     gamedat_ids.MAX_OBJECTS = 255;         // "Object count"
     gamedat_ids.MAX_GLOBALS = 198;         // 1+LastGlobal
-    gamedat_ids.DICT_START = $3B95;        // header word $08
+    gamedat_ids.DICT_START = 0x3B95;       // header word $08
     gamedat_ids.DICT_WORD_SIZE = 7;
     gamedat_ids.PROP_TABLE_START = 0x0BF7; // prop address for first obj
     gamedat_ids.PROP_TABLE_END = 0x2362;   // just before globals, header $0C-1
