@@ -22,7 +22,7 @@ export function AboutPage()
         map.set(tup.onum, tup);
     }
     
-    let advroom: number = gamedat_ids.ADVENTURER;
+    let advroom: number = gamedat_ids.PLAYER;
     while (true) {
         let tup = map.get(advroom);
         if (!tup || tup.parent == 0 || tup.parent == gamedat_ids.ROOMS)
@@ -30,14 +30,14 @@ export function AboutPage()
         advroom = tup.parent;
     }
 
-    if (advroom != gamedat_ids.ADVENTURER) {
+    if (advroom != gamedat_ids.PLAYER) {
         let obj = gamedat_object_ids.get(advroom);
         if (obj) {
             curroom = obj.name;
         }
 
         let child = map.get(advroom)!.child;
-        if (child && child == gamedat_ids.ADVENTURER) {
+        if (child && child == gamedat_ids.PLAYER) {
             child = map.get(child)!.sibling;
         }
 
@@ -73,15 +73,15 @@ export function AboutPage()
             <div className="AboutPage">
                 <h2>What's going on?</h2>
                 <p>
-                    You are playing Zork 3, the classic Infocom text adventure.
+                    You are playing Deadline, the classic Infocom text adventure.
                     And you are watching the Z-machine execute the game,
                     live, as you play.
                 </p>
                 <p>
-                    (In case it&#x2019;s not obvious: <em>SPOILERS</em> for Zork 3.
+                    (In case it&#x2019;s not obvious: <em>SPOILERS</em> for Deadline.
                     The source code gives away every secret and solution in the game.
                     The whole point of this project is to demonstrate how
-                    Zork works!)
+                    Infocom games work!)
                 </p>
                 <p>
                     Type commands in the left pane. (If you&#x2019;re not familiar
@@ -104,7 +104,7 @@ export function AboutPage()
                        <>(Try typing &#x201C;<code>EXAMINE { firstobj }</code>&#x201D;!) </>
                        : null) }
                     Objects you pick up will be listed directly under
-                    the <code>ADVENTURER</code>; they will move with
+                    the <code>PLAYER</code>; they will move with
                     you as part of your inventory.
                 </p>
                 <p>
@@ -118,13 +118,11 @@ export function AboutPage()
                     shows the table of timed events.
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'grammar') }>Grammar</a>{' '}
                     shows the parse table.
-                    {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'map') }>Map</a>{' '}
-                    is what you think.
                 </p>
                 <p>
                     Click on any function, object, or variable to see its
                     definition in the source code. Click on an object&#x2019;s
-                    {' '}<ObjPageLink onum={ 202 } /> button
+                    {' '}<ObjPageLink onum={ 160 } /> button
                     to see its current state and place in the world.
                     (This will initially match the source code, but
                     may change as you interact with the game.)
@@ -132,43 +130,36 @@ export function AboutPage()
                 <p>
                     <Commentary topic={ 'ABOUT' } />
                     Click on the green buttons to see commentary about
-                    Zork&#x2019;s implementation. Notes, trivia, whatever came
+                    Deadline&#x2019;s implementation. Notes, trivia, whatever came
                     into my head as I was building the Visible Zorker!
                 </p>
-                <h2>Which Zork is this?</h2>
+                <h2>Which version is this?</h2>
                 <p>
-                    The first version of Zork was written in 1977 by energetic
-                    MIT students, in a LISP-y language called MDL. A few
-                    years later, as part of Infocom, they rewrote it &#x2014; 
-                    piecewise &#x2014; with a homebrew portable tool they called{' '}
+                    Deadline was the first non-Zork game created by Infocom.
+                    As with Zork, it was built using a proprietary system
+                    called{' '}
                     <ExtWebLink url={ 'https://blog.zarfhome.com/2019/04/what-is-zil-anyway' } text={ 'ZIL' } />.
                     (For &#x201C;Zork Implementation Language&#x201D;.)
                 </p>
                 <p>
-                    Zork 3 adapts the block-pushing puzzle and the endgame of
-                    MIT Zork into a brand-new map and storyline.
+                    The game was originally released in 1982.
+                    The version you see here dates from 1983. (The serial number
+                    &#x201C;840727&#x201D; shows the compile date.)
                 </p>
                 <p>
-                    The version you see here dates from 1984. (The serial number
-                    &#x201C;840727&#x201D; shows the compile date.) This version
-                    predates the &#x201C;renovated&#x201D; trilogy with
-                    its common parser library shared between Zork 1, 2, and 3.
-                </p>
-                <p>
-                    This 1984 release is
+                    This 1983 release is
                     the one most commonly seen today,
                     because it was included in the &#x201C;
                     <ExtWebLink url={ 'https://archive.org/details/lost-treasures-of-infocom' } text={ 'Lost Treasures of Infocom' } />
                     &#x201D; collection and later collections.
                     I have therefore selected it for this exhibit.
-                    That was not the final version, however.
                     Archived evidence indicates that Infocom continued
-                    updating the source until at least 1986.
+                    updating the source until at least 1985.
                 </p>
                 <h2>Sources and acknowledgements</h2>
                 <p>
-                    Zork&#x2019;s source code was first{' '}
-                    <ExtWebLink url={ 'https://github.com/historicalsource/zork2' } text={ 'publicly released' } />
+                    The game&#x2019;s source code was first{' '}
+                    <ExtWebLink url={ 'https://github.com/historicalsource/deadline' } text={ 'publicly released' } />
                     {' '}by Jason Scott in April 2019.
                     I then combed through all known versions and posted my{' '}
                     <ExtWebLink url={ 'https://eblong.com/infocom/' } text={ 'Obsessively Complete Infocom Catalog' } />,
@@ -198,20 +189,17 @@ export function AboutPage()
                     Infocom&#x2019;s Zork hint maps.
                 </p>
                 <p>
-                    Zork itself was originally written by Tim Anderson,
-                    Marc Blank, Bruce Daniels, and Dave Lebling. The
-                    commercial versions are copyright 1981 (etc) by Infocom,
+                    Deadline itself was originally written by Marc Blank.
+                    It is copyright 1982 (etc) by Infocom,
                     then Activision, then renamed to Mediagenic,
                     then Bobby Kotick bought it and renamed it Activision,
                     then Vivendi bought it and merged it with Blizzard,
                     then Microsoft consumed the lot.
                 </p>
                 <p>
-                    Thus, the Zork 3 source code is copyright 2025 by
-                    Microsoft. As of November 2025, it is{' '}
-                    <ExtWebLink url={ 'https://opensource.microsoft.com/blog/2025/11/20/preserving-code-that-shaped-generations-zork-i-ii-and-iii-go-open-source' } text={ 'open source' } />
-                    {' '}under the MIT license. Thanks to Microsoft for making
-                    this project completely legal!
+                    Thus, the Deadline source code is copyright 2025 by
+                    Microsoft. Microsoft has not released this game as
+                    open source, but I&#x2019;m going at it regardless.
                 </p>
                 <hr/>
                 <p>
