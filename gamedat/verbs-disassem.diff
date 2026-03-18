@@ -1,0 +1,67 @@
+*** /tmp/r27.txt	Tue Mar 17 23:08:00 2026
+--- /tmp/r28.txt	Tue Mar 17 23:08:15 2026
+***************
+*** 1444,1452 ****
+        verb: "gaze at OBJ with OBJ"
+  
+   nnnn:  TEST_ATTR       Gaf,#12 [TRUE] nnnn
+!  nnnn:  PRINT           "You cannot read the"
+!  nnnn:  CALL            nnnn -> -(SP)
+!  nnnn:  PRINT_RET       "?"
+   nnnn:  GET_PROP        Gaf,#04 -> -(SP)
+   nnnn:  PRINT_PADDR     (SP)+
+   nnnn:  NEW_LINE        
+--- 1444,1452 ----
+        verb: "gaze at OBJ with OBJ"
+  
+   nnnn:  TEST_ATTR       Gaf,#12 [TRUE] nnnn
+!  nnnn:  PRINT           "You cannot read the "
+!  nnnn:  PRINT_OBJ       Gaf
+!  nnnn:  PRINT_RET       "."
+   nnnn:  GET_PROP        Gaf,#04 -> -(SP)
+   nnnn:  PRINT_PADDR     (SP)+
+   nnnn:  NEW_LINE        
+***************
+*** 1777,1782 ****
+--- 1777,1783 ----
+   nnnn:  GET_CHILD       Gaf -> -(SP) [FALSE] nnnn
+   nnnn:  GET_CHILD       Gaf -> L00 [FALSE] nnnn
+   nnnn:  INSERT_OBJ      L00,G00
++  nnnn:  SET_ATTR        L00,#1e
+   nnnn:  JUMP            nnnn
+   nnnn:  PRINT_RET       "Everything in it spills onto the floor."
+   nnnn:  PRINT_RET       "Well, what did you expect to happen?"
+***************
+*** 2159,2165 ****
+   nnnn:  NEW_LINE        
+   nnnn:  STORE           G7a,Gaf
+   nnnn:  STORE           G79,G00
+!  nnnn:  RTRUE           
+   nnnn:  PRINT           "You can't talk to the"
+   nnnn:  CALL            nnnn -> -(SP)
+   nnnn:  PRINT           "!"
+--- 2160,2166 ----
+   nnnn:  NEW_LINE        
+   nnnn:  STORE           G7a,Gaf
+   nnnn:  STORE           G79,G00
+!  nnnn:  RET             G79
+   nnnn:  PRINT           "You can't talk to the"
+   nnnn:  CALL            nnnn -> -(SP)
+   nnnn:  PRINT           "!"
+***************
+*** 2564,2570 ****
+   nnnn:  NEW_LINE        
+   nnnn:  CALL            nnnn -> -(SP)
+   nnnn:  STORE           G00,L00
+!  nnnn:  RTRUE           
+  
+  Routine nnnn, 5 locals (nnnn, nnnn, nnnn, nnnn, nnnn)
+  
+--- 2565,2571 ----
+   nnnn:  NEW_LINE        
+   nnnn:  CALL            nnnn -> -(SP)
+   nnnn:  STORE           G00,L00
+!  nnnn:  RET             G00
+  
+  Routine nnnn, 5 locals (nnnn, nnnn, nnnn, nnnn, nnnn)
+  
