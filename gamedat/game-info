@@ -28,3 +28,15 @@ SourceFile 8 main.zil      6
 SourceFile 9 parser.zil    7
 SourceFile 10 syntax.zil   3
 SourceFile 11 verbs.zil    9
+
+Object 160 PLAYER
+Object 249 SOUTH-LAWN
+Object 250 HIM-HER
+Object 251 IT
+### check these...
+Object 252 PSEUDO-OBJECT
+Object 253 ROOMS
+Object 254 LOCAL-GLOBALS
+Object 255 GLOBAL-OBJECTS
+
+Global 189 C-TABLE  TABLE
