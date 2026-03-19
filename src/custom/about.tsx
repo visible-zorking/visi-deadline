@@ -96,7 +96,7 @@ export function AboutPage()
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'objtree') }>World</a>{' '}
                     tab for a start.
                     This shows every object and room in the game.
-                    You, the Adventurer, are in the topmost room:{' '}
+                    You, the Player, are in the topmost room:{' '}
                     <code>{ curroom }</code>.
                     Listed with you are the objects you
                     can see.{' '}
