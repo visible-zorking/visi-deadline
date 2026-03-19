@@ -42,3 +42,57 @@ Object 255 GLOBAL-OBJECTS
 Global 187 C-INTS
 Global 188 C-DEMONS
 Global 189 C-TABLE  TABLE
+
+#Attribute BURNBIT
+#Attribute CLIMBBIT
+#Attribute CONTBIT
+#Attribute DOORBIT
+#Attribute DRUGBIT
+#Attribute DUPLICATE
+#Attribute FURNITURE
+#Attribute FURTINTURE
+#Attribute INVISIBLE
+#Attribute NDESCBIT
+#Attribute ONBIT
+#Attribute OPENBIT
+#Attribute PERSON
+#Attribute READBIT
+#Attribute RLANDBIT
+#Attribute SEARCHBIT
+#Attribute SURFACEBIT
+#Attribute TAKEBIT
+#Attribute TOUCHBIT
+#Attribute TRANSBIT
+#Attribute TRYTAKEBIT
+#Attribute TURNBIT
+#Attribute VEHBIT
+
+#Property  ACTION
+#Property  ADJECTIVE
+#Property  CAPACITY
+#Property  CHARACTER
+#Property  CORRIDOR
+#Property  COUNT
+#Property  DESCFCN
+#Property  FDESC
+#Property  GLOBAL
+#Property  LDESC
+#Property  LINE
+#Property  PSEUDO
+#Property  SIZE
+#Property  STATION
+#Property  SYNONYM
+#Property  TEXT
+### check dirs too
+Property 20 OUT
+Property 21 IN
+Property 22 DOWN
+Property 23 UP
+Property 24 SE
+Property 25 NW
+Property 26 NE
+Property 27 SW
+Property 28 WEST
+Property 29 EAST
+Property 30 SOUTH
+Property 31 NORTH
