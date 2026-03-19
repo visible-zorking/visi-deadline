@@ -138,6 +138,8 @@ export function AboutPage()
                     The <a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'feelies') }>Feelies</a>{' '}
                     tab is particularly important. Deadline originally came
                     with a &#x201C;Documentary Evidence&#x201D; file.
+                    (An actual file dossier with memos and photos and an
+                    evidence bag of pills!)
                     This provided your introduction to the mystery,
                     the background of many of the characters, and evidence
                     you need to begin your investigation. The Feelies tab
