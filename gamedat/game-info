@@ -286,28 +286,28 @@ Object 253 ROOMS
 Object 254 LOCAL-GLOBALS
 Object 255 GLOBAL-OBJECTS
 
-#Attribute BURNBIT
+Attribute 17 BURNBIT
 #Attribute CLIMBBIT
-#Attribute CONTBIT
-#Attribute DOORBIT
-#Attribute DRUGBIT
+Attribute 21 CONTBIT
+Attribute 22 DOORBIT
+Attribute 10 DRUGBIT
 #Attribute DUPLICATE
 #Attribute FURNITURE
 #Attribute FURTINTURE
-#Attribute INVISIBLE
-#Attribute NDESCBIT
+Attribute 31 INVISIBLE
+Attribute 25 NDESCBIT
 Attribute 23 ONBIT
-#Attribute OPENBIT
+Attribute 28 OPENBIT
 #Attribute PERSON
-#Attribute READBIT
+Attribute 18 READBIT
 Attribute 24 RLANDBIT
 #Attribute SEARCHBIT
-#Attribute SURFACEBIT
-#Attribute TAKEBIT
+Attribute 29 SURFACEBIT
+Attribute 19 TAKEBIT
 Attribute 30 TOUCHBIT
 #Attribute TRANSBIT
 #Attribute TRYTAKEBIT
-#Attribute TURNBIT
+Attribute 16 TURNBIT
 #Attribute VEHBIT
 
 Property 18 ACTION  RTN
@@ -315,16 +315,16 @@ Property 16 ADJECTIVE ADJS
 Property 8 CAPACITY  INT
 #Property  CHARACTER  INT
 Property 12 CORRIDOR  INT
-#Property  COUNT  INT
-#Property  DESCFCN  RTN
-#Property  FDESC  STR
+Property 3 COUNT  INT
+Property 6 DESCFCN  RTN
+Property 9 FDESC  STR
 ##Property 15 GLOBAL  OBJS
 Property 17 LDESC  STR
 Property 14 LINE  INT
 ##Property 11 PSEUDO  WORDRTNS
 Property 10 SIZE  INT
 Property 13 STATION  OBJ
-#Property  SYNONYM  WORDS
+Property 19 SYNONYM  WORDS
 Property 4 TEXT  STR
 ### check dirs too
 Property 20 OUT  DIR
