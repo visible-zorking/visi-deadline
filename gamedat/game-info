@@ -310,22 +310,22 @@ Attribute 30 TOUCHBIT
 #Attribute TURNBIT
 #Attribute VEHBIT
 
-#Property  ACTION  RTN
+Property 18 ACTION  RTN
 Property 16 ADJECTIVE ADJS
-#Property  CAPACITY  INT
+Property 8 CAPACITY  INT
 #Property  CHARACTER  INT
 Property 12 CORRIDOR  INT
 #Property  COUNT  INT
 #Property  DESCFCN  RTN
 #Property  FDESC  STR
-#Property  GLOBAL  OBJS
-#Property  LDESC  STR
+##Property 15 GLOBAL  OBJS
+Property 17 LDESC  STR
 Property 14 LINE  INT
-#Property  PSEUDO  WORDRTNS
-#Property  SIZE  INT
-#Property  STATION  INT
+##Property 11 PSEUDO  WORDRTNS
+Property 10 SIZE  INT
+Property 13 STATION  OBJ
 #Property  SYNONYM  WORDS
-#Property  TEXT  STR
+Property 4 TEXT  STR
 ### check dirs too
 Property 20 OUT  DIR
 Property 21 IN  DIR
