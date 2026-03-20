@@ -236,11 +236,13 @@ long description (fdesc or ldesc), otherwise will print short."
 
 <ROUTINE V-VERSION ("AUX" (CNT 17))
 	 <TELL
-"DEADLINE|
-Infocom interactive fiction - a mystery story|
-Copyright (c) 1982, 1983 by Infocom, Inc.  All rights reserved.|
-DEADLINE is a registered trademark of Infocom, Inc.|
+"DEADLINE: An INTERLOGIC Mystery|
+Copyright 1982 by Infocom, Inc.  All rights reserved.|
+DEADLINE and INTERLOGIC are trademarks of Infocom, Inc.|
 Release ">
+	 ;"***VZ: The banner message was updated in r28 to remove the
+	   'INTERLOGIC' brand, add 'registered' trademark, and show
+	   the copyright as '(c) 1982, 1983'.***"
 	 <PRINTN <BAND <GET 0 1> *3777*>>
 	 <TELL " / Serial number ">
 	 <REPEAT ()
@@ -619,7 +621,7 @@ and both tumble to the ground." CR>
 "If there is a problem here, it is unintentional. You may report
 your problem to the address provided in your documentation." CR>>
 
-;"***VZ: the word 'registered' was added in r28.***"
+;"***VZ: The word 'registered' was added in r28.***"
 <GLOBAL COPR-NOTICE
 " a transcript of interaction with DEADLINE.|
 DEADLINE is a trademark of Infocom, Inc.|
@@ -1273,8 +1275,9 @@ slivers that evaporate instantaneously."
 		<TELL "The" PRSO " doesn't sleep." CR>)>>
 
 <ROUTINE V-ZORK ()
+	 ;"***VZ: The word 'registered' was added in r28.***"
 	 <TELL
-"A series of fantasy simulation games and a registered trademark of Infocom,
+"A series of fantasy simulation games and a trademark of Infocom,
 Inc." CR>>
 
 \
