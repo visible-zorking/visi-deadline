@@ -292,7 +292,8 @@ Attribute 5 FOODBIT
 Attribute 6 DRINKBIT
 Attribute 7 FLAMEBIT
 Attribute 8 WEAPONBIT
-Attribute 9 FURTINTURE  # typo!
+# Typo!
+Attribute 9 FURTINTURE
 Attribute 10 DRUGBIT
 Attribute 11 TRYTAKEBIT
 Attribute 12 VEHBIT
