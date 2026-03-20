@@ -317,22 +317,22 @@ Attribute 29 SURFACEBIT
 Attribute 30 TOUCHBIT
 Attribute 31 INVISIBLE
 
-Property 18 ACTION  RTN
-Property 16 ADJECTIVE ADJS
-Property 8 CAPACITY  INT
-#Property  CHARACTER  INT
-Property 12 CORRIDOR  INT
 Property 3 COUNT  INT
-Property 6 DESCFCN  RTN
-Property 9 FDESC  STR
-##Property 15 GLOBAL  OBJS
-Property 17 LDESC  STR
-Property 14 LINE  INT
-##Property 11 PSEUDO  WORDRTNS
-Property 10 SIZE  INT
-Property 13 STATION  OBJ
-Property 19 SYNONYM  WORDS
 Property 4 TEXT  STR
+Property 6 DESCFCN  RTN
+Property 7 CHARACTER  INT
+Property 8 CAPACITY  INT
+Property 9 FDESC  STR
+Property 10 SIZE  INT
+##Property 11 PSEUDO  WORDRTNS
+Property 12 CORRIDOR  INT
+Property 13 STATION  OBJ
+Property 14 LINE  INT
+##Property 15 GLOBAL  OBJS
+Property 16 ADJECTIVE ADJS
+Property 17 LDESC  STR
+Property 18 ACTION  RTN
+Property 19 SYNONYM  WORDS
 ### check dirs too
 Property 20 OUT  DIR
 Property 21 IN  DIR
