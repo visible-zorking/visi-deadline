@@ -286,29 +286,29 @@ Object 253 ROOMS
 Object 254 LOCAL-GLOBALS
 Object 255 GLOBAL-OBJECTS
 
+Attribute 9 FURTINTURE
+Attribute 10 DRUGBIT
+Attribute 11 TRYTAKEBIT
+Attribute 12 VEHBIT
+Attribute 13 FURNITURE
+Attribute 14 DUPLICATE
+Attribute 15 CLIMBBIT
+Attribute 16 TURNBIT
 Attribute 17 BURNBIT
-#Attribute CLIMBBIT
+Attribute 18 READBIT
+Attribute 19 TAKEBIT
+Attribute 20 PERSON
 Attribute 21 CONTBIT
 Attribute 22 DOORBIT
-Attribute 10 DRUGBIT
-#Attribute DUPLICATE
-#Attribute FURNITURE
-#Attribute FURTINTURE
-Attribute 31 INVISIBLE
-Attribute 25 NDESCBIT
 Attribute 23 ONBIT
-Attribute 28 OPENBIT
-#Attribute PERSON
-Attribute 18 READBIT
 Attribute 24 RLANDBIT
-#Attribute SEARCHBIT
+Attribute 25 NDESCBIT
+Attribute 26 SEARCHBIT
+Attribute 27 TRANSBIT
+Attribute 28 OPENBIT
 Attribute 29 SURFACEBIT
-Attribute 19 TAKEBIT
 Attribute 30 TOUCHBIT
-#Attribute TRANSBIT
-#Attribute TRYTAKEBIT
-Attribute 16 TURNBIT
-#Attribute VEHBIT
+Attribute 31 INVISIBLE
 
 Property 18 ACTION  RTN
 Property 16 ADJECTIVE ADJS
