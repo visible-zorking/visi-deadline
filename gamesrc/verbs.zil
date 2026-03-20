@@ -5,8 +5,10 @@
 
 ;"*** VISIBLE ZORKER NOTE***
   The verbs.zil file was missing from the Deadline r27 directory!
-  I have patched in a copy of verbs.zil from Deadline r28. Hopefully
-  it's close enough...
+  This file was reconstructed from r28 verbs.zil by comparing the
+  *compiled* r27 and r28 game files and reversing all apparent changes.
+  See '***VZ:***' comments below.. The formatting is probably not
+  exactly the same as the original (lost) r27 verbs.zil file.
   [--zarf, 2026/03/16]
   *** END NOTE ***"
 
@@ -617,7 +619,7 @@ and both tumble to the ground." CR>
 "If there is a problem here, it is unintentional. You may report
 your problem to the address provided in your documentation." CR>>
 
-;"***VZ: the word 'registered' was removed from r28.***"
+;"***VZ: the word 'registered' was added in r28.***"
 <GLOBAL COPR-NOTICE
 " a transcript of interaction with DEADLINE.|
 DEADLINE is a trademark of Infocom, Inc.|
