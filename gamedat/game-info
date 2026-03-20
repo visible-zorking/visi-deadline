@@ -323,7 +323,7 @@ Property 7 CHARACTER  INT
 Property 8 CAPACITY  INT
 Property 9 FDESC  STR
 Property 10 SIZE  INT
-##Property 11 PSEUDO  WORDRTNS
+Property 11 PSEUDO  WORDRTNS
 Property 12 CORRIDOR  INT
 Property 13 STATION  OBJ
 Property 14 LINE  INT
