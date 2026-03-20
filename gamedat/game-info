@@ -296,36 +296,36 @@ Object 255 GLOBAL-OBJECTS
 #Attribute FURTINTURE
 #Attribute INVISIBLE
 #Attribute NDESCBIT
-#Attribute ONBIT
+Attribute 23 ONBIT
 #Attribute OPENBIT
 #Attribute PERSON
 #Attribute READBIT
-#Attribute RLANDBIT
+Attribute 24 RLANDBIT
 #Attribute SEARCHBIT
 #Attribute SURFACEBIT
 #Attribute TAKEBIT
-#Attribute TOUCHBIT
+Attribute 30 TOUCHBIT
 #Attribute TRANSBIT
 #Attribute TRYTAKEBIT
 #Attribute TURNBIT
 #Attribute VEHBIT
 
-#Property  ACTION
-#Property  ADJECTIVE
-#Property  CAPACITY
-#Property  CHARACTER
-#Property  CORRIDOR
-#Property  COUNT
-#Property  DESCFCN
-#Property  FDESC
-#Property  GLOBAL
-#Property  LDESC
-#Property  LINE
-#Property  PSEUDO
-#Property  SIZE
-#Property  STATION
-#Property  SYNONYM
-#Property  TEXT
+#Property  ACTION  RTN
+Property 16 ADJECTIVE ADJS
+#Property  CAPACITY  INT
+#Property  CHARACTER  INT
+Property 12 CORRIDOR  INT
+#Property  COUNT  INT
+#Property  DESCFCN  RTN
+#Property  FDESC  STR
+#Property  GLOBAL  OBJS
+#Property  LDESC  STR
+Property 14 LINE  INT
+#Property  PSEUDO  WORDRTNS
+#Property  SIZE  INT
+#Property  STATION  INT
+#Property  SYNONYM  WORDS
+#Property  TEXT  STR
 ### check dirs too
 Property 20 OUT  DIR
 Property 21 IN  DIR
