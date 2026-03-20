@@ -617,9 +617,10 @@ and both tumble to the ground." CR>
 "If there is a problem here, it is unintentional. You may report
 your problem to the address provided in your documentation." CR>>
 
+;"***VZ: the word 'registered' was removed from r28.***"
 <GLOBAL COPR-NOTICE
 " a transcript of interaction with DEADLINE.|
-DEADLINE is a registered trademark of Infocom, Inc.|
+DEADLINE is a trademark of Infocom, Inc.|
 Copyright (c) 1982 Infocom, Inc.  All rights reserved.|
 ">
 
