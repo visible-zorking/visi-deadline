@@ -350,3 +350,16 @@ Property 31 NORTH  DIR
 Global 187 C-INTS
 Global 188 C-DEMONS
 Global 189 C-TABLE  TABLE
+
+
+# Map connections that don't come directly from room properties.
+# (These are used for the "list rooms in order of closeness to you"
+# display tab.)
+
+MapExtraConn - SHED-ROOM IN BEHIND-SHED
+MapExtraConn - EAST-LAWN IN BEHIND-SHED
+# XXX isn't a real room, so we map it last (using the DISTANT special
+# direction)
+MapExtraConn - SOUTH-LAWN DISTANT XXX
+MapExtraConn - XXX DISTANT SOUTH-LAWN
+
