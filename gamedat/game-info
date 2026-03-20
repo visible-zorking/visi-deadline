@@ -286,7 +286,14 @@ Object 253 ROOMS
 Object 254 LOCAL-GLOBALS
 Object 255 GLOBAL-OBJECTS
 
-Attribute 9 FURTINTURE
+Attribute 2 TOOLBIT
+Attribute 3 RMUNGBIT
+Attribute 4 LIGHTBIT
+Attribute 5 FOODBIT
+Attribute 6 DRINKBIT
+Attribute 7 FLAMEBIT
+Attribute 8 WEAPONBIT
+Attribute 9 FURTINTURE  # typo!
 Attribute 10 DRUGBIT
 Attribute 11 TRYTAKEBIT
 Attribute 12 VEHBIT
