@@ -316,7 +316,6 @@ Attribute 29 SURFACEBIT
 Attribute 30 TOUCHBIT
 Attribute 31 INVISIBLE
 
-###?
 Property 3 COUNT  INT
 Property 4 TEXT  STR
 Property 5 STATE  INT
@@ -334,7 +333,6 @@ Property 16 ADJECTIVE ADJS
 Property 17 LDESC  STR
 Property 18 ACTION  RTN
 Property 19 SYNONYM  WORDS
-### check dirs too
 Property 20 OUT  DIR
 Property 21 IN  DIR
 Property 22 DOWN  DIR
