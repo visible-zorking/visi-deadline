@@ -1016,7 +1016,9 @@ hits you: the ground is moving toward me.  It is your last thought." CR>
 
 <ROUTINE V-READ ()
 	 <COND (<NOT <FSET? ,PRSO ,READBIT>>
-		<TELL "You cannot read the " D ,PRSO "." CR>)
+		;"***VZ: In r28 this message uses 'D ,PRSO' and ends with
+		  a period. ***"
+		<TELL "You cannot read the" PRSO "?" CR>)
 	       (ELSE <TELL <GETP ,PRSO ,P?TEXT> CR>)>>
 
 <ROUTINE V-LOOK-UNDER ()
