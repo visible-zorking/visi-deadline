@@ -1,0 +1,23 @@
+
+.FeeliesPage h2 {
+    font-size: 110%;
+    font-family: "Libre Baskerville", serif;
+}
+
+.FeeliesPage hr {
+    border: none;
+    height: 2px;
+    background-color: #888;
+    margin: 40px 20px;
+}
+
+.FeeliesPage a {
+    color: #00C;
+}
+.DarkTheme .FeeliesPage a {
+    color: #88F;
+}
+
+.FeeliesPage .Feelie {
+    text-align: center;
+}
