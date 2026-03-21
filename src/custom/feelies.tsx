@@ -35,8 +35,13 @@ export function FeeliesPage()
                 <p>
                     (The label was attached to a baggie of three white tablets.
                     I still have the baggie, but the tablets have crumbled
-                    to moldy ash, so I have removed them from the label.)
+                    to moldy ash, so I am not including them here.)
                 </p>
+                <FeelieLink url={ 'interview-mrs-robner.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Mrs. Robner' } />
+                <FeelieLink url={ 'interview-dunbar.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Ms. Dunbar' } />
+                <FeelieLink url={ 'interview-baxter.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Mr. Baxter' } />
+                <FeelieLink url={ 'interview-george.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with George Robner' } />
+                <FeelieLink url={ 'interview-rourke.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Mrs. Rourke' } />
             </div>
         </div>
     );
