@@ -59,11 +59,11 @@ function FeelieLink({ url, text, width, height } : { url:string, text:string, wi
 {
     return (
         <p className="Feelie">
-            <a href={ '/pic/'+url } target="_blank">
-                <img src={ '/pic/thumb/'+url } width={ width } height={ height } />
+            <a href={ './pic/'+url } target="_blank">
+                <img src={ './pic/thumb/'+url } width={ width } height={ height } />
             </a>
             <br/>
-            <a href={ '/pic/'+url } target="_blank">{ text }</a>
+            <a href={ './pic/'+url } target="_blank">{ text }</a>
         </p>
     )
 }
