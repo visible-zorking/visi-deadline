@@ -1463,7 +1463,8 @@ collapse." CR>)
 		       <TELL
 D ,PRSO " is listening." CR>)>
 		<SETG QCONTEXT ,PRSO>
-		<SETG QCONTEXT-ROOM ,HERE>)
+		<SETG QCONTEXT-ROOM ,HERE>
+		<RTRUE>)         ;"***VZ: <RTRUE> removed in r28.***"
 	       (T
 		<TELL "You can't talk to the" PRSO "!" CR>
 		<SETG QUOTE-FLAG <>>
@@ -1727,7 +1728,8 @@ good fingerprints to be found." CR>>
 		<TELL
 		 "You take a quick peek into the " D ,PRSO ":" CR>
 		<DESCRIBE-OBJECTS>
-		<SETG HERE .OHERE>)>>
+		<SETG HERE .OHERE>
+		<RTRUE>)>>       ;"***VZ: <RTRUE> removed in r28.***"
 
  <ROUTINE SEE-INTO? (THERE "AUX" P L TX O)
 	 <SET P 0>
