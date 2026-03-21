@@ -549,14 +549,25 @@ Global 197 VERBS  table created from SYNTAX
 # Argument type info for routines that are hard to guess.
 
 RoutineType - CLAUSE - - WORD
-RoutineType - V-CLIMB-UP PROP
+RoutineType - CARRY-CHECK OBJ
+RoutineType - COR-DIR OBJ OBJ
 RoutineType - DDESC STR OBJ STR
+RoutineType - DIR-FROM OBJ OBJ
+RoutineType - DIR-PRINT PROP
+RoutineType - ESTABLISH-GOAL OBJ OBJ
+RoutineType - FOLLOW-GOAL OBJ
 RoutineType - GWIM - - PREP
+RoutineType - IN-MOTION? OBJ
 RoutineType - LKP OBJ TABLE
+RoutineType - MOVE-PERSON OBJ OBJ
 RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
+RoutineType - QCONTEXT-CHECK OBJ
 RoutineType - SYNTAX-FOUND GLINE
+### TIME-PRINT HMTIME
+RoutineType - TRANSFER OBJ OBJ OBJ
+RoutineType - V-CLIMB-UP PROP
 RoutineType - WT? WORD - -
 
 # Map connections that don't come directly from room properties.
