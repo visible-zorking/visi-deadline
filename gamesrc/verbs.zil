@@ -1211,8 +1211,9 @@ slivers that evaporate instantaneously."
 	       (<AND <FSET? ,PRSO ,OPENBIT> <FIRST? ,PRSO>>
 		<REPEAT ()
 			<COND (<SET X <FIRST? ,PRSO>>
-			       <MOVE .X ,HERE>
-			       <FSET .X ,TOUCHBIT>)
+			       <MOVE .X ,HERE>)
+			       ;"***VZ: r28 added <FSET .X ,TOUCHBIT>
+			         after the <MOVE> above.***"
 			      (ELSE <RETURN>)>>
 		<TELL "Everything in it spills onto the floor." CR>)
 	       (T <TELL "Well, what did you expect to happen?" CR>)>>
