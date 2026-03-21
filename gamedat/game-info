@@ -188,7 +188,7 @@ Object 156 GLOBAL-BAXTER
 Object 157 BAXTER
 Object 158 GLOBAL-GARDENER
 Object 159 GARDENER
-Object 160 PLAYER
+Object 160 PLAYER  OBJ
 Object 161 XXX
 Object 162 AIR
 Object 163 GROUND
@@ -347,7 +347,7 @@ Property 29 EAST  DIR
 Property 30 SOUTH  DIR
 Property 31 NORTH  DIR
 
-Global 0 HERE
+Global 0 HERE  OBJ
 Global 1 SCORE
 Global 2 MOVES
 Global 3 WHERE-TABLES
@@ -434,7 +434,7 @@ Global 83 NEWSPAPER-READ
 Global 84 P-ADVERB
 Global 85 CALENDAR-PAGE
 Global 86 G-LETTER
-Global 87 YUKS
+Global 87 YUKS  DATA
 Global 88 WILL-READY
 Global 89 LADDER-FLAG
 Global 90 G-CALENDAR
@@ -467,7 +467,7 @@ Global 116 NO-LADDERS
 Global 117 P-SPACE
 Global 118 PRESENT-TIME
 Global 119 FINGERPRINT-OBJ
-Global 120 WHO-CARES
+Global 120 WHO-CARES  DATA
 Global 121 QCONTEXT-ROOM
 Global 122 QCONTEXT
 Global 123 PRON-SHE
@@ -477,10 +477,10 @@ Global 126 PRON-HIM
 Global 127 HO-HUM
 Global 128 OFFENDED
 Global 129 WHO-WAIT
-Global 130 COPR-NOTICE
+Global 130 COPR-NOTICE  STR
 Global 131 FUMBLE-PROB
 Global 132 FUMBLE-NUMBER
-Global 133 INDENTS
+Global 133 INDENTS  DATA
 Global 134 DEAD
 Global 135 LIT
 Global 136 SUPER-BRIEF
@@ -489,11 +489,11 @@ Global 138 P-CEPTR
 Global 139 P-CSPTR
 Global 140 P-GETFLAGS
 Global 141 P-MATCHLEN
-Global 142 P-OCLAUSE
-Global 143 P-MERGE
-Global 144 P-BUTS
-Global 145 P-PRSI
-Global 146 P-PRSO
+Global 142 P-OCLAUSE  TABLE
+Global 143 P-MERGE  TABLE
+Global 144 P-BUTS  TABLE
+Global 145 P-PRSI  TABLE
+Global 146 P-PRSO  TABLE
 Global 147 P-ADJN
 Global 148 P-ADJ
 Global 149 P-NAM
@@ -502,36 +502,36 @@ Global 151 P-SLOCBITS
 Global 152 P-NUMBER
 Global 153 QUOTE-FLAG
 Global 154 P-NCN
-Global 155 P-VTBL
-Global 156 P-OTBL
-Global 157 P-ITBL
+Global 155 P-VTBL  TABLE
+Global 156 P-OTBL  TABLE
+Global 157 P-ITBL  TABLE
 Global 158 P-AADJ
 Global 159 P-ANAM
 Global 160 P-ACLAUSE
 Global 161 P-MERGED
 Global 162 P-OFLAG
-Global 163 P-IT-LOC
-Global 164 P-IT-OBJECT
+Global 163 P-IT-LOC  OBJ
+Global 164 P-IT-OBJECT  OBJ
 Global 165 P-CONT
-Global 166 P-INBUF
-Global 167 P-LEXV
-Global 168 WINNER
+Global 166 P-INBUF  TABLE
+Global 167 P-LEXV  TABLE
+Global 168 WINNER  OBJ
 Global 169 P-DIR
 Global 170 P-LEN
 Global 171 P-CCSRC
-Global 172 P-SYNTAX
-Global 173 P-ONEOBJ
+Global 172 P-SYNTAX  GLINE
+Global 173 P-ONEOBJ  WORD
 Global 174 P-TABLE
-Global 175 PRSO
-Global 176 PRSI
-Global 177 PRSA
-Global 178 GWIM-DISABLE
+Global 175 PRSO  PRSO
+Global 176 PRSI  OBJ
+Global 177 PRSA  ACTION
+Global 178 GWIM-DISABLE  UNUSED
 Global 179 ALWAYS-LIT
-Global 180 L-PRSI
-Global 181 L-PRSO
-Global 182 L-PRSA
-Global 183 P-HIM-HER-LOC
-Global 184 P-HIM-HER
+Global 180 L-PRSI  OBJ
+Global 181 L-PRSO  OBJ
+Global 182 L-PRSA  ACTION
+Global 183 P-HIM-HER-LOC  OBJ
+Global 184 P-HIM-HER  OBJ
 Global 185 P-WON
 Global 186 CLOCK-WAIT
 Global 187 C-INTS
@@ -539,12 +539,12 @@ Global 188 C-DEMONS
 Global 189 C-TABLE  TABLE
 Global 190 LOAD-ALLOWED
 Global 191 LOAD-MAX
-Global 192 LOW-DIRECTION
+Global 192 LOW-DIRECTION  PROP
 Global 193 BIGFIX
-Global 194 PREPOSITIONS
-Global 195 ACTIONS
-Global 196 PREACTIONS
-Global 197 VERBS
+Global 194 PREPOSITIONS  table created from SYNTAX
+Global 195 ACTIONS  table created from SYNTAX
+Global 196 PREACTIONS  table created from SYNTAX
+Global 197 VERBS  table created from SYNTAX
 
 # Map connections that don't come directly from room properties.
 # (These are used for the "list rooms in order of closeness to you"
