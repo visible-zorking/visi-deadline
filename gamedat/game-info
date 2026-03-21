@@ -329,7 +329,7 @@ Property 11 PSEUDO  WORDRTNS
 Property 12 CORRIDOR  INT
 Property 13 STATION  OBJ
 Property 14 LINE  INT
-##Property 15 GLOBAL  OBJS
+Property 15 GLOBAL  OBJS
 Property 16 ADJECTIVE ADJS
 Property 17 LDESC  STR
 Property 18 ACTION  RTN
