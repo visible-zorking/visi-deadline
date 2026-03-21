@@ -92,6 +92,11 @@ export function property_value_display(tag: string, values: number[]) : JSX.Elem
         return (
             <VarShowCorridorBits value={ values[0]*0x100+values[1] } />
         )
+        
+    case 'TLINE':
+        return (
+            <VarShowTLine value={ values[1] } />
+        )
     }
     
     return null;
@@ -143,6 +148,30 @@ export function VarShowCorridorBits({ value }: { value:number })
     
     return (
         <i>cor-{ str }</i>
+    );
+}
+
+export function VarShowTLine({ value }: { value:number })
+{
+    let val: string;
+    switch (value) {
+    case 0:
+        val = ',TOP-OF-THE-LINE-C';
+        break;
+    case 1:
+        val = ',BOTTOM-LINE-C';
+        break;
+    case 2:
+        val = ',OUTSIDE-LINE-C';
+        break;
+    case 3:
+        val = ',FOOD-LINE-C';
+        break;
+    default:
+        return null;
+    }
+    return (
+        <code>{ val }</code>
     );
 }
 
