@@ -546,6 +546,19 @@ Global 195 ACTIONS  table created from SYNTAX
 Global 196 PREACTIONS  table created from SYNTAX
 Global 197 VERBS  table created from SYNTAX
 
+# Argument type info for routines that are hard to guess.
+
+RoutineType - CLAUSE - - WORD
+RoutineType - V-CLIMB-UP PROP
+RoutineType - DDESC STR OBJ STR
+RoutineType - GWIM - - PREP
+RoutineType - LKP OBJ TABLE
+RoutineType - ORPHAN GLINE GLINE
+RoutineType - PERFORM ACTION PERFORMO PERFORMI
+RoutineType - PICK-ONE TABLE
+RoutineType - SYNTAX-FOUND GLINE
+RoutineType - WT? WORD - -
+
 # Map connections that don't come directly from room properties.
 # (These are used for the "list rooms in order of closeness to you"
 # display tab.)
