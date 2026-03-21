@@ -26,18 +26,28 @@ export function FeeliesPage()
                     manual, visit the{' '}
                     <ExtWebLink url={ 'https://infodoc.plover.net/manuals/temp/deadline.pdf' } text={ 'InfoDoc Project' } />.
                 </p>
-                <FeelieLink url={ 'coates-letter.jpg' } text={ 'Letter from Warren Coates (Attorney) to the Edindale Police Department' } />
+                <FeelieLink url={ 'coates-letter.jpg' } width={ 250 } height={ 305 } text={ 'Letter from Warren Coates (Attorney) to the Edindale Police Department' } />
+                <FeelieLink url={ 'scene-photo.jpg' } width={ 300 } height={ 240 } text={ 'Crime scene photo' } />
+                <FeelieLink url={ 'corpus-delicti.jpg' } width={ 250 } height={ 323 } text={ 'Coroner\u2019s report' } />
+                <FeelieLink url={ 'official-memo.jpg' } width={ 250 } height={ 161 } text={ 'Memo from Detective Anderson' } />
+                <FeelieLink url={ 'lab-report.jpg' } width={ 250 } height={ 164 } text={ 'Lab report on teacup' } />
+                <FeelieLink url={ 'evidence-label.jpg' } width={ 133 } height={ 71 } text={ 'Evidence label for tablets' } />
+                <p>
+                    (The label was attached to a baggie of three white tablets.
+                    I still have the baggie, but the tablets have crumbled
+                    to moldy ash, so I have removed them from the label.)
+                </p>
             </div>
         </div>
     );
 }
 
-function FeelieLink({ url, text } : { url:string, text:string })
+function FeelieLink({ url, text, width, height } : { url:string, text:string, width:number, height:number })
 {
     return (
         <p className="Feelie">
             <a href={ '/pic/'+url } target="_blank">
-                <img src={ '/pic/thumb/'+url } width="250" height="305" />
+                <img src={ '/pic/thumb/'+url } width={ width } height={ height } />
             </a>
             <br/>
             <a href={ '/pic/'+url } target="_blank">{ text }</a>
