@@ -26,7 +26,21 @@ export function FeeliesPage()
                     manual, visit the{' '}
                     <ExtWebLink url={ 'https://infodoc.plover.net/manuals/temp/deadline.pdf' } text={ 'InfoDoc Project' } />.
                 </p>
+                <FeelieLink url={ 'coates-letter.jpg' } text={ 'Letter from Warren Coates (Attorney) to the Edindale Police Department' } />
             </div>
         </div>
     );
+}
+
+function FeelieLink({ url, text } : { url:string, text:string })
+{
+    return (
+        <p className="Feelie">
+            <a href={ '/pic/'+url } target="_blank">
+                <img src={ '/pic/thumb/'+url } width="250" height="305" />
+            </a>
+            <br/>
+            <a href={ '/pic/'+url } target="_blank">{ text }</a>
+        </p>
+    )
 }
