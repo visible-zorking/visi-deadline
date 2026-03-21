@@ -550,16 +550,24 @@ Global 197 VERBS  table created from SYNTAX
 
 RoutineType - CLAUSE - - WORD
 RoutineType - CARRY-CHECK OBJ
+RoutineType - COM-CHECK OBJ
 RoutineType - COR-DIR OBJ OBJ
 RoutineType - DDESC STR OBJ STR
+RoutineType - DESCRIBE-PERSON OBJ
 RoutineType - DIR-FROM OBJ OBJ
 RoutineType - DIR-PRINT PROP
+RoutineType - DISCRETION OBJ OBJ
 RoutineType - ESTABLISH-GOAL OBJ OBJ
 RoutineType - FOLLOW-GOAL OBJ
+RoutineType - FOLLOWED? OBJ
+RoutineType - GOAL-REACHED OBJ
+RoutineType - GRAB-ATTENTION OBJ
 RoutineType - GWIM - - PREP
+RoutineType - IMOVEMENT OBJ RTN
 RoutineType - IN-MOTION? OBJ
 RoutineType - LKP OBJ TABLE
 RoutineType - MOVE-PERSON OBJ OBJ
+RoutineType - MURDER-NOT-PROVEN OBJ
 RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
@@ -567,6 +575,7 @@ RoutineType - QCONTEXT-CHECK OBJ
 RoutineType - SYNTAX-FOUND GLINE
 ### TIME-PRINT HMTIME
 RoutineType - TRANSFER OBJ OBJ OBJ
+RoutineType - UNPRIORITIZE OBJ
 RoutineType - V-CLIMB-UP PROP
 RoutineType - WT? WORD - -
 
