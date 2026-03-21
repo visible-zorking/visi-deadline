@@ -84,6 +84,19 @@ export function global_value_display(tag: string, value: number, glo: GlobalData
     return null;
 }
 
+export function property_value_display(tag: string, values: number[]) : JSX.Element|null
+{
+    switch (tag) {
+        
+    case 'CORBITS':
+        return (
+            <VarShowCorridorBits value={ values[0]*0x100+values[1] } />
+        )
+    }
+    
+    return null;
+}
+
 export function stack_call_arg_display(tag: string, value: number) : JSX.Element|null
 {
     switch (tag) {
@@ -112,6 +125,25 @@ export function stack_call_arg_display(tag: string, value: number) : JSX.Element
     }
 
     return null;
+}
+
+export function VarShowCorridorBits({ value }: { value:number })
+{
+    let ls: string[] = [];
+
+    for (let bit=1; bit < 65536; bit *= 2) {
+        if (value & bit)
+            ls.push(''+bit);
+    }
+
+    if (!ls.length)
+        ls.push('0');
+    
+    let str = ls.join(',');
+    
+    return (
+        <i>cor-{ str }</i>
+    );
 }
 
 export function ArgShowTime({ value }: { value:number })
