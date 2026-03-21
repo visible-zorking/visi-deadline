@@ -14,6 +14,7 @@ import { ObjectPage } from '../visi/objpage';
 import { GlobalState } from '../visi/globstate';
 import { SourceFileList } from '../visi/filelist';
 import { AboutPage } from './about';
+import { FeeliesPage } from './feelies';
 
 const tab_list = [
     [ 'activity', 'Activity' ],
@@ -23,6 +24,7 @@ const tab_list = [
     [ 'timers', 'Timers' ],
     [ 'grammar', 'Grammar' ],
     [ 'filelist', 'Files' ],
+    [ 'feelies', 'Feelies' ],
     [ 'about', '?' ],
 ];
 
@@ -85,6 +87,9 @@ export function TabbedPane()
         break;
     case 'filelist':
         tabcontent = <SourceFileList />;
+        break;
+    case 'feelies':
+        tabcontent = <FeeliesPage />;
         break;
     case 'about':
         tabcontent = <AboutPage />;

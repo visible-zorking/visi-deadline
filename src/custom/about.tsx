@@ -71,7 +71,7 @@ export function AboutPage()
     return (
         <div className="ScrollContent">
             <div className="AboutPage">
-                <h2>What's going on?</h2>
+                <h2>What&#x2019;s going on?</h2>
                 <p>
                     You are playing Deadline, the classic Infocom text adventure.
                     And you are watching the Z-machine execute the game,
