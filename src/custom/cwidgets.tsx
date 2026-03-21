@@ -82,8 +82,31 @@ export function stack_call_arg_display(tag: string, value: number) : JSX.Element
         return (
             <ArgShowObject value={ value } />
         )
+        
+    case 'HMTIME':
+        return (
+            <ArgShowTime value={ value } />
+        )
+        
     }
 
     return null;
 }
 
+export function ArgShowTime({ value }: { value:number })
+{
+    let minutes = value % 60;
+    let hours = Math.floor(value / 60);
+
+    let ampm = (hours < 12) ? 'am' : 'pm';
+    if (hours > 12) {
+        hours -= 12;
+    }
+    let strmin = ''+minutes;
+    if (minutes < 10)
+        strmin = '0'+minutes;
+
+    return (
+        <i>{ hours }:{ strmin }{ ampm }</i>
+    )
+}
