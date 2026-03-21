@@ -69,7 +69,7 @@ export function stack_call_arg_display(tag: string, value: number) : JSX.Element
         
     case 'PERFORMO':
         let ctx = useContext(StackCallCtx);
-        if (ctx.args[0] == 999) {      /* action WALK */
+        if (ctx.args[0] == 130) {      /* action WALK */
             return (
                 <ArgShowProperty value={ value } />
             );
