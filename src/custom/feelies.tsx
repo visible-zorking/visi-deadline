@@ -26,6 +26,7 @@ export function FeeliesPage()
                     manual, visit the{' '}
                     <ExtWebLink url={ 'https://infodoc.plover.net/manuals/temp/deadline.pdf' } text={ 'InfoDoc Project' } />.
                 </p>
+                <hr />
                 <FeelieLink url={ 'coates-letter.jpg' } width={ 250 } height={ 305 } text={ 'Letter from Warren Coates (Attorney) to the Edindale Police Department' } />
                 <FeelieLink url={ 'scene-photo.jpg' } width={ 300 } height={ 240 } text={ 'Crime scene photo' } />
                 <FeelieLink url={ 'corpus-delicti.jpg' } width={ 250 } height={ 323 } text={ 'Coroner\u2019s report' } />
@@ -42,6 +43,13 @@ export function FeeliesPage()
                 <FeelieLink url={ 'interview-baxter.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Mr. Baxter' } />
                 <FeelieLink url={ 'interview-george.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with George Robner' } />
                 <FeelieLink url={ 'interview-rourke.jpg' } width={ 200 } height={ 327 } text={ 'Police interview with Mrs. Rourke' } />
+                <hr />
+                <p>
+                    This page was not part of the original release; it was
+                    added for the 1984 &#x201C;Grey Box&#x201D; package.
+                    This scan courtesy of the InfoDoc Project.
+                </p>
+                <FeelieLink url={ 'detective-notes.jpg' } width={ 250 } height={ 293 } text={ 'Handwritten notes by the detective' } />
             </div>
         </div>
     );
