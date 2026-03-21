@@ -23,6 +23,13 @@ src:ACTIONS-109: The [glob:PRESENT-TIME] global is defined twice, which is not a
 rtn:WELCOME: Why do you have exactly twelve hours to solve the murder? At least one reason is so that the game does not have to parse “am” or “pm” times. `WAIT UNTIL 9:30` unambiguously refers to the morning, because you can’t stay until 9:30 in the evening.
 
 
+glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have sight-lines to each other. (Some of the “corridors” are outdoors.) Each room in a corridor has that bit set in its [prop:CORRIDOR] property.
+	This permits the game to display messages like “Mrs. Robner, off to the north, ducks into a room to the north.”
+
+prop:CORRIDOR: This property defines one or more “corridors” (sight-lines) that the player can see down from a given room. See [glob:COR-1].
+
+
+
 rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known release recognizes it. This vestige remains.
 
 obj:STAIRS: This room lists itself as a scenery object (the `GLOBAL` property). This doesn’t seem to have any effect, but it doesn’t hurt the game either. It threw my Visible Zorker code for a loop though!
