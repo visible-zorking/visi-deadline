@@ -20,6 +20,8 @@ glob:PRESENT-TIME: The current time, stored as minutes after midnight (`H*60+M`)
 src:ACTIONS-109: The [glob:PRESENT-TIME] global is defined twice, which is not an error in ZIL.
 	(The comment is wrong, though. Maybe it’s on Daylight Saving Time?)
 
+rtn:WELCOME: Why do you have exactly twelve hours to solve the murder? At least one reason is so that the game does not have to parse “am” or “pm” times. `WAIT UNTIL 9:30` unambiguously refers to the morning, because you can’t stay until 9:30 in the evening.
+
 
 rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known release recognizes it. This vestige remains.
 
