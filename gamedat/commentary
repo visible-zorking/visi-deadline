@@ -23,6 +23,14 @@ src:ACTIONS-109: The [glob:PRESENT-TIME] global is defined twice, which is not a
 rtn:WELCOME: Why do you have exactly twelve hours to solve the murder? At least one reason is so that the game does not have to parse “am” or “pm” times. `WAIT UNTIL 9:30` unambiguously refers to the morning, because you can’t stay until 9:30 in the evening.
 
 
+glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
+
+
+prop:LINE: ###transit
+
+glob:TOP-OF-THE-LINE: ###transit
+
+
 glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have sight-lines to each other. (Some of the “corridors” are outdoors.) Each room in a corridor has that bit set in its [prop:CORRIDOR] property.
 	This permits the game to display messages like “Mrs. Robner, off to the north, ducks into a room to the north.”
 
