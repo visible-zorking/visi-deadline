@@ -181,7 +181,10 @@ export function ArgShowTime({ value }: { value:number })
     let hours = Math.floor(value / 60);
 
     let ampm = (hours < 12) ? 'am' : 'pm';
-    if (hours > 12) {
+    if (hours == 0) {
+        hours = 12;
+    }
+    else if (hours > 12) {
         hours -= 12;
     }
     let strmin = ''+minutes;
