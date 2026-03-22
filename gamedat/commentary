@@ -8,6 +8,26 @@
 
 ABOUT: Welcome to the commentary track!
 
+rtn:V-VERSION: Print the title, release, and serial number.
+	In 1982, Infocom briefly branded its games as “INTERLOGIC”. They had mostly switched to “interactive fiction” by 1984.
+
+
+GRAMMAR-LEGEND: This is the list of verb forms which the game recognizes. (Simple directions like `NORTH` are a special case; they’re not listed here.) These are compiled from the [SYNTAX|~src:SYNTAX-67] file.
+	Objects in a verb line have various flags which give hints about their usage. An object attribute (like `LIGHTBIT`) means that if the player doesn’t name an object, the parser will try to guess one with that attribute.
+	The other flag letters have specific meanings: the object must be **h**eld; the object will be **t**aken if not held; the object should be **i**n the room or **o**n the ground; the object should be **p**ossessed or **c**arried in a container. (Yes, they’re confusing. Infocom’s own docs say “No one really understands them except Stu” (Galley).)
+
+attr:RMUNGBIT: Not applied to real objects. `RMUNGBIT` is a hack used in grammar lines; it means the object is optional (but the preposition before it is required). This allows the parser to accept commands like [LOOK AROUND|~src:SYNTAX-279].
+
+glob:P-SYNTAX: The grammar line found when the most recent command was parsed. (Except for simple direction commands, which are a special case.) See the Grammar tab.
+
+
+OBJTREE-LEGEND: In this list, `Rooms` are rooms and `Items` are regular items. (Sometimes portable, sometimes not.)
+	`Scen` indicates scenery objects. These exist in multiple places; for example, the [~obj:HOUSE] is visible from most of the outdoors areas.
+	`Glob` indicates a global object, which is *always* visible, or at least mentionable. For example, [~obj:GLOBAL-MURDER] is global, so you can always `ASK PERSON ABOUT MURDER`.
+
+obj:LOCAL-GLOBALS: This is a container for scenery objects like [~obj:HOUSE], which are visible from many locations in the game.
+
+
 glob:SCORE: The hours value of the current time. (See also [glob:PRESENT-TIME].)
 	The Z-machine was originally designed to show `SCORE` and `MOVES` in the status line. In *Deadline*, these variables were repurposed to show a time in hours and minutes. A bit in the game file header tells the interpreter which way to format them.
 
