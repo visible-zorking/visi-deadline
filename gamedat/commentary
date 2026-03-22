@@ -86,6 +86,7 @@ glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have
 prop:CORRIDOR: This property defines one or more “corridors” (sight-lines) that the player can see down from a given room. See [glob:COR-1].
 
 
+src:VERBS-290: This wry comment does not appear to have ever been used in a released version of the game.
 
 rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known release recognizes it. This vestige remains.
 
