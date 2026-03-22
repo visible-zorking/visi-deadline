@@ -145,6 +145,10 @@ export function AboutPage()
                     you need to begin your investigation. The Feelies tab
                     contains links to these documents.
                 </p>
+                <p>
+                    It also explains some specialized commands you&#x2019;ll
+                    need, like <code>FINGERPRINT</code>.
+                </p>
                 <h2>Which version is this?</h2>
                 <p>
                     Deadline was the first non-Zork game created by Infocom.
