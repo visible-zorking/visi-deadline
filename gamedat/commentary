@@ -28,6 +28,11 @@ OBJTREE-LEGEND: In this list, `Rooms` are rooms and `Items` are regular items. (
 obj:LOCAL-GLOBALS: This is a container for scenery objects like [~obj:HOUSE], which are visible from many locations in the game.
 
 
+glob:WINNER: `WINNER` is the actor in the current command.
+	`WINNER` is usually [~obj:PLAYER], but for a command like `GEORGE, GO EAST` it briefly shifts to the named NPC.
+
+glob:HERE: The location of the [*glob:WINNER].
+
 glob:SCORE: The hours value of the current time. (See also [glob:PRESENT-TIME].)
 	The Z-machine was originally designed to show `SCORE` and `MOVES` in the status line. In *Deadline*, these variables were repurposed to show a time in hours and minutes. A bit in the game file header tells the interpreter which way to format them.
 
@@ -40,7 +45,31 @@ glob:PRESENT-TIME: The current time, stored as minutes after midnight (`H*60+M`)
 src:ACTIONS-109: The [glob:PRESENT-TIME] global is defined twice, which is not an error in ZIL.
 	(The comment is wrong, though. Maybe it’s on Daylight Saving Time?)
 
+rtn:GO: Set up the world at the start of the game. Start the timers. Print the banner. Set all those useful globals like [~glob:HERE] and [~glob:WINNER].
+
 rtn:WELCOME: Why do you have exactly twelve hours to solve the murder? At least one reason is so that the game does not have to parse “am” or “pm” times. `WAIT UNTIL 9:30` unambiguously refers to the morning, because you can’t stay until 9:30 in the evening.
+
+glob:LIT: Whether the current location has light. *Deadline* has no dark areas so this is always true.
+
+glob:DEAD: It is notionally possible to die in *Deadline*, but this variable is never used.
+
+glob:LOW-DIRECTION: Properties with this value and above are directions.
+
+glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a blank line or an error.)
+	No relation to whether the *player* has won.
+
+
+glob:C-INTS: Indicates how much of the timer table ([*glob:C-TABLE]) is used. This counts down from `C-TABLELEN`, which is 300.
+
+glob:C-DEMONS: Indicates how much of the timer table is used for daemons.
+	The difference between daemons and timers is that timers run every turn; daemons run every *input*, even if no turn passes. But *Deadline* does not use daemons.
+
+glob:C-TABLE: The timer table. See the “Timers” tab for a current listing.
+
+TIMERS-LEGEND: A list of the timers running (or paused) in the timer table ([~glob:C-TABLE]). Positive numbers count down (while enabled) and call the named function after that many turns. Negative numbers are called every turn while the timer is enabled.
+	This list only grows as you play; timers can be added, started, and stopped, but not removed.
+	Note that enabled negative timers, like [~rtn:I-ATTENTION], count down towards “negative infinity”. They’ll wrap and stop working after 65535 turns, but back then nobody worried about this!
+
 
 
 glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
