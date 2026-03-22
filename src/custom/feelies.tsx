@@ -7,6 +7,39 @@ export function FeeliesPage()
     return (
         <div className="ScrollContent">
             <div className="FeeliesPage">
+                <h2>Commands for detectives</h2>
+                <p>
+                    A few commands particular to Infocom&#x2019;s mystery
+                    games:
+                </p>
+                <p>
+                    <code>EXAMINE <i>something</i> CAREFULLY</code>
+                    {' '}&nbsp;{' '}
+                    <i>(takes longer but may uncover more information)</i>
+                    <br/>
+                    <code>FINGERPRINT <i>something</i></code>
+                    <br/>
+                    <code>ANALYZE <i>something</i></code>
+                    <br/>
+                    <code>ANALYZE <i>something</i> FOR <i>something</i></code>
+                    <br/>
+                    <code>ACCUSE <i>suspect</i> OF <i>something</i></code>
+                    <br/>
+                    <code>WAIT <i>number</i> MINUTES</code>
+                    <br/>
+                    <code>WAIT UNTIL <i>time</i></code>
+                    <br/>
+                    <code>WAIT FOR <i>person</i></code>
+                    <br/>
+                    <code>ARREST <i>suspect</i></code>
+                </p>
+                <p>
+                    The familiar commands{' '}
+                    <code>ASK <i>suspect</i> ABOUT <i>something</i></code>
+                    {' '}and{' '}
+                    <code>SHOW <i>something</i> TO <i>suspect</i></code>
+                    {' '}will be useful as well.
+                </p>
                 <h2>Documentary evidence</h2>
                 <p>
                     <i>Deadline</i> originally came with a
