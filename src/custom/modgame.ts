@@ -14,8 +14,14 @@ export function get_goal_tables(engine: GnustoEngine, state: ZState): any
         goaltables.push(goaltable);
     }
 
+    let attntable = [];
+    for (let char=0; char<8; char++) {
+        attntable.push(engine.getWord(11745+2*char));
+    }
+    
     return {
-        goaltables: goaltables
+        goaltables: goaltables,
+        attntable: attntable,
     }
 }
 
