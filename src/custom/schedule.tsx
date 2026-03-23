@@ -79,10 +79,16 @@ function CharacterTable()
 
 function CharacterTableRow({ char, loc }: { char:number, loc:number })
 {
+    let locobj = gamedat_object_ids.get(loc);
+    
     return (
         <tr>
             <td>{ charnames[char].name }</td>
-            <td>{ loc }</td>
+            <td>
+                {
+                    locobj ? locobj.name : '\u2014'
+                }
+            </td>
         </tr>
     );
 }
