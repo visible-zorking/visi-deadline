@@ -7,6 +7,17 @@ import { ReactCtx } from '../visi/context';
 import { signed_zvalue, unpack_address } from '../visi/gametypes';
 import { gamedat_object_ids, gamedat_routine_addrs } from '../visi/gamedat';
 
+const charnames = [
+    'Player',
+    'Gardner',
+    'Baxter',
+    'Dunbar',
+    'George',
+    'Mrs Robner',
+    'Rourke',
+    'Coates',
+];
+
 export function SchedulePage()
 {
     let rctx = useContext(ReactCtx);
@@ -17,7 +28,7 @@ export function SchedulePage()
     let rowls = [];
     for (let char=0; char<8; char++) {
         rowls.push(
-            <GoalTableRow key={ char } row={ specifics.goaltables[char] } />
+            <GoalTableRow key={ char } char={ char } row={ specifics.goaltables[char] } />
         );
     }
     
@@ -32,7 +43,7 @@ export function SchedulePage()
     );
 }
 
-function GoalTableRow({ row }: { row:number[] })
+function GoalTableRow({ char,  row }: { char:number, row:number[] })
 {
     let rctx = useContext(ReactCtx);
     
@@ -46,6 +57,7 @@ function GoalTableRow({ row }: { row:number[] })
     
     return (
         <tr>
+            <td>{ charnames[char] }</td>
             <td>{ row[0] }</td>
             <td>{ row[1] }</td>
             <td>{ row[2] }</td>
@@ -55,7 +67,7 @@ function GoalTableRow({ row }: { row:number[] })
             <td>{ row[6] }</td>
             <td>
                 { func7 ?
-                  <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>{ func7.name }</a>
+                  <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>timer</a>
                   : '???'
                 }
             </td>
