@@ -9,17 +9,24 @@ import { gamedat_object_ids, gamedat_routine_addrs, gamedat_property_nums } from
 
 import { SpecificDeadline } from './modgame';
 
-const charnames = [
-    'Player',
-    'Gardener',
-    'Baxter',
-    'Dunbar',
-    'George',
-    'Mrs Robner',
-    'Rourke',
-    'Coates',
+type CharTableType = {
+    name: string,
+    id: number,
+}
+
+// This duplicates gameids, sorry.
+const charnames: CharTableType[] = [
+    { name: 'Player', id: 160 },
+    { name: 'Gardener', id: 159 },
+    { name: 'Baxter', id: 157 },
+    { name: 'Dunbar', id: 155 },
+    { name: 'George', id: 153 },
+    { name: 'Mrs Robner', id: 151 },
+    { name: 'Rourke', id: 149 },
+    { name: 'Coates', id: 54 },
 ];
 
+// And this duplicates properties.
 const dirabbrevs: { [key: number]: string } = {
     31: 'N',
     30: 'S',
@@ -38,6 +45,50 @@ const dirabbrevs: { [key: number]: string } = {
 
 export function SchedulePage()
 {
+    return (
+        <div className="ScrollContent">
+            <CharacterTable />
+            <GoalTable />
+        </div>
+    );
+}
+
+function CharacterTable()
+{
+    let rctx = useContext(ReactCtx);
+    let zstate = rctx.zstate;
+
+    let rowls = [];
+    for (let char=0; char<8; char++) {
+        let charid = charnames[char].id;
+        // We rely on the fact that the zstate reports objects in order (1-based).
+        let loc = zstate.objects[charid-1].parent;
+        rowls.push(
+            <CharacterTableRow key={ char } char={ char } loc={ loc } />
+        );
+    }
+    
+    return (
+        <table className="GoalTable">
+            <tbody>
+                { rowls }
+            </tbody>
+        </table>
+    );
+}
+
+function CharacterTableRow({ char, loc }: { char:number, loc:number })
+{
+    return (
+        <tr>
+            <td>{ charnames[char].name }</td>
+            <td>{ loc }</td>
+        </tr>
+    );
+}
+
+function GoalTable()
+{
     let rctx = useContext(ReactCtx);
     let zstate = rctx.zstate;
     
@@ -51,13 +102,11 @@ export function SchedulePage()
     }
     
     return (
-        <div className="ScrollContent">
-            <table className="GoalTable">
-                <tbody>
-                    { rowls }
-                </tbody>
-            </table>
-        </div>
+        <table className="GoalTable">
+            <tbody>
+                { rowls }
+            </tbody>
+        </table>
     );
 }
 
@@ -80,7 +129,7 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
     
     return (
         <tr>
-            <td>{ charnames[char] }</td>
+            <td>{ charnames[char].name }</td>
             <td>
                 {
                     obj0 ? obj0.name : '\u2014'
