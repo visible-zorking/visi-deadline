@@ -11,7 +11,7 @@ import { SpecificDeadline } from './modgame';
 
 const charnames = [
     'Player',
-    'Gardner',
+    'Gardener',
     'Baxter',
     'Dunbar',
     'George',
@@ -33,7 +33,7 @@ const dirabbrevs: { [key: number]: string } = {
     22: 'D',
     21: 'IN',
     20: 'OUT',
-    0: '-',
+    0: '\u2014',
 }
 
 export function SchedulePage()
@@ -64,7 +64,11 @@ export function SchedulePage()
 function GoalTableRow({ char,  row }: { char:number, row:number[] })
 {
     let rctx = useContext(ReactCtx);
-    
+
+    let obj0 = gamedat_object_ids.get(row[0]);
+    let obj1 = gamedat_object_ids.get(row[1]);
+    let obj2 = gamedat_object_ids.get(row[2]);
+    let obj6 = gamedat_object_ids.get(row[6]);
     let func7 = gamedat_routine_addrs.get(unpack_address(row[7]));
     let prop3 = dirabbrevs[row[3]];
     
@@ -77,9 +81,21 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
     return (
         <tr>
             <td>{ charnames[char] }</td>
-            <td>{ row[0] }</td>
-            <td>{ row[1] }</td>
-            <td>{ row[2] }</td>
+            <td>
+                {
+                    obj0 ? obj0.name : '\u2014'
+                }
+            </td>
+            <td>
+                {
+                    obj1 ? obj1.name : '\u2014'
+                }
+            </td>
+            <td>
+                {
+                    obj2 ? obj2.name : '\u2014'
+                }
+            </td>
             <td>
                 {
                     prop3 ? prop3 : row[3]
@@ -87,7 +103,11 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             </td>
             <td>{ row[4] }</td>
             <td>{ row[5] }</td>
-            <td>{ row[6] }</td>
+            <td>
+                {
+                    obj6 ? obj6.name : '\u2014'
+                }
+            </td>
             <td>
                 { func7 ?
                   <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>timer</a>
