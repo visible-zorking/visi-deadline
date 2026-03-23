@@ -2,8 +2,13 @@ import { unpack_address } from '../visi/gametypes';
 import { GnustoEngine, ZState } from '../visi/zstate';
 import { gamedat_routine_names, gamedat_global_names, gamedat_string_map } from '../visi/gamedat';
 
+export type SpecificDeadline = {
+    goaltables: number[][],
+    attntable: number[],
+};
+
 /* Pull out the GOAL-TABLES. */
-export function get_goal_tables(engine: GnustoEngine, state: ZState): any
+export function get_goal_tables(engine: GnustoEngine, state: ZState): SpecificDeadline
 {
     let goaltables = [];
     for (let char=0; char<8; char++) {

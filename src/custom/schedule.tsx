@@ -7,6 +7,8 @@ import { ReactCtx } from '../visi/context';
 import { signed_zvalue, unpack_address } from '../visi/gametypes';
 import { gamedat_object_ids, gamedat_routine_addrs, gamedat_property_nums } from '../visi/gamedat';
 
+import { SpecificDeadline } from './modgame';
+
 const charnames = [
     'Player',
     'Gardner',
@@ -39,7 +41,7 @@ export function SchedulePage()
     let rctx = useContext(ReactCtx);
     let zstate = rctx.zstate;
     
-    let specifics = zstate.specifics;
+    let specifics = zstate.specifics as SpecificDeadline;
     
     let rowls = [];
     for (let char=0; char<8; char++) {
