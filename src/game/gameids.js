@@ -30,6 +30,13 @@ function gamedat_ids_specific(gamedat_ids)
     gamedat_ids.GLOBAL_OBJECTS = gamedat_object_names.get('GLOBAL-OBJECTS').onum;
     gamedat_ids.LOCAL_GLOBALS = gamedat_object_names.get('LOCAL-GLOBALS').onum;
     gamedat_ids.PLAYER = gamedat_object_names.get('PLAYER').onum;
+    gamedat_ids.GARDENER = gamedat_object_names.get('GARDENER').onum;
+    gamedat_ids.BAXTER = gamedat_object_names.get('BAXTER').onum;
+    gamedat_ids.DUNBAR = gamedat_object_names.get('DUNBAR').onum;
+    gamedat_ids.GEORGE = gamedat_object_names.get('GEORGE').onum;
+    gamedat_ids.MRS_ROBNER = gamedat_object_names.get('MRS-ROBNER').onum;
+    gamedat_ids.ROURKE = gamedat_object_names.get('ROURKE').onum;
+    gamedat_ids.COATES = gamedat_object_names.get('COATES').onum;
     gamedat_ids.STARTROOM = gamedat_object_names.get('SOUTH-LAWN').onum;
     gamedat_ids.PSEUDO_OBJECT = gamedat_object_names.get('PSEUDO-OBJECT').onum;
 
