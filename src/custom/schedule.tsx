@@ -1,7 +1,11 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 
+import { ZilSourceLoc } from '../visi/main';
 import { ReactCtx } from '../visi/context';
+
+import { signed_zvalue, unpack_address } from '../visi/gametypes';
+import { gamedat_object_ids, gamedat_routine_addrs } from '../visi/gamedat';
 
 export function SchedulePage()
 {
@@ -19,7 +23,7 @@ export function SchedulePage()
     
     return (
         <div className="ScrollContent">
-            <table>
+            <table className="GoalTable">
                 <tbody>
                     { rowls }
                 </tbody>
@@ -30,6 +34,16 @@ export function SchedulePage()
 
 function GoalTableRow({ row }: { row:number[] })
 {
+    let rctx = useContext(ReactCtx);
+    
+    let func7 = gamedat_routine_addrs.get(unpack_address(row[7]));
+    
+    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
+        ev.preventDefault();
+        let dat: ZilSourceLoc = { id: id, commentary: true };
+        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
+    }
+    
     return (
         <tr>
             <td>{ row[0] }</td>
@@ -39,7 +53,12 @@ function GoalTableRow({ row }: { row:number[] })
             <td>{ row[4] }</td>
             <td>{ row[5] }</td>
             <td>{ row[6] }</td>
-            <td>{ row[7] }</td>
+            <td>
+                { func7 ?
+                  <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>{ func7.name }</a>
+                  : '???'
+                }
+            </td>
             <td>{ row[8] }</td>
             <td>{ row[9] }</td>
         </tr>

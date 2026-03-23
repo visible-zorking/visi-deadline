@@ -9,14 +9,14 @@ export function get_goal_tables(engine: GnustoEngine, state: ZState): any
     for (let char=0; char<8; char++) {
         let goaltable = [];
         for (let ix=0; ix<20; ix += 2) {
-            goaltable.push(engine.getWord(11569 + 20*char + ix));
+            goaltable.push(engine.getUnsignedWord(11569 + 20*char + ix));
         }
         goaltables.push(goaltable);
     }
 
     let attntable = [];
     for (let char=0; char<8; char++) {
-        attntable.push(engine.getWord(11745+2*char));
+        attntable.push(engine.getUnsignedWord(11745+2*char));
     }
     
     return {

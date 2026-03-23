@@ -1,4 +1,10 @@
 
+.GoalTable td {
+    font-family: "Courier Prime";
+    font-size: 85%;
+    padding: 0px 4px;
+}
+
 .FeeliesPage h2 {
     font-size: 110%;
     font-family: "Libre Baskerville", serif;
