@@ -5,7 +5,7 @@ import { ZilSourceLoc } from '../visi/main';
 import { ReactCtx } from '../visi/context';
 
 import { signed_zvalue, unpack_address } from '../visi/gametypes';
-import { gamedat_object_ids, gamedat_routine_addrs } from '../visi/gamedat';
+import { gamedat_object_ids, gamedat_routine_addrs, gamedat_property_nums } from '../visi/gamedat';
 
 const charnames = [
     'Player',
@@ -17,6 +17,22 @@ const charnames = [
     'Rourke',
     'Coates',
 ];
+
+const dirabbrevs: { [key: number]: string } = {
+    31: 'N',
+    30: 'S',
+    29: 'E',
+    28: 'W',
+    27: 'NE',
+    26: 'NW',
+    25: 'SE',
+    24: 'SW',
+    23: 'U',
+    22: 'D',
+    21: 'IN',
+    20: 'OUT',
+    0: '-',
+}
 
 export function SchedulePage()
 {
@@ -48,6 +64,7 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
     let rctx = useContext(ReactCtx);
     
     let func7 = gamedat_routine_addrs.get(unpack_address(row[7]));
+    let prop3 = dirabbrevs[row[3]];
     
     function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
         ev.preventDefault();
@@ -61,7 +78,11 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             <td>{ row[0] }</td>
             <td>{ row[1] }</td>
             <td>{ row[2] }</td>
-            <td>{ row[3] }</td>
+            <td>
+                {
+                    prop3 ? prop3 : row[3]
+                }
+            </td>
             <td>{ row[4] }</td>
             <td>{ row[5] }</td>
             <td>{ row[6] }</td>
