@@ -4,6 +4,11 @@
     padding: 4px;
 }
 
+.GoalTable th {
+    font-weight: normal;
+    font-size: 85%;
+}
+
 .GoalTable td {
     font-family: "Courier Prime";
     font-size: 85%;

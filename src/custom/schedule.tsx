@@ -71,6 +71,10 @@ function CharacterTable()
     return (
         <table className="GoalTable">
             <tbody>
+                <tr>
+                    <th>person</th>
+                    <th>location</th>
+                </tr>
                 { rowls }
             </tbody>
         </table>
