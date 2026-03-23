@@ -552,6 +552,8 @@ RoutineType - CLAUSE - - WORD
 RoutineType - CARRY-CHECK OBJ
 RoutineType - COM-CHECK OBJ
 RoutineType - COR-DIR OBJ OBJ
+RoutineType - CORRIDOR-CHECK TABLE OBJ
+RoutineType - CORRIDOR-LOOK OBJ
 RoutineType - DDESC STR OBJ STR
 RoutineType - DESCRIBE-PERSON OBJ
 RoutineType - DIR-FROM OBJ OBJ
