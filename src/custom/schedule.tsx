@@ -90,13 +90,19 @@ export function SchedulePage()
                 room that will get them onto the desired line.
                 The &#x201C;dir&#x201D; is the direction they just moved
                 (not used in practice).
-                The &#x201C;?&#x201D; column is whether the character is able to
-                move. (This turns off temporarily if you call their name.)
-            </p>
-            <p>
-                
+                The &#x201C;?&#x201D; column is whether the character's
+                movement is enabled.
             </p>
             <GoalTable />
+            <p>
+                If you call a character's name, or otherwise attract
+                their attention, it temporarily disables their movement.
+                (See &#x201C;?&#x201D; above.) This sets their
+                entry in the ATTENTION-TABLE, which then decreases
+                each turn (I-ATTENTION) until it reaches zero.
+                Different characters have different attention spans.
+            </p>
+            <AttentionTable />
         </div>
     );
 }
@@ -245,3 +251,47 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
         </tr>
     )
 }
+
+function AttentionTable()
+{
+    let rctx = useContext(ReactCtx);
+    let zstate = rctx.zstate;
+
+    let specifics = zstate.specifics as SpecificDeadline;
+    
+    let rowls = [];
+    for (let char=0; char<8; char++) {
+        rowls.push(
+            <AttentionTableRow key={ char } char={ char } attn={ specifics.attntable[char] } span={ specifics.goaltables[char][8] } />
+        );
+    }
+    
+    return (
+        <table className="GoalTable">
+            <tbody>
+                <tr>
+                    <th>person</th>
+                    <th>attn</th>
+                    <th>span</th>
+                </tr>
+                { rowls }
+            </tbody>
+        </table>
+    );
+}
+
+function AttentionTableRow({ char, attn, span }: { char:number, attn:number, span:number })
+{
+    attn = signed_zvalue(attn);
+    if (attn < 0)
+        attn = 0;
+    
+    return (
+        <tr>
+            <td>{ charnames[char].name }</td>
+            <td>{ attn }</td>
+            <td>{ span }</td>
+        </tr>
+    )
+}
+
