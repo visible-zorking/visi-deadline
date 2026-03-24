@@ -84,8 +84,8 @@ export function SchedulePage()
                 <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
                 shows each character&#x2019;s current movement goal.
                 &#x201C;Final&#x201D; is where they are heading;
-                &#x201C;station&#x201D; is that room&#x2019;s
-                {' '}<code>STATION</code>;
+                &#x201C;station&#x201D; is that room&#x2019;s{' '}
+                <code>STATION</code>;
                 &#x201C;inter&#x201D; is the interchange
                 room that will get them onto the desired line.
                 The &#x201C;dir&#x201D; is the direction they just moved
@@ -95,11 +95,14 @@ export function SchedulePage()
             </p>
             <GoalTable />
             <p>
-                If you call a character's name, or otherwise attract
+                If you call a character&#x2019;s name, or otherwise attract
                 their attention, it temporarily disables their movement.
                 (See &#x201C;?&#x201D; above.) This sets their
-                entry in the ATTENTION-TABLE, which then decreases
-                each turn (I-ATTENTION) until it reaches zero.
+                entry in the{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE') }><code>ATTENTION-TABLE</code></a>,
+                which then decreases each turn
+                (<a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION') }><code>I-ATTENTION</code></a>)
+                until it reaches zero.
                 Different characters have different attention spans.
             </p>
             <AttentionTable />
