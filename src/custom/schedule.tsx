@@ -68,8 +68,9 @@ export function SchedulePage()
             </p>
             <CharacterTable />
             <p>
-                To manage NPC movement, the game defines four "transit lines"
-                that run through the map. Every room is either a "station"
+                To manage NPC movement, the game defines four
+                &#x201C;transit lines&#x201D; that run through the map.
+                Every room is either a &#x201C;station&#x201D;
                 on one of these lines, or adjacent to a station room.
                 Thus, to reach a goal, an NPC just needs to
                 (1) move to the local station if needed;
@@ -77,7 +78,7 @@ export function SchedulePage()
                 interchange;
                 (3) if on the goal line, move one step towards the
                 goal station;
-                (4) move to the final room (if adjacent to the station).
+                (4) move to the final room (if that&#x2019;s not the station).
             </p>
             <p>
                 <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
@@ -148,7 +149,10 @@ function CharacterTableRow({ char, loc, timertn }: { char:number, loc:number, ti
             <td>{ charnames[char].name }</td>
             <td>
                 {
-                    locobj ? locobj.name : '\u2014'
+                    locobj ?
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+locobj.name) }>{ locobj.name }</a>
+                        
+                    : '\u2014'
                 }
             </td>
             <td>
