@@ -45,9 +45,54 @@ const dirabbrevs: { [key: number]: string } = {
 
 export function SchedulePage()
 {
+    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
+        ev.preventDefault();
+        let dat: ZilSourceLoc = { id: id, commentary: true };
+        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
+    }
+    
     return (
         <div className="ScrollContent">
+            <p>
+                Infocom introduced an autonomous NPC in <em>Zork 1</em>,
+                but <em>Deadline</em>&#x2019;s seven characters are a vast
+                leap in sophistication. Each has a schedule over the
+                game&#x2019;s twelve-hour timeline.
+                The schedule has a random element,
+                so each playthrough is slightly different; and the NPCs
+                can be diverted by your actions as well.
+            </p>
+            <p>
+                Let&#x2019;s start with the characters&#x2019; current
+                locations, and the timer routines that control each of them:
+            </p>
             <CharacterTable />
+            <p>
+                To manage NPC movement, the game defines four "transit lines"
+                that run through the map. Every room is either a "station"
+                on one of these lines, or adjacent to a station room.
+                Thus, to reach a goal, an NPC just needs to
+                (1) move to the local station if needed;
+                (2) move one step along the current line to the next
+                interchange;
+                (3) if on the goal line, move one step towards the
+                goal station;
+                (4) move to the final room (if adjacent to the station).
+            </p>
+            <p>
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
+                shows each character&#x2019;s current movement goal.
+                "Final" is where they are heading; "station" is that
+                room's <code>STATION</code>; "inter" is the interchange
+                room that will get them onto the desired line.
+                The "dir" is the direction they just moved (not used in
+                practice).
+                The "?" column is whether the character is able to
+                move; this turns off if you call their name.
+            </p>
+            <p>
+                
+            </p>
             <GoalTable />
         </div>
     );
@@ -131,6 +176,16 @@ function GoalTable()
     return (
         <table className="GoalTable">
             <tbody>
+                <tr>
+                    <th>person</th>
+                    <th>final</th>
+                    <th>station</th>
+                    <th>inter</th>
+                    <th>dir</th>
+                    <th>?</th>
+                    <th>pri</th>
+                    <th>queued</th>
+                </tr>
                 { rowls }
             </tbody>
         </table>
@@ -170,15 +225,17 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
                     prop3 ? prop3 : row[3]
                 }
             </td>
-            <td>{ row[4] }</td>
+            <td>
+                { (row[4] ?
+                   <span className="TimerActive">&#x2611;</span> :
+                   <span className="TimerInactive">&#x2610;</span>) }
+            </td>
             <td>{ row[5] }</td>
             <td>
                 {
                     obj6 ? obj6.name : '\u2014'
                 }
             </td>
-            <td>{ row[8] }</td>
-            <td>{ row[9] }</td>
         </tr>
     )
 }
