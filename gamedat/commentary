@@ -75,10 +75,27 @@ TIMERS-LEGEND: A list of the timers running (or paused) in the timer table ([~gl
 glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
 
 
-prop:LINE: ###transit
+glob:MOVEMENT-GOALS: The day’s schedule for each character.
+	Each character (other than the player) has a list of movement times and goals. A line `30 10 DINING-ROOM` means that they will wait 30±10 minutes (20 to 40) and then begin moving towards the `DINING-ROOM`.
 
-glob:TOP-OF-THE-LINE: ###transit
+glob:GOAL-TABLES: The current movement goal of each character. The scheme is explained in the “Schedule” tab.
 
+rtn:IMOVEMENT: Move a character one step towards their current goal. Each character calls this every turn when it is time for them to travel.
+	When they reach their goal, they advance one line on their [~glob:MOVEMENT-GOALS] table and set a long timer (30 or 60 minutes or whatever) until they begin their next `IMOVEMENT`.
+
+rtn:ESTABLISH-GOAL: Set up a character’s [glob:GOAL-TABLES] entry to move them towards a destination. See the “Schedule” tab for a complete explanation.
+
+prop:LINE: The transit line which a given room is on or adjacent too. See [~prop:STATION].
+
+prop:STATION: The transit-line room which is, or is adjacent to, a given room. See [~prop:LINE].
+	([~obj:GUEST-ROOM] and [~obj:GEORGE-BATH] are not adjacent to their `STATION` rooms. This seems to be a mistake, but it doesn’t matter because NPCs never travel to those rooms.)
+
+glob:TOP-OF-THE-LINE: These tables define the “transit lines” which let NPCs travel around the map. Every room is either on or adjacent to a transit line.
+
+rtn:I-ATTENTION: This timer routine decreases each character’s attention level after you call their name or do something else which calls [~rtn:GRAB-ATTENTION]. These values are stored in [glob:ATTENTION-TABLE]. After two to six minutes, they will become impatient and leave.
+
+glob:ATTENTION-TABLE: The current attention level of each character. This is set positive if you call their name or do something else which calls [~rtn:GRAB-ATTENTION]. It then decreases every turn ([rtn:I-ATTENTION]) to zero, at which point they wander off.
+	(In fact the values in this table decrease *every* turn, becoming negative. Negative values are ignored. For simplicity, I display negative values as “0” in the Schedule tab.)
 
 glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have sight-lines to each other. (Some of the “corridors” are outdoors.) Each room in a corridor has that bit set in its [prop:CORRIDOR] property.
 	This permits the game to display messages like “Mrs. Robner, off to the north, ducks into a room to the north.”
