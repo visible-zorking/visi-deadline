@@ -58,13 +58,16 @@ function CharacterTable()
     let rctx = useContext(ReactCtx);
     let zstate = rctx.zstate;
 
+    let specifics = zstate.specifics as SpecificDeadline;
+    
     let rowls = [];
     for (let char=0; char<8; char++) {
         let charid = charnames[char].id;
         // We rely on the fact that the zstate reports objects in order (1-based).
         let loc = zstate.objects[charid-1].parent;
+        let timertn = specifics.goaltables[char][7];
         rowls.push(
-            <CharacterTableRow key={ char } char={ char } loc={ loc } />
+            <CharacterTableRow key={ char } char={ char } loc={ loc } timertn={ timertn } />
         );
     }
     
@@ -74,6 +77,7 @@ function CharacterTable()
                 <tr>
                     <th>person</th>
                     <th>location</th>
+                    <th>timer</th>
                 </tr>
                 { rowls }
             </tbody>
@@ -81,9 +85,16 @@ function CharacterTable()
     );
 }
 
-function CharacterTableRow({ char, loc }: { char:number, loc:number })
+function CharacterTableRow({ char, loc, timertn }: { char:number, loc:number, timertn:number })
 {
     let locobj = gamedat_object_ids.get(loc);
+    let func7 = gamedat_routine_addrs.get(unpack_address(timertn));
+    
+    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
+        ev.preventDefault();
+        let dat: ZilSourceLoc = { id: id, commentary: true };
+        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
+    }
     
     return (
         <tr>
@@ -91,6 +102,12 @@ function CharacterTableRow({ char, loc }: { char:number, loc:number })
             <td>
                 {
                     locobj ? locobj.name : '\u2014'
+                }
+            </td>
+            <td>
+                { func7 ?
+                  <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>{ func7.name }</a>
+                  : '???'
                 }
             </td>
         </tr>
@@ -128,14 +145,7 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
     let obj1 = gamedat_object_ids.get(row[1]);
     let obj2 = gamedat_object_ids.get(row[2]);
     let obj6 = gamedat_object_ids.get(row[6]);
-    let func7 = gamedat_routine_addrs.get(unpack_address(row[7]));
     let prop3 = dirabbrevs[row[3]];
-    
-    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
-        ev.preventDefault();
-        let dat: ZilSourceLoc = { id: id, commentary: true };
-        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
-    }
     
     return (
         <tr>
@@ -165,12 +175,6 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             <td>
                 {
                     obj6 ? obj6.name : '\u2014'
-                }
-            </td>
-            <td>
-                { func7 ?
-                  <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:'+func7.name) }>timer</a>
-                  : '???'
                 }
             </td>
             <td>{ row[8] }</td>
