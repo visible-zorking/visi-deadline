@@ -82,13 +82,15 @@ export function SchedulePage()
             <p>
                 <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
                 shows each character&#x2019;s current movement goal.
-                "Final" is where they are heading; "station" is that
-                room's <code>STATION</code>; "inter" is the interchange
+                &#x201C;Final&#x201D; is where they are heading;
+                &#x201C;station&#x201D; is that room&#x2019;s
+                {' '}<code>STATION</code>;
+                &#x201C;inter&#x201D; is the interchange
                 room that will get them onto the desired line.
-                The "dir" is the direction they just moved (not used in
-                practice).
-                The "?" column is whether the character is able to
-                move; this turns off if you call their name.
+                The &#x201C;dir&#x201D; is the direction they just moved
+                (not used in practice).
+                The &#x201C;?&#x201D; column is whether the character is able to
+                move. (This turns off temporarily if you call their name.)
             </p>
             <p>
                 
