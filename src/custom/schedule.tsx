@@ -43,6 +43,10 @@ const dirabbrevs: { [key: number]: string } = {
     0: '\u2014',
 }
 
+// Initial values of the MOVEMENT-GOALS table. (Seven characters, because
+// Coates does not partake.)
+const initialmovegoals = [11793, 11799, 11839, 11855, 11883, 11929, 11963];
+
 export function SchedulePage()
 {
     function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
@@ -77,7 +81,8 @@ export function SchedulePage()
             <CharacterTable />
             <p>
                 To manage NPC movement, the game defines four
-                &#x201C;transit lines&#x201D; that run through the map.
+                &#x201C;<a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:TOP-OF-THE-LINE') }>transit lines</a>&#x201D;
+                that run through the map.
                 Every room is either a &#x201C;station&#x201D;
                 on one of these lines, or adjacent to a station room.
                 Thus, to reach a goal, an NPC just needs to

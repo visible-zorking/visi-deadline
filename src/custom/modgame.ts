@@ -5,11 +5,13 @@ import { gamedat_routine_names, gamedat_global_names, gamedat_string_map } from 
 export type SpecificDeadline = {
     goaltables: number[][],
     attntable: number[],
+    movegoals: number[],
 };
 
 /* Pull out the GOAL-TABLES. */
 export function get_goal_tables(engine: GnustoEngine, state: ZState): SpecificDeadline
 {
+    // GOAL-TABLES
     let goaltables = [];
     for (let char=0; char<8; char++) {
         let goaltable = [];
@@ -19,14 +21,22 @@ export function get_goal_tables(engine: GnustoEngine, state: ZState): SpecificDe
         goaltables.push(goaltable);
     }
 
+    // ATTENTION-TABLE
     let attntable = [];
     for (let char=0; char<8; char++) {
         attntable.push(engine.getUnsignedWord(11745+2*char));
+    }
+
+    let movegoals = [];
+    // MOVEMENT-GOALS (top level only)
+    for (let char=0; char<7; char++) {
+        movegoals.push(engine.getUnsignedWord(11997+2*char));
     }
     
     return {
         goaltables: goaltables,
         attntable: attntable,
+        movegoals: movegoals,
     }
 }
 
