@@ -76,7 +76,7 @@ glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
 
 
 glob:MOVEMENT-GOALS: The day’s schedule for each character.
-	Each character (other than the player) has a list of movement times and goals. A line `30 10 DINING-ROOM` means that they will wait 30±10 minutes (20 to 40) and then begin moving towards the `DINING-ROOM`.
+	Each character (other than the player and Coates) has a list of movement times and goals. A line `30 10 DINING-ROOM` means that they will wait 30±10 minutes (20 to 40) and then begin moving towards the `DINING-ROOM`.
 
 glob:GOAL-TABLES: The current movement goal of each character. The scheme is explained in the “Schedule” tab.
 
@@ -90,7 +90,12 @@ prop:LINE: The transit line which a given room is on or adjacent too. See [~prop
 prop:STATION: The transit-line room which is, or is adjacent to, a given room. See [~prop:LINE].
 	([~obj:GUEST-ROOM] and [~obj:GEORGE-BATH] are not adjacent to their `STATION` rooms. This seems to be a mistake, but it doesn’t matter because NPCs never travel to those rooms.)
 
-glob:TOP-OF-THE-LINE: These tables define the “transit lines” which let NPCs travel around the map. Every room is either on or adjacent to a transit line.
+glob:TOP-OF-THE-LINE: These tables define the four “transit lines” which let NPCs travel around the map. Every room is either on or adjacent to a transit line.
+
+src:GOAL-37: `SHALL-3` is not a valid room name. (The South Hall contains only [~obj:SHALL-1] and [~obj:SHALL-2].) What happened here?
+	In the compiled table, this value is zero. It seems that this was a double bug: a mistake in the *Deadline* source that went unnoticed because the ZIL compiler failed to flag it as an undefined symbol.
+	Since characters only use the transit tables to move to specific rooms, this bad table row doesn’t cause any game problems.
+	(It’s possible that an early draft of the map had a `SHALL-3` room which was removed. That is speculation, however.)
 
 rtn:I-ATTENTION: This timer routine decreases each character’s attention level after you call their name or do something else which calls [~rtn:GRAB-ATTENTION]. These values are stored in [glob:ATTENTION-TABLE]. After two to six minutes, they will become impatient and leave.
 
