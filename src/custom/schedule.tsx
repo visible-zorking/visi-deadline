@@ -63,6 +63,14 @@ export function SchedulePage()
                 can be diverted by your actions as well.
             </p>
             <p>
+                Each character&#x2019;s scheduled activity is managed by the{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>
+                {' '}and{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
+                {' '}tables. These are quite complicated, so I have broken
+                them down into smaller tables for display in this tab.
+            </p>
+            <p>
                 Let&#x2019;s start with the characters&#x2019; current
                 locations, and the timer routines that control each of them:
             </p>
@@ -79,6 +87,9 @@ export function SchedulePage()
                 (3) if on the goal line, move one step towards the
                 goal station;
                 (4) move to the final room (if that&#x2019;s not the station).
+                The{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT') }><code>IMOVEMENT</code></a>{' '}
+                routine handles this.
             </p>
             <p>
                 <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
@@ -96,8 +107,10 @@ export function SchedulePage()
             <GoalTable />
             <p>
                 If you call a character&#x2019;s name, or otherwise attract
-                their attention, it temporarily disables their movement.
-                (See &#x201C;?&#x201D; above.) This sets their
+                their attention,{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION') }><code>GRAB-ATTENTION</code></a>
+                {' '}temporarily disables their movement.
+                (See &#x201C;?&#x201D; above.) It then sets their
                 entry in the{' '}
                 <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE') }><code>ATTENTION-TABLE</code></a>,
                 which then decreases each turn
