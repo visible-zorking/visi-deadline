@@ -15,6 +15,11 @@
     padding: 0px 4px;
 }
 
+.GoalTable tr.RowLabel td {
+    padding-top: 12px;
+    padding-bottom: 4px;
+}
+
 .FeeliesPage h2 {
     font-size: 110%;
     font-family: "Libre Baskerville", serif;

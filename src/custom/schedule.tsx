@@ -386,6 +386,12 @@ function MovementTable()
     
     let rowls = [];
     for (let char=1; char<7; char++) {
+        rowls.push(
+            <tr key={ rowls.length } className="RowLabel" >
+                <td />
+                <td colSpan={ 4 } >{ charnames[char].name }</td>
+            </tr>
+        );
         for (let row of movementgoals[char]) {
             rowls.push(
                 <MovementTableRow key={ rowls.length } char={ char } row={ row } />
@@ -398,9 +404,10 @@ function MovementTable()
         <table className="GoalTable">
             <tbody>
                 <tr>
-                    <th>person</th>
+                    <th>when</th>
                     <th>time</th>
                     <th>var</th>
+                    <th>where</th>
                     <th>comment</th>
                 </tr>
                 { rowls }
@@ -413,9 +420,9 @@ function MovementTableRow({ char, row }: { char:number, row:MovementRow })
 {
     return (
         <tr>
-            <td>{ charnames[char].name }</td>
+            <td>{ '\u2014' }</td>
             <td>{ row[0] }</td>
-            <td>{ row[1] }</td>
+            <td>&#xB1;{ row[1] }</td>
             <td>{ row[2] }</td>
             <td>{ row[3] }</td>
         </tr>
