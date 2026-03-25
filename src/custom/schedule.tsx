@@ -50,53 +50,56 @@ const initialmovegoals = [11793, 11799, 11839, 11855, 11883, 11929, 11963];
 // And the MOVEMENT-GOALS contents. These are static, so there's no need
 // to pull them from the game state each turn.
 
+
+const movementgoals = [
 	// "GARDENER"
-	<TABLE 0
-	       60 10 NORTH-LAWN 	// "9-10AM"
-	       60 10 EAST-LAWN		// "10-11AM"
-	       60 10 ROSE-GARDEN	// "11AM-1PM"
-	       60 10 ORCHARD		// "1-2PM"
-	       60 15 SOUTH-LAWN		// "2-3PM"
-	       120 15 WEST-LAWN		// "3-5PM"
-	       0>
+    [
+	       [ 60, 10, "NORTH-LAWN" ], 	// "9-10AM"
+	       [ 60, 10, "EAST-LAWN" ],		// "10-11AM"
+	       [ 60, 10, "ROSE-GARDEN" ],	// "11AM-1PM"
+	       [ 60, 10, "ORCHARD" ],		// "1-2PM"
+	       [ 60, 15, "SOUTH-LAWN" ],		// "2-3PM"
+	       [ 120, 15, "WEST-LAWN" ],		// "3-5PM"
+    ],
 	// "BAXTER"
-	<TABLE 0
-	       120 2 LIVING-ROOM	// "Arrival at 9:55"
-	       360 10 SOUTH-LAWN	// "Leave at 4PM"
-	       0>
+    [
+	       [ 120, 2, "LIVING-ROOM" ],	// "Arrival at 9:55"
+	       [ 360, 10, "SOUTH-LAWN" ],	// "Leave at 4PM"
+    ],
 	// "DUNBAR"
-	<TABLE 0
-	       60 10 DUNBAR-BATH	// "9-9:30AM"
-	       30 10 DUNBAR-ROOM	// "9:30-11:30AM"
-	       135 20 LIVING-ROOM	// "11:30AM-2PM"
-	       135 20 DUNBAR-ROOM	
-	       0>
+    [
+	       [ 60, 10, "DUNBAR-BATH" ],	// "9-9:30AM"
+	       [ 30, 10, "DUNBAR-ROOM" ],	// "9:30-11:30AM"
+	       [ 135, 20, "LIVING-ROOM" ],	// "11:30AM-2PM"
+	       [ 135, 20, "DUNBAR-ROOM" ],	
+    ],
 	// "GEORGE"
-	<TABLE 0
-	       80 10 KITCHEN		// "9:20-9:50AM"
-	       30 10 DINING-ROOM	// "9:50-11AM"
-	       70 20 GEORGE-ROOM	// "11-11:45AM"
-	       45 15 LIVING-ROOM	// "11:45AM-12:30PM"
-	       60 10 EAST-LAWN		// "12:30-2PM"
-	       75 20 LIVING-ROOM	// "2-3PM"
-	       60 15 GEORGE-ROOM
-	       0>
+    [
+	       [ 80, 10, "KITCHEN" ],		// "9:20-9:50AM"
+	       [ 30, 10, "DINING-ROOM" ],	// "9:50-11AM"
+	       [ 70, 20, "GEORGE-ROOM" ],	// "11-11:45AM"
+	       [ 45, 15, "LIVING-ROOM" ],	// "11:45AM-12:30PM"
+	       [ 60, 10, "EAST-LAWN" ],		// "12:30-2PM"
+	       [ 75, 20, "LIVING-ROOM" ],	// "2-3PM"
+	       [ 60, 15, "GEORGE-ROOM" ],
+    ],
 	// "MRS-ROBNER"
-	<TABLE 0
-	       30 10 DINING-ROOM	// "8:30-9AM"
-	       100 15 DINING-ROOM	// "10:10-11:10"
-	       60 20 LIVING-ROOM	// "11:10-12:40"
-	       90 20 MASTER-BEDROOM	// "12:40-1:50"
-	       70 30 LIVING-ROOM
-	       0>
+    [
+	       [ 30, 10, "DINING-ROOM" ],	// "8:30-9AM"
+	       [ 100, 15, "DINING-ROOM" ],	// "10:10-11:10"
+	       [ 60, 20, "LIVING-ROOM" ],	// "11:10-12:40"
+	       [ 90, 20, "MASTER-BEDROOM" ],	// "12:40-1:50"
+	       [ 70, 30, "LIVING-ROOM" ],
+    ],
 	// "ROURKE"
-	<TABLE 0
-	       60 10 KITCHEN		// "9-10AM"
-	       60 20 DINING-ROOM	// "10-11AM"
-	       60 10 KITCHEN		// "11AM-1PM"
-	       120 20 LIVING-ROOM	// "1PM-2PM"
-	       60 30 ROURKE-ROOM	
-	       0>
+    [
+	       [ 60, 10, "KITCHEN" ],		// "9-10AM"
+	       [ 60, 20, "DINING-ROOM" ],	// "10-11AM"
+	       [ 60, 10, "KITCHEN" ],		// "11AM-1PM"
+	       [ 120, 20, "LIVING-ROOM" ],	// "1PM-2PM"
+	       [ 60, 30, "ROURKE-ROOM" ],	
+    ],
+];
 
 export function SchedulePage()
 {
