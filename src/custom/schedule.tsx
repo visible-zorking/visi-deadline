@@ -43,10 +43,6 @@ const dirabbrevs: { [key: number]: string } = {
     0: '\u2014',
 }
 
-// Initial values of the MOVEMENT-GOALS table. (Seven characters, because
-// Coates does not partake.)
-const initialmovegoals = [11793, 11799, 11839, 11855, 11883, 11929, 11963];
-
 // And the MOVEMENT-GOALS contents. These are static, so there's no need
 // to pull them from the game state each turn.
 
