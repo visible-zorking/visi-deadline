@@ -83,6 +83,10 @@ glob:GOAL-TABLES: The current movement goal of each character. The scheme is exp
 rtn:IMOVEMENT: Move a character one step towards their current goal. Each character calls this every turn when it is time for them to travel.
 	When they reach their goal, they advance one line on their [~glob:MOVEMENT-GOALS] table and set a long timer (30 or 60 minutes or whatever) until they begin their next `IMOVEMENT`.
 
+# More precisely:
+# - if not first move (initial 0 entry), establish-goal
+# - if not last entry (final 0 time), pick the interval, queue timer, advance ptr
+
 rtn:ESTABLISH-GOAL: Set up a character’s [glob:GOAL-TABLES] entry to move them towards a destination. See the “Schedule” tab for a complete explanation.
 
 prop:LINE: The transit line which a given room is on or adjacent too. See [~prop:STATION].
@@ -106,6 +110,8 @@ glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have
 	This permits the game to display messages like “Mrs. Robner, off to the north, ducks into a room to the north.”
 
 prop:CORRIDOR: This property defines one or more “corridors” (sight-lines) that the player can see down from a given room. See [glob:COR-1].
+
+### glob:WHERE-TABLES
 
 
 src:VERBS-290: This wry comment does not appear to have ever been used in a released version of the game.
