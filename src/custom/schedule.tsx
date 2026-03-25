@@ -387,6 +387,8 @@ function MovementTable()
        that character's next move. */
     let timers:(number|null)[] = [ null, null, null, null, null, null, null, null ];
 
+    let present = zstate.globals[118]; // PRESENT-TIME
+
     // Loop cloned from timers.tsx.
     let timerpos = zstate.globals[187]; // C-INTS
     while (timerpos+5 < zstate.timertable.length) {
@@ -428,10 +430,15 @@ function MovementTable()
             </tr>
         );
         let current = Math.floor((movegoals[char] - initialmovegoals[char].initial) / 6) - 1;
+        let nexttime: number|null = null;
+        let timerschar = timers[char];
+        if (timerschar !== null) {
+            nexttime = present + timerschar;
+        }
         for (let ix=0; ix<movementgoals[char].length; ix++) {
             let row = movementgoals[char][ix];
             rowls.push(
-                <MovementTableRow key={ rowls.length } char={ char } current={ ix==current } row={ row } time={ movetimes[char][ix] } />
+                <MovementTableRow key={ rowls.length } char={ char } current={ ix==current } row={ row } time={ movetimes[char][ix] } nexttime={ nexttime } />
             );
         }
     }
@@ -453,11 +460,17 @@ function MovementTable()
     );
 }
 
-function MovementTableRow({ char, row, current, time }: { char:number, row:MovementRow, current:boolean, time:number })
+function MovementTableRow({ char, row, current, time, nexttime }: { char:number, row:MovementRow, current:boolean, time:number, nexttime:number|null })
 {
     return (
         <tr>
-            <td>{ '\u2014' }</td>
+            <td>
+                {
+                    nexttime && current ?
+                    <span>{ nexttime }</span>
+                    : <span>&#x2014;</span>
+                }
+            </td>
             <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
             <td className={ current ? 'CurrentGoal' : '' }>{ row[2] }</td>
