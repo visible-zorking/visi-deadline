@@ -181,6 +181,37 @@ export function SchedulePage()
                 Different characters have different attention spans.
             </p>
             <AttentionTable />
+            <p>
+                And finally, the overall plan for the day.
+                (I've saved it for last because it's the longest!)
+            <p>
+            </p>
+                Each character has a list of places to be and how
+                long they will spend there. The character has a
+                different description for each location, which gives
+                a sense of what they're doing. (This has no game effect;
+                it's purely descriptive.)
+            </p>
+            <p>
+                The{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
+                {' '}table is a bit confusing. Each line gives the time
+                the character waits <em>before</em> moving to a given
+                location. So the time they spend there is actually on the
+                {' '}<em>next</em> line.
+            </p>
+            <p>
+                To clarify this (maybe), I've highlighted each character's
+                next destination and the time at which they will depart
+                for it.
+            </p>
+            <p>
+                Times are slightly variable. When a line is highlighted,
+                the game applies a random adjustment. (E.g., McNabb's
+                first move is at 9:00 plus or minus ten minutes.)
+                The next row (how long they spend) is adjusted the other
+                way to avoid schedule drift.
+            </p>
             <MovementTable />
         </div>
     );
