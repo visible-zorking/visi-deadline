@@ -7,7 +7,7 @@ import { ReactCtx } from '../visi/context';
 import { signed_zvalue, unpack_address } from '../visi/gametypes';
 import { gamedat_object_ids, gamedat_routine_addrs, gamedat_property_nums } from '../visi/gamedat';
 
-import { SpecificDeadline } from './modgame';
+import { SpecificDeadline, initialmovegoals } from './modgame';
 
 type CharTableType = {
     name: string,
@@ -379,6 +379,7 @@ function MovementTable()
     let zstate = rctx.zstate;
 
     let specifics = zstate.specifics as SpecificDeadline;
+    let movetimes = specifics.movetimes;
     
     let rowls = [];
     for (let char=1; char<7; char++) {
@@ -388,9 +389,10 @@ function MovementTable()
                 <td colSpan={ 4 } >{ charnames[char].name }</td>
             </tr>
         );
-        for (let row of movementgoals[char]) {
+        for (let ix=0; ix<movementgoals[char].length; ix++) {
+            let row = movementgoals[char][ix];
             rowls.push(
-                <MovementTableRow key={ rowls.length } char={ char } row={ row } />
+                <MovementTableRow key={ rowls.length } char={ char } row={ row } time={ movetimes[char][ix] } />
             );
         }
     }
@@ -412,12 +414,12 @@ function MovementTable()
     );
 }
 
-function MovementTableRow({ char, row }: { char:number, row:MovementRow })
+function MovementTableRow({ char, row, time }: { char:number, row:MovementRow, time:number })
 {
     return (
         <tr>
             <td>{ '\u2014' }</td>
-            <td>{ row[0] }</td>
+            <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
             <td>{ row[2] }</td>
             <td>{ row[3] }</td>
