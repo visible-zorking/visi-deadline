@@ -380,6 +380,7 @@ function MovementTable()
 
     let specifics = zstate.specifics as SpecificDeadline;
     let movetimes = specifics.movetimes;
+    let movegoals = specifics.movegoals;
     
     let rowls = [];
     for (let char=1; char<7; char++) {
@@ -389,10 +390,11 @@ function MovementTable()
                 <td colSpan={ 4 } >{ charnames[char].name }</td>
             </tr>
         );
+        let current = Math.floor((movegoals[char] - initialmovegoals[char].initial) / 6) - 1;
         for (let ix=0; ix<movementgoals[char].length; ix++) {
             let row = movementgoals[char][ix];
             rowls.push(
-                <MovementTableRow key={ rowls.length } char={ char } row={ row } time={ movetimes[char][ix] } />
+                <MovementTableRow key={ rowls.length } char={ char } current={ ix==current } row={ row } time={ movetimes[char][ix] } />
             );
         }
     }
@@ -414,14 +416,14 @@ function MovementTable()
     );
 }
 
-function MovementTableRow({ char, row, time }: { char:number, row:MovementRow, time:number })
+function MovementTableRow({ char, row, current, time }: { char:number, row:MovementRow, current:boolean, time:number })
 {
     return (
         <tr>
             <td>{ '\u2014' }</td>
             <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
-            <td>{ row[2] }</td>
+            <td className={ current ? 'CurrentGoal' : '' }>{ row[2] }</td>
             <td>{ row[3] }</td>
         </tr>
     )
