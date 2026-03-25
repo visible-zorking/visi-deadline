@@ -53,6 +53,8 @@ const initialmovegoals = [11793, 11799, 11839, 11855, 11883, 11929, 11963];
 type MovementRow = [ number, number, string, string ];
 
 const movementgoals: MovementRow[][] = [
+    // "PLAYER"
+    [],
 	// "GARDENER"
     [
         [ 60, 10, "NORTH-LAWN", "9-10AM" ],
@@ -182,6 +184,7 @@ export function SchedulePage()
                 Different characters have different attention spans.
             </p>
             <AttentionTable />
+            <MovementTable />
         </div>
     );
 }
@@ -370,6 +373,51 @@ function AttentionTableRow({ char, attn, span }: { char:number, attn:number, spa
             <td>{ charnames[char].name }</td>
             <td>{ attn }</td>
             <td>{ span }</td>
+        </tr>
+    )
+}
+
+function MovementTable()
+{
+    let rctx = useContext(ReactCtx);
+    let zstate = rctx.zstate;
+
+    let specifics = zstate.specifics as SpecificDeadline;
+    
+    let rowls = [];
+    for (let char=1; char<7; char++) {
+        for (let row of movementgoals[char]) {
+            rowls.push(
+                <MovementTableRow key={ rowls.length } char={ char } row={ row } />
+            );
+        }
+    }
+    
+    
+    return (
+        <table className="GoalTable">
+            <tbody>
+                <tr>
+                    <th>person</th>
+                    <th>time</th>
+                    <th>var</th>
+                    <th>comment</th>
+                </tr>
+                { rowls }
+            </tbody>
+        </table>
+    );
+}
+
+function MovementTableRow({ char, row }: { char:number, row:MovementRow })
+{
+    return (
+        <tr>
+            <td>{ charnames[char].name }</td>
+            <td>{ row[0] }</td>
+            <td>{ row[1] }</td>
+            <td>{ row[2] }</td>
+            <td>{ row[3] }</td>
         </tr>
     )
 }
