@@ -8,6 +8,7 @@ import { signed_zvalue, unpack_address } from '../visi/gametypes';
 import { gamedat_object_ids, gamedat_routine_addrs, gamedat_property_nums } from '../visi/gamedat';
 
 import { SpecificDeadline, initialmovegoals } from './modgame';
+import { ArgShowTime } from './cwidgets';
 
 type CharTableType = {
     name: string,
@@ -467,7 +468,7 @@ function MovementTableRow({ char, row, current, time, nexttime }: { char:number,
             <td>
                 {
                     nexttime && current ?
-                    <span>{ nexttime }</span>
+                    <ArgShowTime value={ nexttime } />
                     : <span>&#x2014;</span>
                 }
             </td>
