@@ -381,6 +381,43 @@ function MovementTable()
     let specifics = zstate.specifics as SpecificDeadline;
     let movetimes = specifics.movetimes;
     let movegoals = specifics.movegoals;
+
+    /* We must now do some fairly dreadful, which is to yank the character
+       timers out of the timer table. This gives us the (true) time until
+       that character's next move. */
+    let timers:(number|null)[] = [ null, null, null, null, null, null, null, null ];
+
+    // Loop cloned from timers.tsx.
+    let timerpos = zstate.globals[187]; // C-INTS
+    while (timerpos+5 < zstate.timertable.length) {
+        let pos = timerpos;
+        let flag = zstate.timertable[pos] * 0x100 + zstate.timertable[pos+1];
+        let count = zstate.timertable[pos+2] * 0x100 + zstate.timertable[pos+3];
+        let addr = zstate.timertable[pos+4] * 0x100 + zstate.timertable[pos+5];
+        if (flag) {
+            switch (addr) {
+            case 48542: // I-ROURKE
+                timers[6] = count;
+                break;
+            case 48557: // I-MRS-ROBNER
+                timers[5] = count;
+                break;
+            case 48413: // I-GEORGE
+                timers[4] = count;
+                break;
+            case 48375: // I-DUNBAR
+                timers[3] = count;
+                break;
+            case 48096: // I-BAXTER
+                timers[2] = count;
+                break;
+            case 47975: // I-GARDNER
+                timers[1] = count;
+                break;
+            }
+        }
+        timerpos += 6;
+    }
     
     let rowls = [];
     for (let char=1; char<7; char++) {
