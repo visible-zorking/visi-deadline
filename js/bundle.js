@@ -34869,8 +34869,20 @@ var bundle = (function (exports) {
       document.body.className = cla;
   }
 
+  // Initial values and lengths of the MOVEMENT-GOALS table.
+  // (Seven characters, because Coates does not partake.)
+  const initialmovegoals = [
+      { initial: 11793, len: 0 },
+      { initial: 11799, len: 6 },
+      { initial: 11839, len: 2 },
+      { initial: 11855, len: 4 },
+      { initial: 11883, len: 7 },
+      { initial: 11929, len: 5 },
+      { initial: 11963, len: 5 },
+  ];
   /* Pull out the GOAL-TABLES. */
   function get_goal_tables(engine, state) {
+      // GOAL-TABLES
       let goaltables = [];
       for (let char = 0; char < 8; char++) {
           let goaltable = [];
@@ -34879,13 +34891,29 @@ var bundle = (function (exports) {
           }
           goaltables.push(goaltable);
       }
+      // ATTENTION-TABLE
       let attntable = [];
       for (let char = 0; char < 8; char++) {
           attntable.push(engine.getUnsignedWord(11745 + 2 * char));
       }
+      let movegoals = [];
+      let movetimes = [];
+      // MOVEMENT-GOALS
+      // Here, we need the top-level pointer and the first value (only) from
+      // each row. (The other two values are static.)
+      for (let char = 0; char < 7; char++) {
+          movegoals.push(engine.getUnsignedWord(11997 + 2 * char));
+          let times = [];
+          for (let ix = 0; ix < initialmovegoals[char].len; ix++) {
+              times.push(engine.getUnsignedWord(initialmovegoals[char].initial + ix * 6 + 2));
+          }
+          movetimes.push(times);
+      }
       return {
           goaltables: goaltables,
           attntable: attntable,
+          movegoals: movegoals,
+          movetimes: movetimes,
       };
   }
   function show_commentary_hook(topic, engine) {
@@ -37070,7 +37098,7 @@ var bundle = (function (exports) {
   function AboutPage() {
       let rctx = reactExports.useContext(ReactCtx);
       let zstate = rctx.zstate;
-      let lastupdate = 'Mar 23, 2026';
+      let lastupdate = 'Mar 25, 2026';
       let curroom = '???';
       let firstobj = '';
       let map = new Map();
@@ -37145,13 +37173,70 @@ var bundle = (function (exports) {
       20: 'OUT',
       0: '\u2014',
   };
+  const movementgoals = [
+      // "PLAYER"
+      [],
+      // "GARDENER"
+      [
+          [60, 10, "NORTH-LAWN", "9-10AM"],
+          [60, 10, "EAST-LAWN", "10-11AM"],
+          [60, 10, "ROSE-GARDEN", "11AM-1PM"],
+          [60, 10, "ORCHARD", "1-2PM"],
+          [60, 15, "SOUTH-LAWN", "2-3PM"],
+          [120, 15, "WEST-LAWN", "3-5PM"],
+      ],
+      // "BAXTER"
+      [
+          [120, 2, "LIVING-ROOM", "Arrival at 9:55"],
+          [360, 10, "SOUTH-LAWN", "Leave at 4PM"],
+      ],
+      // "DUNBAR"
+      [
+          [60, 10, "DUNBAR-BATH", "9-9:30AM"],
+          [30, 10, "DUNBAR-ROOM", "9:30-11:30AM"],
+          [135, 20, "LIVING-ROOM", "11:30AM-2PM"],
+          [135, 20, "DUNBAR-ROOM", ""],
+      ],
+      // "GEORGE"
+      [
+          [80, 10, "KITCHEN", "9:20-9:50AM"],
+          [30, 10, "DINING-ROOM", "9:50-11AM"],
+          [70, 20, "GEORGE-ROOM", "11-11:45AM"],
+          [45, 15, "LIVING-ROOM", "11:45AM-12:30PM"],
+          [60, 10, "EAST-LAWN", "12:30-2PM"],
+          [75, 20, "LIVING-ROOM", "2-3PM"],
+          [60, 15, "GEORGE-ROOM", ""],
+      ],
+      // "MRS-ROBNER"
+      [
+          [30, 10, "DINING-ROOM", "8:30-9AM"],
+          [100, 15, "DINING-ROOM", "10:10-11:10"],
+          [60, 20, "LIVING-ROOM", "11:10-12:40"],
+          [90, 20, "MASTER-BEDROOM", "12:40-1:50"],
+          [70, 30, "LIVING-ROOM", ""],
+      ],
+      // "ROURKE"
+      [
+          [60, 10, "KITCHEN", "9-10AM"],
+          [60, 20, "DINING-ROOM", "10-11AM"],
+          [60, 10, "KITCHEN", "11AM-1PM"],
+          [120, 20, "LIVING-ROOM", "1PM-2PM"],
+          [60, 30, "ROURKE-ROOM", ""],
+      ],
+  ];
   function SchedulePage() {
+      let rctx = reactExports.useContext(ReactCtx);
+      let zstate = rctx.zstate;
+      let present = zstate.globals[118]; // PRESENT-TIME
       function evhan_click_id(ev, id) {
           ev.preventDefault();
           let dat = { id: id, commentary: true };
           window.dispatchEvent(new CustomEvent('zil-source-location', { detail: dat }));
       }
-      return (jsxRuntimeExports.jsxs("div", { className: "ScrollContent", children: [jsxRuntimeExports.jsxs("p", { children: ["Infocom introduced an autonomous NPC in ", jsxRuntimeExports.jsx("em", { children: "Zork 1" }), ", but ", jsxRuntimeExports.jsx("em", { children: "Deadline" }), "\u2019s seven characters are a vast leap in sophistication. Each has a schedule over the game\u2019s twelve-hour timeline. The schedule has a random element, so each playthrough is slightly different; and the NPCs can be diverted by your actions as well."] }), jsxRuntimeExports.jsxs("p", { children: ["Each character\u2019s scheduled activity is managed by the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "and", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS'), children: jsxRuntimeExports.jsx("code", { children: "MOVEMENT-GOALS" }) }), ' ', "tables. These are quite complicated, so I have broken them down into smaller tables for display in this tab."] }), jsxRuntimeExports.jsx("p", { children: "Let\u2019s start with the characters\u2019 current locations, and the timer routines that control each of them:" }), jsxRuntimeExports.jsx(CharacterTable, {}), jsxRuntimeExports.jsxs("p", { children: ["To manage NPC movement, the game defines four \u201Ctransit lines\u201D that run through the map. Every room is either a \u201Cstation\u201D on one of these lines, or adjacent to a station room. Thus, to reach a goal, an NPC just needs to (1) move to the local station if needed; (2) move one step along the current line to the next interchange; (3) if on the goal line, move one step towards the goal station; (4) move to the final room (if that\u2019s not the station). The", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT'), children: jsxRuntimeExports.jsx("code", { children: "IMOVEMENT" }) }), ' ', "routine handles this."] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "shows each character\u2019s current movement goal. \u201CFinal\u201D is where they are heading; \u201Cstation\u201D is that room\u2019s", ' ', jsxRuntimeExports.jsx("code", { children: "STATION" }), "; \u201Cinter\u201D is the interchange room that will get them onto the desired line. The \u201Cdir\u201D is the direction they just moved (not used in practice). The \u201C?\u201D column is whether the character's movement is enabled."] }), jsxRuntimeExports.jsx(GoalTable, {}), jsxRuntimeExports.jsxs("p", { children: ["If you call a character\u2019s name, or otherwise attract their attention,", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "GRAB-ATTENTION" }) }), ' ', "temporarily disables their movement. (See \u201C?\u201D above.) It then sets their entry in the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE'), children: jsxRuntimeExports.jsx("code", { children: "ATTENTION-TABLE" }) }), ", which then decreases each turn (", jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "I-ATTENTION" }) }), ") until it reaches zero. Different characters have different attention spans."] }), jsxRuntimeExports.jsx(AttentionTable, {})] }));
+      return (jsxRuntimeExports.jsxs("div", { className: "ScrollContent", children: [jsxRuntimeExports.jsxs("p", { children: ["Infocom introduced an autonomous NPC in ", jsxRuntimeExports.jsx("em", { children: "Zork 1" }), ", but ", jsxRuntimeExports.jsx("em", { children: "Deadline" }), "\u2019s seven characters are a vast leap in sophistication. Each has a schedule over the game\u2019s twelve-hour timeline. The schedule has a random element, so each playthrough is slightly different; and the NPCs can be diverted by your actions as well."] }), jsxRuntimeExports.jsxs("p", { children: ["Each character\u2019s scheduled activity is managed by the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "and", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS'), children: jsxRuntimeExports.jsx("code", { children: "MOVEMENT-GOALS" }) }), ' ', "tables. These are quite complicated, so I have broken them down into smaller tables for display in this tab."] }), jsxRuntimeExports.jsx("p", { children: "Let\u2019s start with the characters\u2019 current locations, and the timer routines that control each of them:" }), jsxRuntimeExports.jsx(CharacterTable, {}), jsxRuntimeExports.jsxs("p", { children: ["To manage NPC movement, the game defines four \u201C", jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:TOP-OF-THE-LINE'), children: "transit lines" }), "\u201D that run through the map. Every room is either a \u201Cstation\u201D on one of these lines, or adjacent to a station room. Thus, to reach a goal, an NPC just needs to (1) move to the local station if needed; (2) move one step along the current line to the next interchange; (3) if on the goal line, move one step towards the goal station; (4) move to the final room (if that\u2019s not the station). The", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT'), children: jsxRuntimeExports.jsx("code", { children: "IMOVEMENT" }) }), ' ', "routine handles this."] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "shows each character\u2019s current movement goal. \u201CFinal\u201D is where they are heading; \u201Cstation\u201D is that room\u2019s", ' ', jsxRuntimeExports.jsx("code", { children: "STATION" }), "; \u201Cinter\u201D is the interchange room that will get them onto the desired line. The \u201Cdir\u201D is the direction they just moved (not used in practice). The \u201C\u2611\u201D column is whether the character\u2019s movement is enabled."] }), jsxRuntimeExports.jsx("p", { children: "(The last two columns? I\u2019m working on it...)" }), jsxRuntimeExports.jsx(GoalTable, {}), jsxRuntimeExports.jsxs("p", { children: ["If you call a character\u2019s name, or otherwise attract their attention,", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "GRAB-ATTENTION" }) }), ' ', "temporarily disables their movement. (See \u201C\u2611\u201D above.) It then sets their entry in the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE'), children: jsxRuntimeExports.jsx("code", { children: "ATTENTION-TABLE" }) }), ", which then decreases each turn (", jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "I-ATTENTION" }) }), ") until it reaches zero. Different characters have different attention spans."] }), jsxRuntimeExports.jsx(AttentionTable, {}), jsxRuntimeExports.jsxs("p", { children: ["And finally, the overall plan for the day. (I\u2019ve saved it for last because it\u2019s the longest!)", jsxRuntimeExports.jsx("p", {}), "Each character has a list of places to be and how long they will spend there. The character has a different description for each location, which gives a sense of what they\u2019re doing. (This has no game effect; it\u2019s purely descriptive.)"] }), jsxRuntimeExports.jsxs("p", { children: ["The", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS'), children: jsxRuntimeExports.jsx("code", { children: "MOVEMENT-GOALS" }) }), ' ', "table is a bit confusing. Each line gives the time the character waits ", jsxRuntimeExports.jsx("em", { children: "before" }), " moving to a given location. So the time they spend there is actually on the", ' ', jsxRuntimeExports.jsx("em", { children: "next" }), " line."] }), (present == 480) ?
+                  jsxRuntimeExports.jsx("p", { children: "The schedule is not active on the first turn. Starting at 8:01 am, it will highlight each character\u2019s next destination and the time at which they will depart for it." })
+                  :
+                      jsxRuntimeExports.jsx("p", { children: "To clarify this (maybe), I\u2019ve highlighted each character\u2019s next destination and the time at which they will depart for it." }), jsxRuntimeExports.jsx("p", { children: "Times are slightly variable. When a line is highlighted, the game applies a random adjustment. (E.g., McNabb\u2019s first move is at 9:00 plus or minus ten minutes.) The next row (how long they spend) is adjusted the other way to avoid schedule drift." }), jsxRuntimeExports.jsx("p", { children: "After the table runs out for a character (2:00 to 3:00), they just stay put for the rest of the game." }), jsxRuntimeExports.jsx("p", { children: "The right-hand column is a source-code comment. They have no effect in the game; they\u2019re just the developer\u2019s notes to himself, and they\u2019re sometimes wrong!" }), jsxRuntimeExports.jsx(MovementTable, {})] }));
   }
   function CharacterTable() {
       let rctx = reactExports.useContext(ReactCtx);
@@ -37189,7 +37274,7 @@ var bundle = (function (exports) {
       for (let char = 0; char < 8; char++) {
           rowls.push(jsxRuntimeExports.jsx(GoalTableRow, { char: char, row: specifics.goaltables[char] }, char));
       }
-      return (jsxRuntimeExports.jsx("table", { className: "GoalTable", children: jsxRuntimeExports.jsxs("tbody", { children: [jsxRuntimeExports.jsxs("tr", { children: [jsxRuntimeExports.jsx("th", { children: "person" }), jsxRuntimeExports.jsx("th", { children: "final" }), jsxRuntimeExports.jsx("th", { children: "station" }), jsxRuntimeExports.jsx("th", { children: "inter" }), jsxRuntimeExports.jsx("th", { children: "dir" }), jsxRuntimeExports.jsx("th", { children: "?" }), jsxRuntimeExports.jsx("th", { children: "pri" }), jsxRuntimeExports.jsx("th", { children: "queued" })] }), rowls] }) }));
+      return (jsxRuntimeExports.jsx("table", { className: "GoalTable", children: jsxRuntimeExports.jsxs("tbody", { children: [jsxRuntimeExports.jsxs("tr", { children: [jsxRuntimeExports.jsx("th", { children: "person" }), jsxRuntimeExports.jsx("th", { children: "final" }), jsxRuntimeExports.jsx("th", { children: "station" }), jsxRuntimeExports.jsx("th", { children: "inter" }), jsxRuntimeExports.jsx("th", { children: "dir" }), jsxRuntimeExports.jsx("th", { children: "\u2610" }), jsxRuntimeExports.jsx("th", { children: "pri" }), jsxRuntimeExports.jsx("th", { children: "queued" })] }), rowls] }) }));
   }
   function GoalTableRow({ char, row }) {
       reactExports.useContext(ReactCtx);
@@ -37217,6 +37302,76 @@ var bundle = (function (exports) {
       if (attn < 0)
           attn = 0;
       return (jsxRuntimeExports.jsxs("tr", { children: [jsxRuntimeExports.jsx("td", { children: charnames[char].name }), jsxRuntimeExports.jsx("td", { children: attn }), jsxRuntimeExports.jsx("td", { children: span })] }));
+  }
+  function MovementTable() {
+      let rctx = reactExports.useContext(ReactCtx);
+      let zstate = rctx.zstate;
+      let specifics = zstate.specifics;
+      let movetimes = specifics.movetimes;
+      let movegoals = specifics.movegoals;
+      /* We must now do some fairly dreadful, which is to yank the character
+         timers out of the timer table. This gives us the (true) time until
+         that character's next move. */
+      let timers = [null, null, null, null, null, null, null, null];
+      let present = zstate.globals[118]; // PRESENT-TIME
+      // Loop cloned from timers.tsx.
+      let timerpos = zstate.globals[187]; // C-INTS
+      while (timerpos + 5 < zstate.timertable.length) {
+          let pos = timerpos;
+          let flag = zstate.timertable[pos] * 0x100 + zstate.timertable[pos + 1];
+          let count = zstate.timertable[pos + 2] * 0x100 + zstate.timertable[pos + 3];
+          let addr = zstate.timertable[pos + 4] * 0x100 + zstate.timertable[pos + 5];
+          if (flag) {
+              switch (addr) {
+                  case 48542: // I-ROURKE
+                      timers[6] = count;
+                      break;
+                  case 48557: // I-MRS-ROBNER
+                      timers[5] = count;
+                      break;
+                  case 48413: // I-GEORGE
+                      timers[4] = count;
+                      break;
+                  case 48375: // I-DUNBAR
+                      timers[3] = count;
+                      break;
+                  case 48096: // I-BAXTER
+                      timers[2] = count;
+                      break;
+                  case 47975: // I-GARDNER
+                      timers[1] = count;
+                      break;
+              }
+          }
+          timerpos += 6;
+      }
+      let rowls = [];
+      for (let char = 1; char < 7; char++) {
+          rowls.push(jsxRuntimeExports.jsxs("tr", { className: "RowLabel", children: [jsxRuntimeExports.jsx("td", {}), jsxRuntimeExports.jsx("td", { colSpan: 4, children: charnames[char].name })] }, rowls.length));
+          let current = Math.floor((movegoals[char] - initialmovegoals[char].initial) / 6) - 1;
+          let curnexttime = null;
+          let timerschar = timers[char];
+          if (timerschar !== null) {
+              curnexttime = present + timerschar;
+          }
+          let sumtime = 480;
+          for (let ix = 0; ix < movementgoals[char].length; ix++) {
+              let row = movementgoals[char][ix];
+              sumtime += row[0];
+              let nexttime = null;
+              if (ix == current)
+                  nexttime = curnexttime;
+              else if (ix > current)
+                  nexttime = sumtime;
+              rowls.push(jsxRuntimeExports.jsx(MovementTableRow, { char: char, current: ix == current, row: row, time: movetimes[char][ix], nexttime: nexttime }, rowls.length));
+          }
+      }
+      return (jsxRuntimeExports.jsx("table", { className: "GoalTable", children: jsxRuntimeExports.jsxs("tbody", { children: [jsxRuntimeExports.jsxs("tr", { children: [jsxRuntimeExports.jsx("th", { children: "when" }), jsxRuntimeExports.jsx("th", { children: "time" }), jsxRuntimeExports.jsx("th", { children: "var" }), jsxRuntimeExports.jsx("th", { children: "leave for" }), jsxRuntimeExports.jsx("th", { children: "comment" })] }), rowls] }) }));
+  }
+  function MovementTableRow({ char, row, current, time, nexttime }) {
+      return (jsxRuntimeExports.jsxs("tr", { className: current ? 'CurrentRow' : '', children: [jsxRuntimeExports.jsx("td", { children: (nexttime !== null) ?
+                      jsxRuntimeExports.jsx(ArgShowTime, { value: nexttime })
+                      : jsxRuntimeExports.jsx("span", { children: "\u2014" }) }), jsxRuntimeExports.jsx("td", { children: time }), jsxRuntimeExports.jsxs("td", { children: ["\u00B1", row[1]] }), jsxRuntimeExports.jsx("td", { children: row[2] }), jsxRuntimeExports.jsx("td", { children: row[3] })] }));
   }
 
   function FeeliesPage() {
