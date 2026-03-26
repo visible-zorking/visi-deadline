@@ -113,6 +113,12 @@ prop:CORRIDOR: This property defines one or more “corridors” (sight-lines) t
 
 glob:WHERE-TABLES: This tracks when each character last saw each other character. This lets you ask questions like `DUNBAR, WHERE IS GEORGE?` (You won’t get the location, but you will get a time.)
 
+rtn:I-BAXTER-ARRIVE: As you might expect, this timer causes Baxter to appear at 9:55 am. Thereafter he is controlled by [glob:MOVEMENT-GOALS] like the other characters.
+
+src:GOAL-449: When Baxter reaches the South Lawn, he leaves the game.
+
+rtn:I-COATES-ARRIVE: As you might expect, this timer causes Coates to appear at 11:51-11:55 am.
+
 
 src:VERBS-290: This wry comment does not appear to have ever been used in a released version of the game.
 
