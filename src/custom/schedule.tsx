@@ -485,13 +485,20 @@ function MovementTable()
             </tr>
         );
         let current = Math.floor((movegoals[char] - initialmovegoals[char].initial) / 6) - 1;
-        let nexttime: number|null = null;
+        let curnexttime: number|null = null;
         let timerschar = timers[char];
         if (timerschar !== null) {
-            nexttime = present + timerschar;
+            curnexttime = present + timerschar;
         }
+        let sumtime = 480;
         for (let ix=0; ix<movementgoals[char].length; ix++) {
             let row = movementgoals[char][ix];
+            sumtime += row[0];
+            let nexttime: number|null = null;
+            if (ix == current)
+                nexttime = curnexttime;
+            else if (ix > current)
+                nexttime = sumtime;
             rowls.push(
                 <MovementTableRow key={ rowls.length } char={ char } current={ ix==current } row={ row } time={ movetimes[char][ix] } nexttime={ nexttime } />
             );
@@ -521,7 +528,7 @@ function MovementTableRow({ char, row, current, time, nexttime }: { char:number,
         <tr className={ current ? 'CurrentRow' : '' }>
             <td>
                 {
-                    nexttime && current ?
+                    (nexttime !== null) ?
                     <ArgShowTime value={ nexttime } />
                     : <span>&#x2014;</span>
                 }
