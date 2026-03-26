@@ -518,7 +518,7 @@ function MovementTable()
 function MovementTableRow({ char, row, current, time, nexttime }: { char:number, row:MovementRow, current:boolean, time:number, nexttime:number|null })
 {
     return (
-        <tr>
+        <tr className={ current ? 'CurrentRow' : '' }>
             <td>
                 {
                     nexttime && current ?
@@ -528,7 +528,7 @@ function MovementTableRow({ char, row, current, time, nexttime }: { char:number,
             </td>
             <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
-            <td className={ current ? 'CurrentGoal' : '' }>{ row[2] }</td>
+            <td>{ row[2] }</td>
             <td>{ row[3] }</td>
         </tr>
     )

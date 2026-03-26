@@ -20,6 +20,13 @@
     padding-bottom: 4px;
 }
 
+.GoalTable tr.CurrentRow {
+    background: #FFDD88;
+}
+.DarkTheme .GoalTable tr.CurrentRow {
+    background: #705000;
+}
+
 .FeeliesPage h2 {
     font-size: 110%;
     font-family: "Libre Baskerville", serif;
