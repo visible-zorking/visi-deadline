@@ -188,14 +188,14 @@ export function SchedulePage()
             <AttentionTable />
             <p>
                 And finally, the overall plan for the day.
-                (I've saved it for last because it's the longest!)
+                (I&#x2019;ve saved it for last because it&#x2019;s the longest!)
             <p>
             </p>
                 Each character has a list of places to be and how
                 long they will spend there. The character has a
                 different description for each location, which gives
-                a sense of what they're doing. (This has no game effect;
-                it's purely descriptive.)
+                a sense of what they&#x2019;re doing. (This has no game effect;
+                it&#x2019;s purely descriptive.)
             </p>
             <p>
                 The{' '}
@@ -208,20 +208,20 @@ export function SchedulePage()
             { (present == 480) ?
               <p>
                   The schedule is not active on the first turn.
-                  Starting at 8:01 am, it will highlight each character's
+                  Starting at 8:01 am, it will highlight each character&#x2019;s
                   next destination and the time at which they will depart
                   for it.
               </p>
               :
               <p>
-                  To clarify this (maybe), I've highlighted each character's
+                  To clarify this (maybe), I&#x2019;ve highlighted each character&#x2019;s
                   next destination and the time at which they will depart
                   for it.
               </p>
             }
             <p>
                 Times are slightly variable. When a line is highlighted,
-                the game applies a random adjustment. (E.g., McNabb's
+                the game applies a random adjustment. (E.g., McNabb&#x2019;s
                 first move is at 9:00 plus or minus ten minutes.)
                 The next row (how long they spend) is adjusted the other
                 way to avoid schedule drift.
@@ -232,8 +232,8 @@ export function SchedulePage()
             </p>
             <p>
                 The right-hand column is a source-code comment. They
-                have no effect in the game; they're just the developer's
-                notes to himself, and they're sometimes wrong!
+                have no effect in the game; they&#x2019;re just the developer&#x2019;s
+                notes to himself, and they&#x2019;re sometimes wrong!
             </p>
             <MovementTable />
         </div>
