@@ -52,7 +52,7 @@ type MovementRow = [ number, number, string, string ];
 const movementgoals: MovementRow[][] = [
     // "PLAYER"
     [],
-	// "GARDENER"
+    // "GARDENER"
     [
         [ 60, 10, "NORTH-LAWN", "9-10AM" ],
         [ 60, 10, "EAST-LAWN", "10-11AM" ],
@@ -231,9 +231,9 @@ export function SchedulePage()
                 they just stay put for the rest of the game.
             </p>
             <p>
-                The right-hand column is a source-code comment. This
-                has no effect in the game; it's just the developer's
-                notes to himself.
+                The right-hand column is a source-code comment. They
+                have no effect in the game; they're just the developer's
+                notes to himself, and they're sometimes wrong!
             </p>
             <MovementTable />
         </div>
