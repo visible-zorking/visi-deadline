@@ -212,6 +212,15 @@ export function SchedulePage()
                 The next row (how long they spend) is adjusted the other
                 way to avoid schedule drift.
             </p>
+            <p>
+                After the table runs out for a character (2:00 to 3:00),
+                they just stay put for the rest of the game.
+            </p>
+            <p>
+                The right-hand column is a source-code comment. This
+                has no effect in the game; it's just the developer's
+                notes to himself.
+            </p>
             <MovementTable />
         </div>
     );
