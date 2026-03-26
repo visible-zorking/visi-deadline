@@ -111,7 +111,7 @@ glob:COR-1: The twelve `COR-N` tables define twelve corridors of rooms that have
 
 prop:CORRIDOR: This property defines one or more “corridors” (sight-lines) that the player can see down from a given room. See [glob:COR-1].
 
-### glob:WHERE-TABLES
+glob:WHERE-TABLES: This tracks when each character last saw each other character. This lets you ask questions like `DUNBAR, WHERE IS GEORGE?` (You won’t get the location, but you will get a time.)
 
 
 src:VERBS-290: This wry comment does not appear to have ever been used in a released version of the game.
