@@ -513,7 +513,7 @@ function MovementTable()
                     <th>when</th>
                     <th>time</th>
                     <th>var</th>
-                    <th>where</th>
+                    <th>leave for</th>
                     <th>comment</th>
                 </tr>
                 { rowls }
