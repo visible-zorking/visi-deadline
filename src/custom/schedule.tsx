@@ -103,6 +103,11 @@ const movementgoals: MovementRow[][] = [
 
 export function SchedulePage()
 {
+    let rctx = useContext(ReactCtx);
+    let zstate = rctx.zstate;
+    
+    let present = zstate.globals[118]; // PRESENT-TIME
+    
     function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
         ev.preventDefault();
         let dat: ZilSourceLoc = { id: id, commentary: true };
@@ -200,11 +205,20 @@ export function SchedulePage()
                 location. So the time they spend there is actually on the
                 {' '}<em>next</em> line.
             </p>
-            <p>
-                To clarify this (maybe), I've highlighted each character's
-                next destination and the time at which they will depart
-                for it.
-            </p>
+            { (present == 480) ?
+              <p>
+                  The schedule is not active on the first turn.
+                  Starting at 8:01 am, it will highlight each character's
+                  next destination and the time at which they will depart
+                  for it.
+              </p>
+              :
+              <p>
+                  To clarify this (maybe), I've highlighted each character's
+                  next destination and the time at which they will depart
+                  for it.
+              </p>
+            }
             <p>
                 Times are slightly variable. When a line is highlighted,
                 the game applies a random adjustment. (E.g., McNabb's
