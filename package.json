@@ -14,7 +14,7 @@
     "rearrange-tables": "python3 visiterp/pyana/parse.py --game deadline-r27-s831005 -z gamesrc/deadline.zil --zcode gamedat/deadline-r27-s831005.z3 --gamedat",
     "recolor-source": "python3 visiterp/pyana/parse.py --game deadline-r27-s831005 -z gamesrc/deadline.zil --src",
     "regenerate-commentary": "python3 visiterp/pyana/comgen.py gamedat/commentary",
-    "reparse-map": "python3 visiterp/pyana/mapparse.py gamedat/game-map.svg"
+    "reparse-map": "python3 visiterp/pyana/mapparse.py gamedat/base-map.svg"
   },
   "type": "module",
   "dependencies": {
