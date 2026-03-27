@@ -24,15 +24,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="11.313708"
-     inkscape:cx="89.979338"
-     inkscape:cy="302.24396"
+     inkscape:zoom="1"
+     inkscape:cx="965"
+     inkscape:cy="1902.5"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
      inkscape:window-x="2067"
      inkscape:window-y="30"
      inkscape:window-maximized="0"
-     inkscape:current-layer="mobilelayer">
+     inkscape:current-layer="connlayer">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -56,7 +56,28 @@
 #connlayer .Invisible { display:none; }
 </style>
   <defs
-     id="defs1" />
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Dot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Dot"
+       markerWidth="0.34999999"
+       markerHeight="0.34999999"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path17" />
+    </marker>
+  </defs>
   <g
      inkscape:groupmode="layer"
      id="sketchlayer"
@@ -465,7 +486,22 @@
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="Front-Decor" />
+     inkscape:label="Front-Decor"
+     style="display:none">
+    <path
+       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6292df;stroke-width:2.117;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.58;marker-start:url(#Dot);marker-mid:url(#Dot);marker-end:url(#Dot);paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1"
+       d="m 259.29166,465.66669 v -37.04167 h 15.875 l 15.87499,13.22917 h 18.52084"
+       id="path2"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6292df;stroke-width:2.117;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.58;-inkscape-stroke:none;marker-start:url(#Dot);marker-mid:url(#Dot);marker-end:url(#Dot);paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1"
+       d="m 214.31249,394.22919 h 29.10417 l 21.16666,-13.22917 h 23.81251"
+       id="path10" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6292df;stroke-width:2.117;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.58;-inkscape-stroke:none;marker-start:url(#Dot);marker-mid:url(#Dot);marker-end:url(#Dot);paint-order:stroke fill markers"
+       d="m 259.29166,497.41669 h 47.625 L 381,431.27085 h 58.2083 l -71.43747,-95.24999 -79.375,-63.5 -55.56251,37.04166 -108.47916,111.125 h 31.75 l 42.33333,87.3125 42.33333,50.27083"
+       id="path11" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="mobilelayer"
