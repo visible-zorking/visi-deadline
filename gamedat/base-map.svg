@@ -53,24 +53,7 @@
 #roomlayer rect { fill:#F8F0E8; stroke:#000; stroke-width:0.7; }
 #roomlayer rect.Selected { fill:#FFD080; }
 #mobilelayer g.Offstage { display:none; }
-#mobilelayer #cp-mob-winner.Offstage { display:none; }
 #connlayer .Invisible { display:none; }
-#mob-mirror .BoxFloor { fill:#91D5FF; }
-#mob-mirror .BoxPine { fill:#FFDBA1; }
-#mob-mirror .BoxMahogany { fill:#B5592A; }
-#mob-mirror .BoxBlack { fill:#424242; }
-#mob-mirror .BoxWhite { fill:#FFFFFF; }
-#mob-mirror .BoxRed { fill:#FF0000; }
-#mob-mirror .BoxYellow { fill:#E8E800; }
-#mob-mirror .BoxGlass { fill:#C0C6E8; }
-.DarkTheme #mob-mirror .BoxFloor { fill:#095CFF; }
-.DarkTheme #mob-mirror .BoxPine { fill:#9E570F; }
-.DarkTheme #mob-mirror .BoxMahogany { fill:#FFAB61; }
-.DarkTheme #mob-mirror .BoxBlack { fill:#E0E0E0; }
-.DarkTheme #mob-mirror .BoxWhite { fill:#101010; }
-.DarkTheme #mob-mirror .BoxRed { fill:#FF7000; }
-.DarkTheme #mob-mirror .BoxYellow { fill:#6C4800; }
-.DarkTheme #mob-mirror .BoxGlass { fill:#8086A8; }
 </style>
   <defs
      id="defs1" />
