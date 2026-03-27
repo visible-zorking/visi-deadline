@@ -20,7 +20,7 @@ import { FeeliesPage } from './feelies';
 const tab_list = [
     [ 'activity', 'Activity' ],
     [ 'objtree', 'World' ],
-    //[ 'map', 'Map' ],
+    [ 'map', 'Map' ],
     [ 'globals', 'State' ],
     [ 'timers', 'Timers' ],
     [ 'schedule', 'Schedule' ],
@@ -35,6 +35,13 @@ export function TabbedPane()
     let rctx = useContext(ReactCtx);
 
     const mobiles = [
+        gamedat_ids.GARDENER,
+        gamedat_ids.BAXTER,
+        gamedat_ids.DUNBAR,
+        gamedat_ids.GEORGE,
+        gamedat_ids.MRS_ROBNER,
+        gamedat_ids.ROURKE,
+        gamedat_ids.COATES,
     ];
 
     let ells = tab_list.map(([key, label]) => {
@@ -73,11 +80,9 @@ export function TabbedPane()
     case 'activity':
         tabcontent = <CallActivity />;
         break;
-    /*
     case 'map':
         tabcontent = <GameMap mobiles={ mobiles } />;
         break;
-    */
     case 'globals':
         tabcontent = <GlobalState />;
         break;
