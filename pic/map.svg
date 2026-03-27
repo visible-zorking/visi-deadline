@@ -1,0 +1,192 @@
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="1800" height="2400" viewBox="0 0 476.24999 635" version="1.1" id="svg1">
+  
+  <style id="style1">svg.DarkTheme { filter: invert(90%) hue-rotate(180deg); }
+#roomlayer rect { fill:#F8F0E8; stroke:#000; stroke-width:0.7; }
+#roomlayer rect.Selected { fill:#FFD080; }
+#mobilelayer g.Offstage { display:none; }
+#mobilelayer #cp-mob-winner.Offstage { display:none; }
+#connlayer .Invisible { display:none; }
+#mob-mirror .BoxFloor { fill:#91D5FF; }
+#mob-mirror .BoxPine { fill:#FFDBA1; }
+#mob-mirror .BoxMahogany { fill:#B5592A; }
+#mob-mirror .BoxBlack { fill:#424242; }
+#mob-mirror .BoxWhite { fill:#FFFFFF; }
+#mob-mirror .BoxRed { fill:#FF0000; }
+#mob-mirror .BoxYellow { fill:#E8E800; }
+#mob-mirror .BoxGlass { fill:#C0C6E8; }
+.DarkTheme #mob-mirror .BoxFloor { fill:#095CFF; }
+.DarkTheme #mob-mirror .BoxPine { fill:#9E570F; }
+.DarkTheme #mob-mirror .BoxMahogany { fill:#FFAB61; }
+.DarkTheme #mob-mirror .BoxBlack { fill:#E0E0E0; }
+.DarkTheme #mob-mirror .BoxWhite { fill:#101010; }
+.DarkTheme #mob-mirror .BoxRed { fill:#FF7000; }
+.DarkTheme #mob-mirror .BoxYellow { fill:#6C4800; }
+.DarkTheme #mob-mirror .BoxGlass { fill:#8086A8; }
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    src: url("../visiterp/font/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: italic;
+    src: url("../visiterp/font/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../visiterp/font/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: italic;
+    font-weight: bold;
+    src: url("../visiterp/font/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Courier Prime";
+    font-style: normal;
+    src: url("../visiterp/font/CourierPrime-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Courier Prime";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../visiterp/font/CourierPrime-Bold.ttf") format("truetype");
+}
+</style>
+  <defs id="defs1"/>
+  
+  <g id="decorlayer">
+    <rect style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#f1f1f1;fill-opacity:1;fill-rule:evenodd;stroke:#c8c8c8;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" id="rect47" width="177.27083" height="127.00002" x="187.85416" y="359.83334"/>
+  </g>
+  <g id="connlayer" style="display:inline">
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 52.916664,251.35418 h 15.875" id="path110"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 275.16666,423.33335 -60.85417,0" id="path40"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 338.66665,447.14586 h -47.625" id="path41"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 251.35416,381.00002 v 84.66667" id="path42"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 214.31249,399.52085 29.10417,0" id="path43"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 259.29166,375.70836 29.10416,-1e-5" id="path44"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 283.10416,428.62502 v 37.04167" id="path45"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 314.85416,452.43752 v 13.22917" id="path47"/>
+    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="rect48" width="1.5874993" height="3.1749949" x="-487.89139" y="249.76694" transform="rotate(-90)"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 214.31249,502.70835 h 92.60417" id="path68"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 251.35416,476.25002 v 82.02083" id="path69"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 124.35415,425.97919 h 31.75" id="path70"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 396.875,425.97922 h 42.3333" id="path71"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 206.37499,428.62502 v 68.79167" id="path72"/>
+    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="rect72" width="1.5874993" height="3.1749949" x="-487.89139" y="204.78777" transform="rotate(-90)"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 113.77083,433.91669 v 42.33333 l 126.99999,82.02083" id="path73"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 206.37499,508.00002 v 13.22917 l 31.75,29.10416" id="path74"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 198.43749,502.70835 h -23.8125 l -50.27083,-68.79166" id="path75"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 198.43749,497.41669 -34.39583,-23.8125 v -42.33334" id="path76"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 449.79163,433.91669 2e-5,34.39583 -187.85416,89.95833" id="path77"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 388.9375,431.27085 v 21.16667 l -66.14584,44.97917" id="path78"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 439.2083,433.91669 -82.0208,68.79166 h -34.39584" id="path79"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 314.85416,508.00002 v 13.22917 l -50.27084,29.10416" id="path80"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 359.83333,346.60419 v 21.16667 l 15.875,39.68749" id="path94"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 388.9375,420.68752 -2e-5,-52.91667 -21.16666,-39.6875" id="path95"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 359.83333,320.14586 v 15.875" id="path96"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 240.77082,320.14586 v 15.875" id="path97"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="M 248.70832,314.85419 H 351.89583" id="path98"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="M 248.70832,341.31252 H 351.89583" id="path99"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 367.77083,320.14586 71.43747,97.89583" id="path100"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 351.89583,309.56252 -63.5,-34.39583" id="path101"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 267.22916,275.16669 -18.52084,34.39583" id="path102"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 277.8125,275.16669 v 15.875 l -37.04168,5.29166 0,13.22917" id="path103"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="M 124.35416,418.04169 232.83332,320.14586" id="path104"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 232.83332,341.31252 -10.58333,0 -82.02083,68.79167" id="path105"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 460.37497,433.91669 10.58333,10.58333" id="path107"/>
+  </g>
+  <g id="roomlayer" style="display:inline">
+    <rect id="r-pantry" width="21.166666" height="15.875001" x="285.75" y="367.77084" ry="2.6458292"/>
+    <rect id="r-corner" width="21.166666" height="15.875001" x="240.77083" y="391.58334" ry="2.6458292"/>
+    <rect id="r-kitchen" width="26.458326" height="15.875009" x="240.77083" y="367.77084" ry="2.6458292"/>
+    <rect id="r-dining-room" width="21.166685" height="21.166658" x="195.79166" y="386.29169" ry="2.6458292"/>
+    <rect id="r-nfoyer" width="21.166666" height="15.875001" x="240.77083" y="415.39584" ry="2.6458292"/>
+    <rect id="r-living-room" width="21.166668" height="21.166677" x="195.79166" y="415.39584" ry="2.6458292"/>
+    <rect id="r-stair-bottom" width="21.166666" height="15.875001" x="272.52081" y="415.39584" ry="2.6458292"/>
+    <rect id="r-shall-1" width="21.166666" height="15.875001" x="272.52084" y="439.20834" ry="2.6458292"/>
+    <rect id="r-shall-2" width="21.166666" height="15.875001" x="304.27081" y="439.20834" ry="2.6458292"/>
+    <rect id="r-south-closet" width="21.166666" height="15.875001" x="304.27081" y="463.02084" ry="2.6458292"/>
+    <rect id="r-rourke-room" width="21.166666" height="15.875001" x="272.52081" y="463.02084" ry="2.6458292"/>
+    <rect id="r-rourke-bath" width="21.166666" height="15.875001" x="336.02081" y="439.20834" ry="2.6458292"/>
+    <rect id="r-foyer" width="21.166666" height="15.875001" x="240.77083" y="463.02084" ry="2.6458292"/>
+    <rect id="r-front-path" width="21.166666" height="15.875001" x="240.77081" y="494.77084" ry="2.6458292"/>
+    <rect id="r-east-of-door" width="21.166666" height="15.875001" x="304.27084" y="494.77084" ry="2.6458292"/>
+    <rect id="r-west-of-door" width="21.166666" height="15.875001" x="195.79166" y="494.77084" ry="2.6458292"/>
+    <rect id="r-west-side" width="21.166666" height="15.875001" x="153.45833" y="418.04169" ry="2.6458292"/>
+    <rect id="r-east-side" width="21.166666" height="15.875001" x="378.35416" y="418.04172" ry="2.6458292"/>
+    <rect id="r-south-lawn" width="26.458323" height="21.16666" x="238.125" y="555.625" ry="2.6458292"/>
+    <rect id="r-west-lawn" width="26.458323" height="21.16666" x="100.54165" y="415.39587" ry="2.6458292"/>
+    <rect id="r-east-lawn" width="26.458323" height="21.16666" x="436.5625" y="415.39587" ry="2.6458292"/>
+    <rect id="r-north-lawn" width="26.458323" height="21.16666" x="264.58334" y="256.64584" ry="2.6458292"/>
+    <rect id="r-rose-garden" width="21.166666" height="15.875001" x="230.18748" y="306.91669" ry="2.6458292"/>
+    <rect id="r-orchard" width="21.166666" height="15.875001" x="349.25" y="306.91669" ry="2.6458292"/>
+    <rect id="r-in-roses" width="21.166666" height="15.875001" x="230.18748" y="333.37503" ry="2.6458292"/>
+    <rect id="r-in-orchard" width="21.166666" height="15.875001" x="349.25" y="333.37503" ry="2.6458292"/>
+    <rect id="r-shed-room" width="15.87501" height="15.875002" x="468.31247" y="441.85419" ry="2.6458292"/>
+  </g>
+  <g id="layer1"/>
+  <g id="mobilelayer">
+    <g id="mob-coates" transform="translate(15.875,15.874998)">
+      <rect style="fill:#dcd7fa;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect33" width="13.229169" height="5.291667" x="-6.6145835" y="-2.6458306" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text46-7"><tspan id="tspan46-6" style="stroke-width:0.740063" x="0.0041161105" y="1.0478791">Coates</tspan></text>
+    </g>
+    <g id="mob-mrs-robner" transform="translate(15.870883,25.410455)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect259" width="18.520758" height="5.291667" x="-9.2563" y="-2.6562874" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text259"><tspan id="tspan259" style="stroke-width:0.740063" x="0.0041160393" y="1.0478791">Mrs Robner</tspan></text>
+    </g>
+    <g id="mob-rourke" transform="translate(15.870883,35.993789)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect260" width="13.75833" height="5.2916646" x="-6.8750501" y="-2.6562874" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text260"><tspan id="tspan260" style="stroke-width:0.740063" x="0.0041162353" y="1.0478791">Rourke</tspan></text>
+    </g>
+    <g id="mob-dunbar" transform="translate(15.870883,46.577123)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect261" width="13.758331" height="5.291667" x="-6.8750501" y="-2.6562874" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text261"><tspan id="tspan261" style="stroke-width:0.740063" x="0.0041162027" y="1.0478791">Dunbar</tspan></text>
+    </g>
+    <g id="mob-george" transform="translate(15.870883,57.160457)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect107" width="13.758314" height="5.2916665" x="-6.8750501" y="-2.6562877" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text107"><tspan id="tspan107" style="stroke-width:0.740063" x="0.0041165007" y="1.0478791">George</tspan></text>
+    </g>
+    <g id="mob-baxter" transform="translate(15.870883,67.743791)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect108" width="13.758323" height="5.2916822" x="-6.8750501" y="-2.6562877" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text108"><tspan id="tspan108" style="stroke-width:0.740063" x="0.0041162176" y="1.0478791">Baxter</tspan></text>
+    </g>
+    <g id="mob-gardener" transform="translate(15.870883,78.327125)">
+      <rect style="fill:#fad2f5;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect109" width="15.874969" height="5.291667" x="-7.9333835" y="-2.6562879" ry="2.6224544"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text109"><tspan id="tspan109" style="stroke-width:0.740063" x="0.0041162805" y="1.0478791">Gardener</tspan></text>
+    </g>
+  </g>
+  <g id="labellayer" style="display:inline">
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="296.33334" y="376.76669" id="text53"><tspan x="296.33334" y="376.76669" id="tspan60">Pantry</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="253.99995" y="376.76666" id="text8"><tspan x="253.99995" y="376.76666" id="tspan8">Kitchen</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="206.375" y="395.81662" id="text10"><tspan x="206.375" y="395.81662" id="tspan10">Dining</tspan><tspan x="206.375" y="401.31995" id="tspan19">Room</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="251.35417" y="422.27499" id="text16"><tspan x="251.35417" y="422.27499" id="tspan16">North of</tspan><tspan x="251.35417" y="427.77832" id="tspan20">Foyer</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="251.35416" y="400.57916" id="text21"><tspan x="251.35416" y="400.57916" id="tspan21">Corner</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="206.375" y="424.92087" id="text23"><tspan x="206.375" y="424.92087" id="tspan22">Living</tspan><tspan x="206.375" y="430.42419" id="tspan23">Room</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="283.10416" y="422.27499" id="text25"><tspan x="283.10416" y="422.27499" id="tspan24">Bottom of</tspan><tspan x="283.10416" y="427.77832" id="tspan25">Stairs</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="283.10419" y="446.08749" id="text27"><tspan x="283.10419" y="446.08749" id="tspan27">South</tspan><tspan x="283.10419" y="451.59082" id="tspan28">Hallway</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="314.85416" y="446.08749" id="text30"><tspan x="314.85416" y="446.08749" id="tspan29">South</tspan><tspan x="314.85416" y="451.59082" id="tspan30">Hallway</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="314.85416" y="469.89999" id="text32"><tspan x="314.85416" y="469.89999" id="tspan31">South</tspan><tspan x="314.85416" y="475.40332" id="tspan32">Closet</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="283.10416" y="469.89999" id="text35"><tspan x="283.10416" y="469.89999" id="tspan34">Rourke’s</tspan><tspan x="283.10416" y="475.40332" id="tspan35">Room</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="346.60416" y="446.08749" id="text37"><tspan x="346.60416" y="446.08749" id="tspan36">Rourke’s</tspan><tspan x="346.60416" y="451.59082" id="tspan37">Bathroom</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="251.35417" y="472.01669" id="text39"><tspan x="251.35417" y="472.01669" id="tspan39">Foyer</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="251.35414" y="501.64999" id="text49"><tspan x="251.35414" y="501.64999" id="tspan49">Front</tspan><tspan x="251.35414" y="507.15332" id="tspan55">Path</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:3.68469px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="206.39609" y="501.80704" id="text51"><tspan x="206.39609" y="501.80704" id="tspan51">West of</tspan><tspan x="206.39609" y="506.59714" id="tspan52">Front Door</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:3.68469px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="314.87524" y="501.80704" id="text54"><tspan x="314.87524" y="501.80704" id="tspan53">East of</tspan><tspan x="314.87524" y="506.59714" id="tspan54">Front Door</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="164.04166" y="424.92084" id="text57"><tspan x="164.04166" y="424.92084" id="tspan56">West</tspan><tspan x="164.04166" y="430.42416" id="tspan57">Side</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="388.93747" y="424.92087" id="text59"><tspan x="388.93747" y="424.92087" id="tspan58">East</tspan><tspan x="388.93747" y="430.42419" id="tspan59">Side</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="251.35417" y="565.15002" id="text62"><tspan x="251.35417" y="565.15002" id="tspan62">South</tspan><tspan x="251.35417" y="570.65338" id="tspan66">Lawn</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="113.77084" y="424.9209" id="text64"><tspan x="113.77084" y="424.9209" id="tspan64">West</tspan><tspan x="113.77084" y="430.42422" id="tspan65">Lawn</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="449.79169" y="424.9209" id="text68"><tspan x="449.79169" y="424.9209" id="tspan67">East</tspan><tspan x="449.79169" y="430.42422" id="tspan68">Lawn</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="277.81253" y="266.17087" id="text81"><tspan x="277.81253" y="266.17087" id="tspan81">North</tspan><tspan x="277.81253" y="271.67419" id="tspan83">Lawn</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="240.77081" y="313.79584" id="text85"><tspan x="240.77081" y="313.79584" id="tspan84">Garden</tspan><tspan x="240.77081" y="319.29916" id="tspan85">Path</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="359.83331" y="313.79584" id="text87"><tspan x="359.83331" y="313.79584" id="tspan87">Orchard</tspan><tspan x="359.83331" y="319.29916" id="tspan88">Path</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="240.77081" y="340.25418" id="text90"><tspan x="240.77081" y="340.25418" id="tspan90">Among</tspan><tspan x="240.77081" y="345.75751" id="tspan91">Roses</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="359.83331" y="340.25418" id="text93"><tspan x="359.83331" y="340.25418" id="tspan93">In the</tspan><tspan x="359.83331" y="345.75751" id="tspan94">Orchard</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="476.24991" y="451.37921" id="text106"><tspan x="476.24991" y="451.37921" id="tspan106">Shed</tspan></text>
+  </g>
+</svg>
