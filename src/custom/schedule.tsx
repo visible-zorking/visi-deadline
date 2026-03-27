@@ -233,9 +233,17 @@ export function SchedulePage()
             <p>
                 The right-hand column is a source-code comment. They
                 have no effect in the game; they&#x2019;re just the developer&#x2019;s
-                notes to himself, and they&#x2019;re sometimes wrong!
+                notes to himself, and some of them are wrong!
             </p>
             <MovementTable />
+            <p>
+                Note that Mrs. Robner&#x2019;s initial trip to the kitchen
+                is not in this table. It's handled by{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:WELCOME') }><code>WELCOME</code></a>.
+                Coates is a simple{' '}
+                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>timer routine</a>,
+                since he doesn&#x2019;t move around the house.
+            </p>
         </div>
     );
 }
