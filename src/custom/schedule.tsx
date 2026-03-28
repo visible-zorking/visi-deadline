@@ -189,8 +189,8 @@ export function SchedulePage()
             <p>
                 And finally, the overall plan for the day.
                 (I&#x2019;ve saved it for last because it&#x2019;s the longest!)
-            <p>
             </p>
+            <p>
                 Each character has a list of places to be and how
                 long they will spend there. The character has a
                 different description for each location, which gives
