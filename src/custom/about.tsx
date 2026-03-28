@@ -118,6 +118,8 @@ export function AboutPage()
                     shows the table of timed events.
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'grammar') }>Grammar</a>{' '}
                     shows the parse table.
+                    {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'map') }>Map</a>{' '}
+                    is what you think.                    
                 </p>
                 <p>
                     Click on any function, object, or variable to see its
