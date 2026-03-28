@@ -120,11 +120,21 @@ src:GOAL-449: When Baxter reaches the South Lawn, he leaves the game.
 rtn:I-COATES-ARRIVE: As you might expect, this timer causes Coates to appear at 11:51-11:55 am.
 
 
+src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
+	It’s very close, though. Only a few changes were made between r27 and r28, and I’m pretty confident that I reverted them correctly.
+
+src:VERBS-1467: Why did they remove this `RTRUE` in r28? It appears to be an attempt to save space.
+	If you reach the end of a ZIL routine without an explicit return statement, it returns the last value expression. In this case that’s `<SETG QCONTEXT-ROOM ,HERE>`, which is an object number. Object numbers are always positive, so you can save a line of code and still effectively return true.
+	What the developer didn’t realize is that returning an arbitrary number takes two bytes of Z-code, whereas `RTRUE` only takes one! The “optimization” in r28 saves a line of code but *wastes* a byte in the game file.
+
+src:VERBS-1732: Why did they remove this `RTRUE` in r28? It appears to be an attempt to save space.
+	If you reach the end of a ZIL routine without an explicit return statement, it returns the last value expression. In this case that’s `<SETG HERE .OHERE>`, which is an object number. Object numbers are always positive, so you can save a line of code and still effectively return true.
+	What the developer didn’t realize is that returning an arbitrary number takes two bytes of Z-code, whereas `RTRUE` only takes one! The “optimization” in r28 saves a line of code but *wastes* a byte in the game file.
+
 src:VERBS-290: This wry comment does not appear to have ever been used in a released version of the game.
 
 rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known release recognizes it. This vestige remains.
 
 obj:STAIRS: This room lists itself as a scenery object (the `GLOBAL` property). This doesn’t seem to have any effect, but it doesn’t hurt the game either. It threw my Visible Zorker code for a loop though!
 
-### VERBS-622: "registered", INTERLOGIC
-### VERBS-1732, VERBS-1467: RTRUE removed
+
