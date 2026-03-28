@@ -34766,6 +34766,7 @@ var bundle = (function (exports) {
   const gamedat_actions = winany.gamedat_actions;
   const gamedat_sourcefiles = winany.gamedat_sourcefiles;
   const gamedat_distances = winany.gamedat_distances;
+  const gamedat_roominfo_names = winany.gamedat_roominfo_names;
   const gamedat_commentary = winany.gamedat_commentary;
   const gamedat_commentarymap = winany.gamedat_commentarymap;
   let assetdir = 'visiterp';
@@ -35326,7 +35327,7 @@ var bundle = (function (exports) {
   }
 
   function SourceView() {
-      let noderef = useRefDiv$1();
+      let noderef = useRefDiv$2();
       let rctx = reactExports.useContext(ReactCtx);
       let zstate = rctx.zstate;
       let atstart = (rctx.sourcelocpos == 0);
@@ -35572,7 +35573,7 @@ var bundle = (function (exports) {
           scrollel.scrollTop = linel.offsetTop - Math.floor(scrollel.offsetHeight * heightratio);
       }
   }
-  const useRefDiv$1 = () => reactExports.useRef(null);
+  const useRefDiv$2 = () => reactExports.useRef(null);
 
   /* The "(i)" button which displays an object detail page.
   */
@@ -36286,6 +36287,147 @@ var bundle = (function (exports) {
       let cla = (startgroup ? "GrammarLine StartGroup" : "GrammarLine");
       return (jsxRuntimeExports.jsxs("li", { className: cla, children: [jsxRuntimeExports.jsxs("div", { className: "GrammarLineAction", children: [prefuncel, " ", funcel] }), jsxRuntimeExports.jsxs("div", { className: "GrammarLineDef", children: [(rctx.shownumbers ? jsxRuntimeExports.jsxs("span", { className: "ShowAddr", children: [verb.num, ":"] }) : null), jsxRuntimeExports.jsx("span", { className: "PrintDictWord", children: verb.words[0] }), ' ', clausels] })] }));
   }
+
+  function GameMap({ mobiles, extras }) {
+      let scrollref = useRefDiv$1();
+      let mapref = useRefObject();
+      let rctx = reactExports.useContext(ReactCtx);
+      let zstate = rctx.zstate;
+      let dragstart = null;
+      let scrollstart = null;
+      let origdocsize = gamedat_ids.MAP_DOCSIZE;
+      let viewsize = gamedat_ids.MAP_VIEWSIZE;
+      let docsize = { w: 0.8 * origdocsize.w, h: 0.8 * origdocsize.h };
+      function evhan_mousedown(ev) {
+          if (!scrollref.current) {
+              return;
+          }
+          /* Clip the drag area to inside the scrollbar box. (Firefox would
+             allow this handler to snipe scrollbar dragging.) */
+          let offx = ev.nativeEvent.offsetX;
+          let offy = ev.nativeEvent.offsetY;
+          if (offx < 0 || offx >= scrollref.current.clientWidth || offy < 0 || offy >= scrollref.current.clientHeight) {
+              return;
+          }
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (scrollref.current && ev.button == 0) {
+              dragstart = { x: ev.clientX, y: ev.clientY };
+              scrollstart = { x: scrollref.current.scrollLeft, y: scrollref.current.scrollTop };
+              scrollref.current.setPointerCapture(ev.pointerId);
+          }
+      }
+      function evhan_mousemove(ev) {
+          if (scrollref.current && dragstart && scrollstart) {
+              ev.preventDefault();
+              scrollref.current.scrollLeft = scrollstart.x - (ev.clientX - dragstart.x);
+              scrollref.current.scrollTop = scrollstart.y - (ev.clientY - dragstart.y);
+          }
+      }
+      /* This callback is used for *both* the map-load event and the useEffect
+         that depends on zstate. This is because the SVG loads slightly later
+         than the first useEffect invocation.
+
+         It's also invoked when the theme changes, because we have to adjust
+         the SVG theme class.
+      */
+      function select_location() {
+          var _a, _b;
+          if (mapref.current) {
+              let herenum = zstate.globals[0]; // LOCATION
+              let hereobj = gamedat_object_ids.get(herenum);
+              let herestr = '';
+              if (hereobj) {
+                  herestr = hereobj.name;
+              }
+              let herecen = null;
+              let roomobj = gamedat_roominfo_names.get(herestr);
+              if (roomobj) {
+                  herecen = roomobj.center;
+              }
+              let mapdoc = mapref.current.contentDocument;
+              if (mapdoc && mapdoc.rootElement) {
+                  let cla = (is_dark_theme() ? 'DarkTheme' : 'LightTheme');
+                  mapdoc.rootElement.classList.value = cla;
+                  let curstr = (_a = mapdoc.rootElement.getAttribute('data-curselect')) !== null && _a !== void 0 ? _a : '';
+                  if (herestr != curstr) {
+                      let el = mapdoc.getElementById('r-' + curstr.toLowerCase());
+                      if (el) {
+                          el.classList.remove('Selected');
+                      }
+                      el = mapdoc.getElementById('r-' + herestr.toLowerCase());
+                      if (el) {
+                          el.classList.add('Selected');
+                          if (scrollref.current && herecen) {
+                              scrollref.current.scrollLeft = herecen.x * docsize.w / viewsize.w - 0.5 * scrollref.current.clientWidth;
+                              scrollref.current.scrollTop = herecen.y * docsize.h / viewsize.h - 0.5 * scrollref.current.clientHeight;
+                          }
+                      }
+                      mapdoc.rootElement.setAttribute('data-curselect', herestr);
+                  }
+                  let mobcounts = {};
+                  for (let mobid of mobiles) {
+                      // We rely on the fact that the zstate reports
+                      // objects in order (1-based).
+                      let zobj = zstate.objects[mobid - 1];
+                      if (!zobj)
+                          continue;
+                      let obj = gamedat_object_ids.get(mobid);
+                      if (!obj)
+                          continue;
+                      let el = mapdoc.getElementById('mob-' + obj.name.toLowerCase());
+                      if (!el)
+                          continue;
+                      let mobcen = null;
+                      let mobloc;
+                      if (zobj.parent) {
+                          mobloc = gamedat_object_ids.get(zobj.parent);
+                          if (mobloc) {
+                              let throomobj = gamedat_roominfo_names.get(mobloc.name);
+                              if (throomobj) {
+                                  mobcen = throomobj.bottom;
+                              }
+                          }
+                      }
+                      if (mobcen && mobloc) {
+                          let mobcount = (_b = mobcounts[mobloc.name]) !== null && _b !== void 0 ? _b : 0;
+                          let posx = mobcen.x + 2 * mobcount;
+                          let posy = mobcen.y + 4 * mobcount;
+                          el.classList.remove('Offstage');
+                          el.setAttribute('transform', 'translate(' + posx + ',' + posy + ')');
+                          mobcounts[mobloc.name] = mobcount + 1;
+                      }
+                      else {
+                          el.classList.add('Offstage');
+                      }
+                  }
+                  if (extras) {
+                      let extrals = extras(zstate);
+                      for (let obj of extrals) {
+                          let el = mapdoc.getElementById(obj.id);
+                          if (!el)
+                              continue;
+                          if (obj.class !== undefined)
+                              el.classList.value = obj.class;
+                          if (obj.transform !== undefined)
+                              el.setAttribute('transform', obj.transform);
+                      }
+                  }
+              }
+          }
+      }
+      reactExports.useEffect(select_location, [zstate, rctx.theme]);
+      function evhan_mouseup(ev) {
+          dragstart = null;
+          scrollstart = null;
+          if (scrollref.current) {
+              scrollref.current.releasePointerCapture(ev.pointerId);
+          }
+      }
+      return (jsxRuntimeExports.jsx("div", { className: "ScrollXYContent", ref: scrollref, onPointerDown: evhan_mousedown, onPointerMove: evhan_mousemove, onPointerUp: evhan_mouseup, children: jsxRuntimeExports.jsx("object", { className: "GameMap", ref: mapref, onLoad: select_location, width: docsize.w, height: docsize.h, type: "image/svg+xml", data: "pic/map.svg" }) }));
+  }
+  const useRefDiv$1 = () => reactExports.useRef(null);
+  const useRefObject = () => reactExports.useRef(null);
 
   function new_context$3() {
       return {
@@ -37236,7 +37378,7 @@ var bundle = (function (exports) {
       return (jsxRuntimeExports.jsxs("div", { className: "ScrollContent", children: [jsxRuntimeExports.jsxs("p", { children: ["Infocom introduced an autonomous NPC in ", jsxRuntimeExports.jsx("em", { children: "Zork 1" }), ", but ", jsxRuntimeExports.jsx("em", { children: "Deadline" }), "\u2019s seven characters are a vast leap in sophistication. Each has a schedule over the game\u2019s twelve-hour timeline. The schedule has a random element, so each playthrough is slightly different; and the NPCs can be diverted by your actions as well."] }), jsxRuntimeExports.jsxs("p", { children: ["Each character\u2019s scheduled activity is managed by the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "and", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS'), children: jsxRuntimeExports.jsx("code", { children: "MOVEMENT-GOALS" }) }), ' ', "tables. These are quite complicated, so I have broken them down into smaller tables for display in this tab."] }), jsxRuntimeExports.jsx("p", { children: "Let\u2019s start with the characters\u2019 current locations, and the timer routines that control each of them:" }), jsxRuntimeExports.jsx(CharacterTable, {}), jsxRuntimeExports.jsxs("p", { children: ["To manage NPC movement, the game defines four \u201C", jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:TOP-OF-THE-LINE'), children: "transit lines" }), "\u201D that run through the map. Every room is either a \u201Cstation\u201D on one of these lines, or adjacent to a station room. Thus, to reach a goal, an NPC just needs to (1) move to the local station if needed; (2) move one step along the current line to the next interchange; (3) if on the goal line, move one step towards the goal station; (4) move to the final room (if that\u2019s not the station). The", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT'), children: jsxRuntimeExports.jsx("code", { children: "IMOVEMENT" }) }), ' ', "routine handles this."] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES'), children: jsxRuntimeExports.jsx("code", { children: "GOAL-TABLES" }) }), ' ', "shows each character\u2019s current movement goal. \u201CFinal\u201D is where they are heading; \u201Cstation\u201D is that room\u2019s", ' ', jsxRuntimeExports.jsx("code", { children: "STATION" }), "; \u201Cinter\u201D is the interchange room that will get them onto the desired line. The \u201Cdir\u201D is the direction they just moved (not used in practice). The \u201C\u2611\u201D column is whether the character\u2019s movement is enabled."] }), jsxRuntimeExports.jsx("p", { children: "(The last two columns? I\u2019m working on it...)" }), jsxRuntimeExports.jsx(GoalTable, {}), jsxRuntimeExports.jsxs("p", { children: ["If you call a character\u2019s name, or otherwise attract their attention,", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "GRAB-ATTENTION" }) }), ' ', "temporarily disables their movement. (See \u201C\u2611\u201D above.) It then sets their entry in the", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE'), children: jsxRuntimeExports.jsx("code", { children: "ATTENTION-TABLE" }) }), ", which then decreases each turn (", jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION'), children: jsxRuntimeExports.jsx("code", { children: "I-ATTENTION" }) }), ") until it reaches zero. Different characters have different attention spans."] }), jsxRuntimeExports.jsx(AttentionTable, {}), jsxRuntimeExports.jsxs("p", { children: ["And finally, the overall plan for the day. (I\u2019ve saved it for last because it\u2019s the longest!)", jsxRuntimeExports.jsx("p", {}), "Each character has a list of places to be and how long they will spend there. The character has a different description for each location, which gives a sense of what they\u2019re doing. (This has no game effect; it\u2019s purely descriptive.)"] }), jsxRuntimeExports.jsxs("p", { children: ["The", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS'), children: jsxRuntimeExports.jsx("code", { children: "MOVEMENT-GOALS" }) }), ' ', "table is a bit confusing. Each line gives the time the character waits ", jsxRuntimeExports.jsx("em", { children: "before" }), " moving to a given location. So the time they spend there is actually on the", ' ', jsxRuntimeExports.jsx("em", { children: "next" }), " line."] }), (present == 480) ?
                   jsxRuntimeExports.jsx("p", { children: "The schedule is not active on the first turn. Starting at 8:01 am, it will highlight each character\u2019s next destination and the time at which they will depart for it." })
                   :
-                      jsxRuntimeExports.jsx("p", { children: "To clarify this (maybe), I\u2019ve highlighted each character\u2019s next destination and the time at which they will depart for it." }), jsxRuntimeExports.jsx("p", { children: "Times are slightly variable. When a line is highlighted, the game applies a random adjustment. (E.g., McNabb\u2019s first move is at 9:00 plus or minus ten minutes.) The next row (how long they spend) is adjusted the other way to avoid schedule drift." }), jsxRuntimeExports.jsx("p", { children: "After the table runs out for a character (2:00 to 3:00), they just stay put for the rest of the game." }), jsxRuntimeExports.jsx("p", { children: "The right-hand column is a source-code comment. They have no effect in the game; they\u2019re just the developer\u2019s notes to himself, and they\u2019re sometimes wrong!" }), jsxRuntimeExports.jsx(MovementTable, {})] }));
+                      jsxRuntimeExports.jsx("p", { children: "To clarify this (maybe), I\u2019ve highlighted each character\u2019s next destination and the time at which they will depart for it." }), jsxRuntimeExports.jsx("p", { children: "Times are slightly variable. When a line is highlighted, the game applies a random adjustment. (E.g., McNabb\u2019s first move is at 9:00 plus or minus ten minutes.) The next row (how long they spend) is adjusted the other way to avoid schedule drift." }), jsxRuntimeExports.jsx("p", { children: "After the table runs out for a character (2:00 to 3:00), they just stay put for the rest of the game." }), jsxRuntimeExports.jsx("p", { children: "The right-hand column is a source-code comment. They have no effect in the game; they\u2019re just the developer\u2019s notes to himself, and some of them are wrong!" }), jsxRuntimeExports.jsx(MovementTable, {}), jsxRuntimeExports.jsxs("p", { children: ["Note that Mrs. Robner\u2019s initial trip to the kitchen is not in this table. It's handled by", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:WELCOME'), children: jsxRuntimeExports.jsx("code", { children: "WELCOME" }) }), ". Coates is a simple", ' ', jsxRuntimeExports.jsx("a", { href: "#", onClick: (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE'), children: "timer routine" }), ", since he doesn\u2019t move around the house."] })] }));
   }
   function CharacterTable() {
       let rctx = reactExports.useContext(ReactCtx);
@@ -37384,7 +37526,7 @@ var bundle = (function (exports) {
   const tab_list = [
       ['activity', 'Activity'],
       ['objtree', 'World'],
-      //[ 'map', 'Map' ],
+      ['map', 'Map'],
       ['globals', 'State'],
       ['timers', 'Timers'],
       ['schedule', 'Schedule'],
@@ -37395,6 +37537,15 @@ var bundle = (function (exports) {
   ];
   function TabbedPane() {
       let rctx = reactExports.useContext(ReactCtx);
+      const mobiles = [
+          gamedat_ids.GARDENER,
+          gamedat_ids.BAXTER,
+          gamedat_ids.DUNBAR,
+          gamedat_ids.GEORGE,
+          gamedat_ids.MRS_ROBNER,
+          gamedat_ids.ROURKE,
+          gamedat_ids.COATES,
+      ];
       let ells = tab_list.map(([key, label]) => {
           let cla = 'TabItem';
           if (key == rctx.tab)
@@ -37424,11 +37575,9 @@ var bundle = (function (exports) {
           case 'activity':
               tabcontent = jsxRuntimeExports.jsx(CallActivity, {});
               break;
-          /*
           case 'map':
-              tabcontent = <GameMap mobiles={ mobiles } />;
+              tabcontent = jsxRuntimeExports.jsx(GameMap, { mobiles: mobiles });
               break;
-          */
           case 'globals':
               tabcontent = jsxRuntimeExports.jsx(GlobalState, {});
               break;
