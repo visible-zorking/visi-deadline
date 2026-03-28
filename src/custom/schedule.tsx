@@ -239,7 +239,7 @@ export function SchedulePage()
             <p>
                 Note that Mrs. Robner&#x2019;s initial trip to the kitchen
                 is not in this table. It's handled by{' '}
-                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:WELCOME') }><code>WELCOME</code></a>.
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'SRC:ACTIONS-2157') }><code>WELCOME</code></a>.
                 Coates is a simple{' '}
                 <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>timer routine</a>,
                 since he doesn&#x2019;t move around the house.
