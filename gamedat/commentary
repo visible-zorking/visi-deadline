@@ -80,12 +80,16 @@ glob:MOVEMENT-GOALS: The day’s schedule for each character.
 
 glob:GOAL-TABLES: The current movement goal of each character. The scheme is explained in the “Schedule” tab.
 
-rtn:IMOVEMENT: Move a character one step towards their current goal. Each character calls this every turn when it is time for them to travel.
-	When they reach their goal, they advance one line on their [~glob:MOVEMENT-GOALS] table and set a long timer (30 or 60 minutes or whatever) until they begin their next `IMOVEMENT`.
+rtn:IMOVEMENT: Prepare a character to move towards their next destination. The character’s timer routine calls this when it is time for them to “wake up” and move.
+	This calls [rtn:ESTABLISH-GOAL] to set up their movement. Then they advance one line on their [~glob:MOVEMENT-GOALS] table and set a long timer (30 or 60 minutes or whatever) – the delay until their *next* wake-up call.
 
 # More precisely:
 # - if not first move (initial 0 entry), establish-goal
 # - if not last entry (final 0 time), pick the interval, queue timer, advance ptr
+
+rtn:I-FOLLOW: Move each character towards their current goal, if they ought to be in motion.
+
+rtn:FOLLOW-GOAL: Move a character one step towards their current goal. All the work driven by the [~glob:GOAL-TABLES] happens in this routine.
 
 rtn:ESTABLISH-GOAL: Set up a character’s [glob:GOAL-TABLES] entry to move them towards a destination. See the “Schedule” tab for a complete explanation.
 
