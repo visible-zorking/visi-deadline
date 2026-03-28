@@ -120,6 +120,11 @@ src:GOAL-449: When Baxter reaches the South Lawn, he leaves the game.
 rtn:I-COATES-ARRIVE: As you might expect, this timer causes Coates to appear at 11:51-11:55 am.
 
 
+glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-ENVELOPE].)
+
+glob:MR-ENVELOPE: Whether Mrs. Robner *knows* you opened the envelope. (See also [glob:ENVELOPE-OPENED].)
+
+
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
 	It’s very close, though. Only a few changes were made between r27 and r28, and I’m pretty confident that I reverted them correctly.
 
