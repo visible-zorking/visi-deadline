@@ -23,6 +23,9 @@ export function contains_label(obj: ObjectData) : string
 export function sorter_for_key(key: number) : (roots:ZObject[], map:Map<number, ZObject>) => void
 {
     let originobj: number = gamedat_ids.PLAYER;
+    const followObjs = [gamedat_ids.PLAYER, gamedat_ids.GARDENER, gamedat_ids.BAXTER, gamedat_ids.DUNBAR, gamedat_ids.GEORGE, gamedat_ids.MRS_ROBNER, gamedat_ids.ROURKE];
+    if (key >= 0 && key < followObjs.length)
+        originobj = followObjs[key];
 
     return function(roots: ZObject[], map: Map<number, ZObject>) {
         let advroom = originobj;
@@ -53,29 +56,9 @@ export function sorter_for_key(key: number) : (roots:ZObject[], map:Map<number, 
 export function ObjListSorter({ followKey, setFollowKey } : { followKey:number, setFollowKey:(v:number)=>void })
 {
     let follow: string = 'adv';
-    switch (followKey) {
-    case 0:
-        follow = 'adv';
-        break;
-    case 1:
-        follow = 'gardener';
-        break;
-    case 2:
-        follow = 'baxter';
-        break;
-    case 3:
-        follow = 'dunbar';
-        break;
-    case 4:
-        follow = 'george';
-        break;
-    case 5:
-        follow = 'mrs-robner';
-        break;
-    case 6:
-        follow = 'rourke';
-        break;
-    }
+    const followKeys = ['adv', 'gardener', 'baxter', 'dunbar', 'george', 'mrs-robner', 'rourke'];
+    if (followKey >= 0 && followKey < followKeys.length)
+        follow = followKeys[followKey];
     
     function evhan_follow_change(val: string) {
         switch (val) {
@@ -83,22 +66,22 @@ export function ObjListSorter({ followKey, setFollowKey } : { followKey:number, 
             setFollowKey(0);
             break;
         case 'gardener':
-            setFollowKey(gamedat_ids.GARDENER);
+            setFollowKey(1);
             break;
         case 'baxter':
-            setFollowKey(gamedat_ids.BAXTER);
+            setFollowKey(2);
             break;
         case 'dunbar':
-            setFollowKey(gamedat_ids.DUNBAR);
+            setFollowKey(3);
             break;
         case 'george':
-            setFollowKey(gamedat_ids.GEORGE);
+            setFollowKey(4);
             break;
         case 'mrs-robner':
-            setFollowKey(gamedat_ids.MRS_ROBNER);
+            setFollowKey(5);
             break;
         case 'rourke':
-            setFollowKey(gamedat_ids.ROURKE);
+            setFollowKey(6);
             break;
         }
     }
