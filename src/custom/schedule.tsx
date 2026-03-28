@@ -127,9 +127,9 @@ export function SchedulePage()
             </p>
             <p>
                 Each character&#x2019;s scheduled activity is managed by the{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>
                 {' '}and{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
                 {' '}tables. These are quite complicated, so I have broken
                 them down into smaller tables for display in this tab.
             </p>
@@ -140,7 +140,7 @@ export function SchedulePage()
             <CharacterTable />
             <p>
                 To manage NPC movement, the game defines four
-                &#x201C;<a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:TOP-OF-THE-LINE') }>transit lines</a>&#x201D;
+                &#x201C;<a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:TOP-OF-THE-LINE') }>transit lines</a>&#x201D;
                 that run through the map.
                 Every room is either a &#x201C;station&#x201D;
                 on one of these lines, or adjacent to a station room.
@@ -152,11 +152,11 @@ export function SchedulePage()
                 goal station;
                 (4) move to the final room (if that&#x2019;s not the station).
                 The{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT') }><code>IMOVEMENT</code></a>{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:IMOVEMENT') }><code>IMOVEMENT</code></a>{' '}
                 routine handles this.
             </p>
             <p>
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:GOAL-TABLES') }><code>GOAL-TABLES</code></a>{' '}
                 shows each character&#x2019;s current movement goal.
                 &#x201C;Final&#x201D; is where they are heading;
                 &#x201C;station&#x201D; is that room&#x2019;s{' '}
@@ -175,13 +175,13 @@ export function SchedulePage()
             <p>
                 If you call a character&#x2019;s name, or otherwise attract
                 their attention,{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION') }><code>GRAB-ATTENTION</code></a>
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION') }><code>GRAB-ATTENTION</code></a>
                 {' '}temporarily disables their movement.
                 (See &#x201C;&#x2611;&#x201D; above.) It then sets their
                 entry in the{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE') }><code>ATTENTION-TABLE</code></a>,
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE') }><code>ATTENTION-TABLE</code></a>,
                 which then decreases each turn
-                (<a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION') }><code>I-ATTENTION</code></a>)
+                (<a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-ATTENTION') }><code>I-ATTENTION</code></a>)
                 until it reaches zero.
                 Different characters have different attention spans.
             </p>
@@ -199,7 +199,7 @@ export function SchedulePage()
             </p>
             <p>
                 The{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:MOVEMENT-GOALS') }><code>MOVEMENT-GOALS</code></a>
                 {' '}table is a bit confusing. Each line gives the time
                 the character waits <em>before</em> moving to a given
                 location. So the time they spend there is actually on the
@@ -239,9 +239,9 @@ export function SchedulePage()
             <p>
                 Note that Mrs. Robner&#x2019;s initial trip to the kitchen
                 is not in this table. It's handled by{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:WELCOME') }><code>WELCOME</code></a>.
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:WELCOME') }><code>WELCOME</code></a>.
                 Coates is a simple{' '}
-                <a href="#" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>timer routine</a>,
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>timer routine</a>,
                 since he doesn&#x2019;t move around the house.
             </p>
         </div>
