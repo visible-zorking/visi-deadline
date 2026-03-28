@@ -52,9 +52,74 @@ export function sorter_for_key(key: number) : (roots:ZObject[], map:Map<number, 
 
 export function ObjListSorter({ followKey, setFollowKey } : { followKey:number, setFollowKey:(v:number)=>void })
 {
+    let follow: string = 'adv';
+    switch (followKey) {
+    case 0:
+        follow = 'adv';
+        break;
+    case 1:
+        follow = 'gardener';
+        break;
+    case 2:
+        follow = 'baxter';
+        break;
+    case 3:
+        follow = 'dunbar';
+        break;
+    case 4:
+        follow = 'george';
+        break;
+    case 5:
+        follow = 'mrs-robner';
+        break;
+    case 6:
+        follow = 'rourke';
+        break;
+    }
+    
+    function evhan_follow_change(val: string) {
+        switch (val) {
+        case 'adv':
+            setFollowKey(0);
+            break;
+        case 'gardener':
+            setFollowKey(gamedat_ids.GARDENER);
+            break;
+        case 'baxter':
+            setFollowKey(gamedat_ids.BAXTER);
+            break;
+        case 'dunbar':
+            setFollowKey(gamedat_ids.DUNBAR);
+            break;
+        case 'george':
+            setFollowKey(gamedat_ids.GEORGE);
+            break;
+        case 'mrs-robner':
+            setFollowKey(gamedat_ids.MRS_ROBNER);
+            break;
+        case 'rourke':
+            setFollowKey(gamedat_ids.ROURKE);
+            break;
+        }
+    }
+    
     return (
         <div>
-            (Following Adventurer)
+            Follow{' '}
+            <input id="followadv_radio" type="radio" name="follow" value="adv" checked={ follow=='adv' } onChange={ (ev) => evhan_follow_change('adv') } />
+            <label htmlFor="followadv_radio">Player</label>{' '}
+            <input id="followgardener_radio" type="radio" name="follow" value="gardener" checked={ follow=='gardener' } onChange={ (ev) => evhan_follow_change('gardener') } />
+            <label htmlFor="followgardener_radio">Gardener</label>
+            <input id="followbaxter_radio" type="radio" name="follow" value="baxter" checked={ follow=='baxter' } onChange={ (ev) => evhan_follow_change('baxter') } />
+            <label htmlFor="followbaxter_radio">Baxter</label>
+            <input id="followdunbar_radio" type="radio" name="follow" value="dunbar" checked={ follow=='dunbar' } onChange={ (ev) => evhan_follow_change('dunbar') } />
+            <label htmlFor="followdunbar_radio">Dunbar</label>
+            <input id="followgeorge_radio" type="radio" name="follow" value="george" checked={ follow=='george' } onChange={ (ev) => evhan_follow_change('george') } />
+            <label htmlFor="followgeorge_radio">George</label>
+            <input id="followmrsrobner_radio" type="radio" name="follow" value="mrs-robner" checked={ follow=='mrs-robner' } onChange={ (ev) => evhan_follow_change('mrs-robner') } />
+            <label htmlFor="followmrsrobner_radio">Mrs Robner</label>
+            <input id="followrourke_radio" type="radio" name="follow" value="rourke" checked={ follow=='rourke' } onChange={ (ev) => evhan_follow_change('rourke') } />
+            <label htmlFor="followrourke_radio">Rourke</label>
         </div>
     );
 }
