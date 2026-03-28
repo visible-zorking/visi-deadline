@@ -119,6 +119,8 @@ src:GOAL-449: When Baxter reaches the South Lawn, he leaves the game.
 
 rtn:I-COATES-ARRIVE: As you might expect, this timer causes Coates to appear at 11:51-11:55 am.
 
+src:ACTIONS-2157: At the end of the [~rtn:WELCOME] sequence, Mrs. Robner heads to the kitchen. The [~obj:KITCHEN] is not listed in her [~glob:MOVEMENT-GOALS] for the day; this is a special case. She’ll return to her schedule at the next listed time.
+
 
 glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-ENVELOPE].)
 
