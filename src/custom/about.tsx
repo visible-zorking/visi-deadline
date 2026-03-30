@@ -235,11 +235,11 @@ export function AboutPage()
                         <b>Contributors:</b>{' '}
                         <NameList level="Contributor" />
                     </li>
-                    <li>
+                    <li className="Small">
                         <b>Participants:</b>{' '}
                         <NameList level="Participant" />
                     </li>
-                    <li>
+                    <li className="Smaller">
                         <b>Supporters:</b>{' '}
                         <NameList level="Supporter" />
                     </li>
