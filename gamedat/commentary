@@ -58,6 +58,11 @@ glob:LOW-DIRECTION: Properties with this value and above are directions.
 glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a blank line or an error.)
 	No relation to whether the *player* has won.
 
+glob:P-ADVERB: Unlike other Infocom games (and nearly all modern IF), *Deadline* pays attention to some adverbs. You can `EXAMINE` an object, or you can `EXAMINE` it `CAREFULLY`. The parser will also [take note|~src:PARSER-265] of the words `QUIETLY`, `SLOWLY`, `QUICKLY`, and `BRIEFLY`.
+	`EXAMINE CAREFULLY` takes three minutes instead of one, but in a few cases it reveals more information. See [~rtn:NOTE-PAPER-F], [~rtn:NEWSPAPER-F], [~rtn:BOOKSHELVES-F].
+	The only other meaningful adverb is `CLIMB STAIRS QUIETLY`, which [informs you|~src:VERBS-339] that it really is impossible.
+
+src:PARSER-265: Unlike other Infocom games (and nearly all modern IF), *Deadline* pays attention to some adverbs. See [glob:P-ADVERB].
 
 glob:C-INTS: Indicates how much of the timer table ([*glob:C-TABLE]) is used. This counts down from `C-TABLELEN`, which is 300.
 
