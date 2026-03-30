@@ -225,6 +225,15 @@ export function AboutPage()
                     2025-2026 by Andrew Plotkin. MIT license;{' '}
                     <ExtWebLink url={ 'https://github.com/visible-zorking/visi-zork3' } text={ 'Github repo' } />.
                 </p>
+                <h2>Patreon supporters</h2>
+                <p>
+                    <b>Fancy contributors:</b>{' '}
+                    <NameList level="fancy" />
+                </p>
+                <p>
+                    <b>Contributors:</b>{' '}
+                    <NameList level="contributor" />
+                </p>
                 <p>
                     Last updated <b>{ lastupdate }</b>.
                     This exhibit is hosted by the{' '}
@@ -241,3 +250,20 @@ export function ExtWebLink({ url, text }: { url:string, text:string })
         <a className="External" target="_blank" href={ url }>{ text }</a>
     );
 }
+
+function NameList({ level }: { level:string })
+{
+    let names = patreon_donors[level];
+
+    if (!names || names.length == 0) {
+        return <></>;
+    }
+
+    let text = names.join(', ');
+    return <span>{ text }</span>;
+}
+
+const patreon_donors: { [key: string]: string[] } = {
+    'fancy': ['David Rheingold',],
+    'contributor': ['Jeff Nyman', 'Ben Cressey'],
+};
