@@ -226,22 +226,24 @@ export function AboutPage()
                     <ExtWebLink url={ 'https://github.com/visible-zorking/visi-zork3' } text={ 'Github repo' } />.
                 </p>
                 <h2>Patreon supporters</h2>
-                <p>
-                    <b>Fancy contributors:</b>{' '}
-                    <NameList level="Fancy Contributor" />
-                </p>
-                <p>
-                    <b>Contributors:</b>{' '}
-                    <NameList level="Contributor" />
-                </p>
-                <p>
-                    <b>Participants:</b>{' '}
-                    <NameList level="Participant" />
-                </p>
-                <p>
-                    <b>Supporters:</b>{' '}
-                    <NameList level="Supporter" />
-                </p>
+                <ul className="PatreonList">
+                    <li>
+                        <b>Fancy contributors:</b>{' '}
+                        <NameList level="Fancy Contributor" />
+                    </li>
+                    <li>
+                        <b>Contributors:</b>{' '}
+                        <NameList level="Contributor" />
+                    </li>
+                    <li>
+                        <b>Participants:</b>{' '}
+                        <NameList level="Participant" />
+                    </li>
+                    <li>
+                        <b>Supporters:</b>{' '}
+                        <NameList level="Supporter" />
+                    </li>
+                </ul>
                 <p>
                     Last updated <b>{ lastupdate }</b>.
                     This exhibit is hosted by the{' '}
@@ -275,5 +277,5 @@ const patreon_donors: { [key: string]: string[] } = {
     "Contributor": ["Ben Cressey", "Brad Jones", "Christopher Cotton", "Jeff Nyman", "John Leen", "Matthew Murray", "Paul Mazaitis", "Peter Berger", "Petter Sj\u00f6lund"],
     "Fancy Contributor": ["David Rheingold"],
     "Participant": ["Aaron Reed", "Adam B", "Adam Thornton", "Alex Seubert", "Aneel Nazareth", "arcanetrivia", "chad royal", "Chris Spiegel", "Christian N", "Curtis Frye", "Damien Neil", "Daniel Sharpe", "David Cornelson", "DJ Lang", "Doug Orleans", "Emily Short", "Eric Nyman", "J. Ryan Stinnett", "James Tranovich", "Jason Compton", "Jo Walton", "John Faulkenbury", "John Krewson", "Joshua Grams", "JT", "Jules Graybill", "Liza Daly", "Mark Sample", "Marty McGuire", "Matthew Griffin", "Michael Rubin", "Mike Wiese", "Monica M", "ndiddy", "Olivier L.", "pdxeric", "Tobias V. Langhoff", "Torbj\u00f6rn Andersson", "Zeke Pabski"],
-    "Supporter": ["Cat", "Christopher ", "crashp1t", "Daniel Smith", "Derrell Piper", "JP Sugarbroad", "Lachlan Cooper", "louis rodriguez", "Mick Stone", "Nevin ", "Pinkunz", "Vivienne Dunstan"],
+    "Supporter": ["Cat", "Christopher", "crashp1t", "Daniel Smith", "Derrell Piper", "JP Sugarbroad", "Lachlan Cooper", "louis rodriguez", "Mick Stone", "Nevin", "Pinkunz", "Vivienne Dunstan"],
 }
