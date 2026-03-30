@@ -219,7 +219,6 @@ export function AboutPage()
                     Microsoft. Microsoft has not released this game as
                     open source, but I&#x2019;m going at it regardless.
                 </p>
-                <hr/>
                 <p>
                     Aside from the above, the Visible Zorker is copyright
                     2025-2026 by Andrew Plotkin. MIT license;{' '}
@@ -244,6 +243,7 @@ export function AboutPage()
                         <NameList level="Supporter" />
                     </li>
                 </ul>
+                <hr/>
                 <p>
                     Last updated <b>{ lastupdate }</b>.
                     This exhibit is hosted by the{' '}
