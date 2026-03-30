@@ -125,6 +125,10 @@ rtn:I-COATES-ARRIVE: As you might expect, this timer causes Coates to appear at 
 
 src:ACTIONS-2157: At the end of the [~rtn:WELCOME] sequence, Mrs. Robner heads to the kitchen. The [~obj:KITCHEN] is not listed in her [~glob:MOVEMENT-GOALS] for the day; this is a special case. She’ll return to her schedule at the next listed time.
 
+rtn:I-WINDOW-LOOK: If you `LOOK OUT WINDOW` in the [~obj:GUEST-ROOM], you can see the [~obj:EAST-LAWN]. The game handles this by setting the room’s [prop:CORRIDOR] property to 512, thus giving it line-of-sight via [~glob:COR-512] – but only for a turn. After that, you stop paying attention to the window.
+
+glob:COR-512: This one is conditional. From the [~obj:GUEST-ROOM], you only notice movement on the [~obj:EAST-LAWN] if you explicitly `LOOK OUT WINDOW`. See [rtn:I-WINDOW-LOOK].
+
 
 glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-ENVELOPE].)
 
