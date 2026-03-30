@@ -98,6 +98,9 @@ rtn:FOLLOW-GOAL: Move a character one step towards their current goal. All the w
 
 rtn:ESTABLISH-GOAL: Set up a character’s [glob:GOAL-TABLES] entry to move them towards a destination. See the “Schedule” tab for a complete explanation.
 
+rtn:INT-WAIT: Run the game time forward by `N` minutes. Returns true if the full time elapsed, or false if the player chose to stop waiting (because of some observed action).
+	This is used by a couple of actions that take more than one minute: `EXAMINE CAREFULLY`, `EXAMINE ROOM`. If you don’t wait the full interval, the `EXAMINE` action fails.
+
 prop:LINE: The transit line which a given room is on or adjacent too. See [~prop:STATION].
 
 prop:STATION: The transit-line room which is, or is adjacent to, a given room. See [~prop:LINE].
