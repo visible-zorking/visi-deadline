@@ -228,11 +228,19 @@ export function AboutPage()
                 <h2>Patreon supporters</h2>
                 <p>
                     <b>Fancy contributors:</b>{' '}
-                    <NameList level="fancy" />
+                    <NameList level="Fancy Contributor" />
                 </p>
                 <p>
                     <b>Contributors:</b>{' '}
-                    <NameList level="contributor" />
+                    <NameList level="Contributor" />
+                </p>
+                <p>
+                    <b>Participants:</b>{' '}
+                    <NameList level="Participant" />
+                </p>
+                <p>
+                    <b>Supporters:</b>{' '}
+                    <NameList level="Supporter" />
                 </p>
                 <p>
                     Last updated <b>{ lastupdate }</b>.
@@ -264,6 +272,8 @@ function NameList({ level }: { level:string })
 }
 
 const patreon_donors: { [key: string]: string[] } = {
-    'fancy': ['David Rheingold',],
-    'contributor': ['Jeff Nyman', 'Ben Cressey'],
-};
+    "Contributor": ["Ben Cressey", "Brad Jones", "Christopher Cotton", "Jeff Nyman", "John Leen", "Matthew Murray", "Paul Mazaitis", "Peter Berger", "Petter Sj\u00f6lund"],
+    "Fancy Contributor": ["David Rheingold"],
+    "Participant": ["Aaron Reed", "Adam B", "Adam Thornton", "Alex Seubert", "Aneel Nazareth", "arcanetrivia", "chad royal", "Chris Spiegel", "Christian N", "Curtis Frye", "Damien Neil", "Daniel Sharpe", "David Cornelson", "DJ Lang", "Doug Orleans", "Emily Short", "Eric Nyman", "J. Ryan Stinnett", "James Tranovich", "Jason Compton", "Jo Walton", "John Faulkenbury", "John Krewson", "Joshua Grams", "JT", "Jules Graybill", "Liza Daly", "Mark Sample", "Marty McGuire", "Matthew Griffin", "Michael Rubin", "Mike Wiese", "Monica M", "ndiddy", "Olivier L.", "pdxeric", "Tobias V. Langhoff", "Torbj\u00f6rn Andersson", "Zeke Pabski"],
+    "Supporter": ["Cat", "Christopher ", "crashp1t", "Daniel Smith", "Derrell Piper", "JP Sugarbroad", "Lachlan Cooper", "louis rodriguez", "Mick Stone", "Nevin ", "Pinkunz", "Vivienne Dunstan"],
+}
