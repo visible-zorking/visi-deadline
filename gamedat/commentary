@@ -138,6 +138,19 @@ rtn:I-WINDOW-LOOK: If you `LOOK OUT WINDOW` in the [~obj:GUEST-ROOM], you can se
 glob:COR-512: This one is conditional. From the [~obj:GUEST-ROOM], you only notice movement on the [~obj:EAST-LAWN] if you explicitly `LOOK OUT WINDOW`. See [rtn:I-WINDOW-LOOK].
 
 
+rtn:I-G-I-G: The timer for McNabb noticing (and raging about) the garden holes. This is queued up when he first enters the [~obj:ROSE-GARDEN].
+
+glob:G-I-G: The time at which McNabb noticed the garden holes.
+
+glob:HOLE-TELL: Whether McNabb has told you about the garden holes.
+
+rtn:I-SHOW-HOLE: The timer for McNabb showing you the holes after you ask him to. If you don't follow him into the garden right away, he gets sarcastic. If delay more than a few minutes, he gives you up as a bad job ([glob:NO-SHOW]) and you lose your chance.
+
+glob:NO-SHOW: Whether McNabb has gotten irate at you for wasting his time after you asked him to show you the holes.
+
+glob:HOLE-SHOWN: Whether McNabb has shown you the garden holes.
+
+
 glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-ENVELOPE].)
 
 glob:MR-ENVELOPE: Whether Mrs. Robner *knows* you opened the envelope. (See also [glob:ENVELOPE-OPENED].)
