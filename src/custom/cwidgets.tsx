@@ -127,6 +127,14 @@ export function global_value_display(tag: string, value: number, glo: GlobalData
             <ArgShowTime value={ value } />
         );
         
+    case 'HMTIMEZ':
+        if (value == 0) {
+            return <i>not set</i>;
+        }
+        return (
+            <ArgShowTime value={ value } />
+        );
+        
     }
     
     return null;
