@@ -17,6 +17,8 @@ export function FeeliesPage()
                     {' '}&nbsp;{' '}
                     <i>(takes longer but may uncover more information)</i>
                     <br/>
+                    <code>SEARCH NEAR <i>something</i></code>
+                    <br/>
                     <code>FINGERPRINT <i>something</i></code>
                     <br/>
                     <code>ANALYZE <i>something</i></code>
