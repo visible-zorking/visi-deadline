@@ -57,6 +57,8 @@
       <path transform="scale(0.5)" style="fill:context-stroke;fill-rule:evenodd;stroke:none" d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z" id="path17-8"/>
     </marker>
     <linearGradient xlink:href="#linearGradient139" id="linearGradient140" x1="343.95831" y1="171.97917" x2="341.3125" y2="394.22919" gradientUnits="userSpaceOnUse" gradientTransform="translate(-84.666671,-63.500003)"/>
+    <linearGradient xlink:href="#linearGradient139" id="linearGradient26" x1="87.3125" y1="272.52084" x2="89.958328" y2="15.875001" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#linearGradient139" id="linearGradient28" x1="320.14581" y1="5.291667" x2="325.4375" y2="272.52084" gradientUnits="userSpaceOnUse"/>
   </defs>
   
   <g id="decorlayer">
@@ -74,13 +76,12 @@
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 174.62494,312.20832 29.10416,-1e-5" id="path44"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 198.43744,365.12498 v 37.04167" id="path45"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 230.18744,388.93748 v 13.22917" id="path47"/>
-    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="rect48" width="1.5874993" height="3.1749949" x="-424.39151" y="165.10019" transform="rotate(-90)"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 129.64577,439.20831 h 92.60417" id="path68"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 166.68744,412.74998 v 82.02083" id="path69"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="M 39.687466,362.47915 H 71.437448" id="path70"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 312.20828,362.47918 h 42.3333" id="path71"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 121.70827,365.12498 v 68.79167" id="path72"/>
-    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="rect72" width="1.5874993" height="3.1749949" x="-424.39151" y="120.12103" transform="rotate(-90)"/>
+    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="toggle-bay-window" width="1.5874993" height="3.1749949" x="-424.39151" y="120.12103" transform="rotate(-90)"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 29.104152,370.41665 v 10.58333 c 0,42.33334 126.999948,113.77083 126.999948,113.77083" id="path73"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 113.77077,439.20831 -7.9375,1e-5 c -21.166651,0 -66.145794,-68.79167 -66.145794,-68.79167" id="path75"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="M 113.77077,433.91665 C 97.895773,423.33332 79.374952,399.52081 79.374952,373.06248 v -5.29167" id="path76"/>
@@ -119,6 +120,11 @@
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 386.29165,404.81252 0,-2.64584 c 0,-5.29166 -15.875,-7.9375 -15.87499,-26.45832" id="path4"/>
     <path style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.058;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;marker-end:url(#marker14);paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 386.29165,415.39585 v 5.29167 c 0,15.875 -203.72916,76.72917 -203.72916,76.72917" id="path5"/>
     <path style="display:inline;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;paint-order:stroke fill markers;stop-color:#000000" d="m 388.93749,391.58335 v 13.22917" id="path110-2"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient26);stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 119.0625,15.875001 C 65.306685,35.836133 83.177742,217.90708 148.16666,272.52084" id="path24"/>
+    <path style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient28);stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="m 230.18749,15.875001 c 119.0625,18.520834 115.4005,198.891459 52.91667,256.645839" id="path25"/>
+    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="toggle-front-door" width="1.5874993" height="3.1749949" x="-424.39151" y="165.10019" transform="rotate(-90)"/>
+    <rect style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="toggle-hidden-door-b" width="1.5874993" height="3.1749949" x="197.11458" y="46.037506"/>
+    <rect style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers" id="toggle-hidden-door-l" width="1.5874993" height="3.1749949" x="150.54791" y="46.037506"/>
   </g>
   <g id="roomlayer" style="display:inline">
     <rect id="r-pantry" width="21.166666" height="15.875001" x="201.08333" y="304.27097" ry="2.6458292"/>
