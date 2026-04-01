@@ -25,13 +25,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="912"
-     inkscape:cy="1624.5"
+     inkscape:zoom="2"
+     inkscape:cx="581"
+     inkscape:cy="1610.75"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
-     inkscape:window-x="2066"
-     inkscape:window-y="30"
+     inkscape:window-x="2135"
+     inkscape:window-y="68"
      inkscape:window-maximized="0"
      inkscape:current-layer="connlayer">
     <inkscape:grid
@@ -252,14 +252,6 @@
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
        d="m 230.18744,388.93748 v 13.22917"
        id="path47" />
-    <rect
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       id="toggle-front-door"
-       width="1.5874993"
-       height="3.1749949"
-       x="-424.39151"
-       y="165.10019"
-       transform="rotate(-90)" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1"
        d="m 129.64577,439.20831 h 92.60417"
@@ -475,6 +467,14 @@
        d="m 230.18749,15.875001 c 119.0625,18.520834 115.4005,198.891459 52.91667,256.645839"
        id="path25"
        sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+       id="toggle-front-door"
+       width="1.5874993"
+       height="3.1749949"
+       x="-424.39151"
+       y="165.10019"
+       transform="rotate(-90)" />
   </g>
   <g
      inkscape:label="Rooms"
