@@ -70,10 +70,16 @@ export function map_toggle_doors(zstate: ZStatePlus): ExtraToggle[]
     let frontdoorstate = frontdoorflag ? 'Invisible' : 'Visible';
     let baywindowflag = zstate.objects[243-1].attrs & 0x08; // BAY-WINDOW & OPENBIT
     let baywindowstate = baywindowflag ? 'Invisible' : 'Visible';
+    let hiddendoorbflag = zstate.objects[179-1].attrs & 0x08; // HIDDEN-DOOR-B & OPENBIT
+    let hiddendoorbstate = hiddendoorbflag ? 'Invisible' : 'Visible';
+    let hiddendoorlflag = zstate.objects[184-1].attrs & 0x08; // HIDDEN-DOOR-L & OPENBIT
+    let hiddendoorlstate = hiddendoorlflag ? 'Invisible' : 'Visible';
     
     return [
         { id: 'toggle-front-door', class: frontdoorstate },
         { id: 'toggle-bay-window', class: baywindowstate },
+        { id: 'toggle-hidden-door-b', class: hiddendoorbstate },
+        { id: 'toggle-hidden-door-l', class: hiddendoorlstate },
     ];
 }
 
