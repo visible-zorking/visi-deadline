@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.5"
+     inkscape:zoom="1"
      inkscape:cx="912"
-     inkscape:cy="671"
+     inkscape:cy="1624.5"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
      inkscape:window-x="2066"
@@ -254,7 +254,7 @@
        id="path47" />
     <rect
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       id="rect48"
+       id="toggle-front-door"
        width="1.5874993"
        height="3.1749949"
        x="-424.39151"
@@ -282,7 +282,7 @@
        id="path72" />
     <rect
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       id="rect72"
+       id="toggle-bay-window"
        width="1.5874993"
        height="3.1749949"
        x="-424.39151"
