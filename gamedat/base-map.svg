@@ -24,16 +24,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="581"
-     inkscape:cy="1610.75"
+     showgrid="true"
+     inkscape:zoom="11.313708"
+     inkscape:cx="711.34942"
+     inkscape:cy="195.02889"
      inkscape:window-width="1976"
      inkscape:window-height="1103"
      inkscape:window-x="2135"
      inkscape:window-y="68"
      inkscape:window-maximized="0"
-     inkscape:current-layer="connlayer">
+     inkscape:current-layer="decorlayer">
     <inkscape:grid
        id="grid1"
        units="px"
@@ -47,7 +47,7 @@
        opacity="0.14902"
        empspacing="5"
        enabled="true"
-       visible="false" />
+       visible="true" />
   </sodipodi:namedview>
   <style
      id="style1">svg.DarkTheme { filter: invert(90%) hue-rotate(180deg); }
@@ -475,6 +475,20 @@
        x="-424.39151"
        y="165.10019"
        transform="rotate(-90)" />
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+       id="toggle-hidden-door-b"
+       width="1.5874993"
+       height="3.1749949"
+       x="197.11458"
+       y="46.037506" />
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.05833;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
+       id="toggle-hidden-door-l"
+       width="1.5874993"
+       height="3.1749949"
+       x="150.54791"
+       y="46.037506" />
   </g>
   <g
      inkscape:label="Rooms"
