@@ -1,5 +1,6 @@
 import { unpack_address } from '../visi/gametypes';
-import { GnustoEngine, ZState } from '../visi/zstate';
+import { GnustoEngine, ZState, ZStatePlus } from '../visi/zstate';
+import { ExtraToggle } from '../visi/map';
 import { gamedat_routine_names, gamedat_global_names, gamedat_string_map } from '../visi/gamedat';
 
 export type SpecificDeadline = {
@@ -60,6 +61,20 @@ export function get_goal_tables(engine: GnustoEngine, state: ZState): SpecificDe
         movegoals: movegoals,
         movetimes: movetimes,
     }
+}
+
+export function map_toggle_doors(zstate: ZStatePlus): ExtraToggle[]
+{
+    // Once again we rely on the fact that the zstate reports objects in order (1-based).
+    let frontdoorflag = zstate.objects[245-1].attrs & 0x08; // FRONT-DOOR & OPENBIT
+    let frontdoorstate = frontdoorflag ? 'Invisible' : 'Visible';
+    let baywindowflag = zstate.objects[243-1].attrs & 0x08; // BAY-WINDOW & OPENBIT
+    let baywindowstate = baywindowflag ? 'Invisible' : 'Visible';
+    
+    return [
+        { id: 'toggle-front-door', class: frontdoorstate },
+        { id: 'toggle-bay-window', class: baywindowstate },
+    ];
 }
 
 export function show_commentary_hook(topic: string, engine: GnustoEngine): string|null

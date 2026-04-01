@@ -3,6 +3,7 @@ import { useContext } from 'react';
 
 import { ReactCtx } from '../visi/context';
 import { gamedat_ids } from '../visi/gamedat';
+import { map_toggle_doors } from './modgame';
 
 import { CallActivity } from '../visi/activity';
 import { TimerTable } from '../visi/timers';
@@ -81,7 +82,7 @@ export function TabbedPane()
         tabcontent = <CallActivity />;
         break;
     case 'map':
-        tabcontent = <GameMap mobiles={ mobiles } />;
+        tabcontent = <GameMap mobiles={ mobiles } extras={ map_toggle_doors } />;
         break;
     case 'globals':
         tabcontent = <GlobalState />;
