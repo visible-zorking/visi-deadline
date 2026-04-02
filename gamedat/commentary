@@ -162,6 +162,11 @@ glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-E
 glob:MR-ENVELOPE: Whether Mrs. Robner *knows* you opened the envelope. (See also [glob:ENVELOPE-OPENED].)
 
 
+glob:BOOKS-MOVED: Whether George has disarranged the books in the library. (See also [glob:GEORGE-MOVES-BOOKS].)
+
+glob:GEORGE-MOVES-BOOKS: Whether you’ve *seen* George disarrange the books in the library. (See also [glob:BOOKS-MOVED].)
+
+
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
 	It’s very close, though. Only a few changes were made between r27 and r28, and I’m pretty confident that I reverted them correctly.
 
