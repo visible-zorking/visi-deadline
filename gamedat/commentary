@@ -79,6 +79,10 @@ TIMERS-LEGEND: A list of the timers running (or paused) in the timer table ([~gl
 obj:OBJECT-PAIR: Multiple actions like `GET ALL` are usually handled one object at a time. However, *Deadline* allows you to `ARREST` two people as one action. (Yeah, that counts as a spoiler, sorry.)
 	The [~rtn:MAIN-LOOP] has a special case for this [here|~src:MAIN-93]. The `ARREST` action is performed with the special object `OBJECT-PAIR`, whose action function [~rtn:OBJECT-PAIR-F] then handles the dual arrest.
 
+obj:GLOBAL-WEATHER: This is a generic topic object. It’s loaded up with synonyms like `PROBLEM` and `WRONG` so that you can `ASK GEORGE ABOUT PROBLEM` or `ROURKE, WHATS WRONG?`
+	Rourke responds to that last with “I don’t know nothing about no weather,” which is amusing.
+
+
 glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
 
 
