@@ -30,6 +30,7 @@
     "@types/react": "18.3.28",
     "@types/react-dom": "18.3.7",
     "rollup": "4.59.0",
+    "terser": "5.46.1",
     "typescript": "5.9.3"
   }
 }
