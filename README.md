@@ -1,14 +1,14 @@
-# The Visible Zorker 3: an interactive fiction visualizer
+# Visible Deadline: an interactive fiction visualizer
 
 - Designed by Andrew Plotkin <erkyrath@eblong.com>
-- Web site: https://eblong.com/infocom/visi-zork3/
+- Web site: https://eblong.com/infocom/visi/deadline/
 
-This is a web app that plays Zork, and simultaneously displays the code that runs the game under the hood. It allows you to explore the implementation of the game in the same way that you explore the game world. Call it an exercise in exploratory coding.
+This is a web app that plays Deadline, and simultaneously displays the code that runs the game under the hood. It allows you to explore the implementation of the game in the same way that you explore the game world. Call it an exercise in exploratory coding.
 
-To try the Visible Zorker 3, [play it here][visizork]. For more about the intent and origins of the project, see my [blog post on the subject][post].
+To try Visible Deadline, [play it here][visigame]. For more about the intent and origins of the project, see my [blog post on the subject][post].
 
 [post]: https://blog.zarfhome.com/2025/01/the-visible-zorker
-[visizork]: https://eblong.com/infocom/visi-zork3/
+[visigame]: https://eblong.com/infocom/visi/deadline/
 
 ## This README is included by reference
 
@@ -28,11 +28,9 @@ The fonts used are Courier Prime, Lato, and Libre Baskerville. The header backgr
 
 [zorkmap]: https://infodoc.plover.net/maps/zork1.pdf
 
-Zork itself was originally written by Tim Anderson, Marc Blank, Bruce Daniels, and Dave Lebling. The commercial versions are copyright 1981 (etc) by Infocom, then Activision, then renamed to Mediagenic, then Bobby Kotick bought it and renamed it Activision, then Vivendi bought it and merged it with Blizzard, then Microsoft consumed the lot.
+Deadline itself was originally written by Marc Blank. It is copyright 1982 (etc) by Infocom, then Activision, then renamed to Mediagenic, then Bobby Kotick bought it and renamed it Activision, then Vivendi bought it and merged it with Blizzard, then Microsoft consumed the lot.
 
-Thus, the Zork 3 source code is copyright 2025 by Microsoft. As of November 2025, it is [open source][oz] under the MIT license. Thanks to Microsoft for making this project completely legal!
-
-[oz]: https://opensource.microsoft.com/blog/2025/11/20/preserving-code-that-shaped-generations-zork-i-ii-and-iii-go-open-source
+Thus, the Deadline source code is copyright 2025 by Microsoft. Microsoft has not released this game as open source, but I'm going at it regardless.
 
 Aside from the above, the Visible Zorker is copyright 2025-2026 by Andrew Plotkin. My work on this project is under the MIT license.
 
