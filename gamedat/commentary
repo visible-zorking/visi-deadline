@@ -167,6 +167,18 @@ glob:BOOKS-MOVED: Whether George has disarranged the books in the library. (See 
 glob:GEORGE-MOVES-BOOKS: Whether you’ve *seen* George disarrange the books in the library. (See also [glob:BOOKS-MOVED].)
 
 
+glob:STUB-D: Whether you’ve heard Dunbar’s version of the concert night.
+
+glob:STUB-B: Whether you’ve heard Baxter’s version of the concert night.
+
+glob:STUB-DX: Set if Baxter heard you asking Dunbar about the concert. He adjusts his story to match hers.
+
+glob:STUB-BX: Set if Dunbar heard you asking Baxter about the concert. She adjusts her story to match his.
+
+glob:CONTRADICTION: Whether you have discovered the inconsistency between Baxter’s story of the concert and Dunbar’s version.
+	While this is a key point in the case, the game does not check the `CONTRADICTION` flag! (It does check [glob:STUB-D].)
+
+
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
 	It’s very close, though. Only a few changes were made between r27 and r28, and I’m pretty confident that I reverted them correctly.
 
