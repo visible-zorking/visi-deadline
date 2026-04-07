@@ -51,7 +51,7 @@ rtn:WELCOME: Why do you have exactly twelve hours to solve the murder? At least 
 
 glob:LIT: Whether the current location has light. *Deadline* has no dark areas so this is always true.
 
-glob:DEAD: It is notionally possible to die in *Deadline*, but this variable is never used.
+glob:DEAD: It is possible to die in *Deadline*, but this variable is never used.
 
 glob:LOW-DIRECTION: Properties with this value and above are directions.
 
