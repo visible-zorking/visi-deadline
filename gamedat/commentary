@@ -55,6 +55,10 @@ glob:DEAD: It is possible to die in *Deadline*, but this variable is never used.
 
 glob:LOW-DIRECTION: Properties with this value and above are directions.
 
+glob:LOAD-MAX: The weight limit you can carry. This is always 100.
+
+glob:LOAD-ALLOWED: Your current weight limit. This is a carry-over from the Zork games, where you can carry less when injured. *Deadline* checks this condition in [~rtn:ITAKE], but nothing in the game can injure you.
+
 glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a blank line or an error.)
 	No relation to whether the *player* has won.
 
