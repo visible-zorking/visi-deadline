@@ -183,10 +183,18 @@ glob:CONTRADICTION: Whether you have discovered the inconsistency between Baxter
 	While this is a key point in the case, the game does not check the `CONTRADICTION` flag! (It does check [glob:STUB-D].)
 
 
-glob:G-CALENDAR: Whether you have showed George the calendar page with “Will completed”.
+glob:G-CALENDAR: Whether you have showed George the calendar page which says “Will completed.”
 	This kicks off the sequence where George enters the hidden closet, removes the [~obj:NEW-WILL], and throws it into the lake. See [rtn:GEORGE-HACK].
 	
-rtn:GEORGE-HACK: Send George off to find the [~obj:NEW-WILL]. This is called when George learns about both the new will [glob:G-CALENDAR] and the fact that it’s missing (at the noon reading).
+rtn:GEORGE-HACK: Send George off to find the [~obj:NEW-WILL]. This is called when George learns about both the new will ([glob:G-CALENDAR]) and the fact that it’s missing (at the noon reading).
+	[rtn:I-GEORGE-HACK] handles George’s next moves.
+
+rtn:I-GEORGE-HACK: This handles George’s trip to [~obj:GEORGE-ROOM].
+	When he reaches his room, he will wait for an opportunity to sneak into the [~obj:LIBRARY]; see [rtn:I-GEORGE-HACK-2].
+
+rtn:I-GEORGE-HACK-2: A short timer which handles George hiding in his room, waiting for you to leave so that he can sneak into the [~obj:LIBRARY]. When he reaches the Library, [rtn:I-GEORGE-HACK-3] begins.
+
+rtn:I-GEORGE-HACK-3: This handles George’s search of the [~obj:LIBRARY] and the [~obj:HIDDEN-CLOSET]. When he retrieves the [~obj:NEW-WILL], his destination is set to the [~obj:NORTH-LAWN], where he will [dispose of it|~src:GOAL-606].
 
 
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
