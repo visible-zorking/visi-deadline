@@ -57,7 +57,7 @@ glob:LOW-DIRECTION: Properties with this value and above are directions.
 
 glob:LOAD-MAX: The weight limit you can carry. This is always 100.
 
-glob:LOAD-ALLOWED: Your current weight limit. This is a carry-over from the Zork games, where you can carry less when injured. *Deadline* checks this condition in [~rtn:ITAKE], but nothing in the game can injure you.
+glob:LOAD-ALLOWED: Your current weight limit. This is a carry-over from the Zork games, where you can carry less when injured. The [~rtn:ITAKE] routine checks this condition, but nothing in the game can injure you.
 
 glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a blank line or an error.)
 	No relation to whether the *player* has won.
@@ -183,6 +183,12 @@ glob:CONTRADICTION: Whether you have discovered the inconsistency between Baxter
 	While this is a key point in the case, the game does not check the `CONTRADICTION` flag! (It does check [glob:STUB-D].)
 
 
+glob:G-CALENDAR: Whether you have showed George the calendar page with “Will completed”.
+	This kicks off the sequence where George enters the hidden closet, removes the [~obj:NEW-WILL], and throws it into the lake. See [rtn:GEORGE-HACK].
+	
+rtn:GEORGE-HACK: Send George off to find the [~obj:NEW-WILL]. This is called when George learns about both the new will [glob:G-CALENDAR] and the fact that it’s missing (at the noon reading).
+
+
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
 	It’s very close, though. Only a few changes were made between r27 and r28, and I’m pretty confident that I reverted them correctly.
 
@@ -200,4 +206,4 @@ rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known r
 
 obj:STAIRS: This room lists itself as a scenery object (the `GLOBAL` property). This doesn’t seem to have any effect, but it doesn’t hurt the game either. It threw my Visible Zorker code for a loop though!
 
-rtn:PORTRAITS-F: Phillips is Mrs. Robner's maiden name (see [here|~src:ACTIONS-1696]). I suspect it is also a very backhanded Zork reference: the Phillips family is the counterpart of the Flatheads.
+rtn:PORTRAITS-F: Phillips is Mrs. Robner’s maiden name (see [here|~src:ACTIONS-1696]). I suspect it is also a very backhanded Zork reference: the Phillips family is the counterpart of the Flatheads.
