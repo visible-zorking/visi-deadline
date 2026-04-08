@@ -10,9 +10,18 @@ import { gamedat_ids, gamedat_distances, gamedat_object_treesort } from '../visi
 
 export function contains_label(obj: ObjectData) : string
 {
+    let isperson = (
+        obj.onum == gamedat_ids.PLAYER
+        || obj.onum == gamedat_ids.GARDENER
+        || obj.onum == gamedat_ids.BAXTER
+        || obj.onum == gamedat_ids.DUNBAR
+        || obj.onum == gamedat_ids.GEORGE
+        || obj.onum == gamedat_ids.MRS_ROBNER
+        || obj.onum == gamedat_ids.ROURKE
+    );
     if (!obj.isroom) {
         // ...or other NPCs
-        if (obj.onum == gamedat_ids.PLAYER)
+        if (isperson)
             return 'carries';
         else
             return 'contains'
