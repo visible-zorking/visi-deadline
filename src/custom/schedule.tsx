@@ -165,7 +165,7 @@ export function SchedulePage()
                 room that will get them onto the desired line.
                 The &#x201C;dir&#x201D; is the direction they just moved
                 (not used in practice).
-                The &#x201C;&#x2611;&#x201D; column is whether the
+                The &#x201C;run&#x201D; column is whether the
                 character&#x2019;s movement is enabled.
             </p>
             <p>
@@ -177,7 +177,7 @@ export function SchedulePage()
                 their attention,{' '}
                 <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:GRAB-ATTENTION') }><code>GRAB-ATTENTION</code></a>
                 {' '}temporarily disables their movement.
-                (See &#x201C;&#x2611;&#x201D; above.) It then sets their
+                (See &#x201C;run&#x201D; above.) It then sets their
                 entry in the{' '}
                 <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'GLOB:ATTENTION-TABLE') }><code>ATTENTION-TABLE</code></a>,
                 which then decreases each turn
@@ -335,7 +335,7 @@ function GoalTable()
                     <th>station</th>
                     <th>inter</th>
                     <th>dir</th>
-                    <th>&#x2610;</th>
+                    <th>run</th>
                     <th>pri</th>
                     <th>queued</th>
                 </tr>
@@ -383,7 +383,11 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
                    <span className="TimerActive">&#x2611;</span> :
                    <span className="TimerInactive">&#x2610;</span>) }
             </td>
-            <td>{ row[5] }</td>
+            <td>
+                { (row[5] ?
+                   <span className="TimerActive">&#x2611;</span> :
+                   <span className="TimerInactive">&#x2610;</span>) }
+            </td>
             <td>
                 {
                     obj6 ? obj6.name : '\u2014'
@@ -544,7 +548,7 @@ function MovementTableRow({ char, row, current, time, nexttime }: { char:number,
             <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
             <td>{ row[2] }</td>
-            <td>{ row[3] }</td>
+            <td><i>{ row[3] }</i></td>
         </tr>
     )
 }
