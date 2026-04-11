@@ -536,6 +536,12 @@ function MovementTable()
 
 function MovementTableRow({ char, row, current, time, nexttime }: { char:number, row:MovementRow, current:boolean, time:number, nexttime:number|null })
 {
+    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
+        ev.preventDefault();
+        let dat: ZilSourceLoc = { id: id, commentary: true };
+        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
+    }
+    
     return (
         <tr className={ current ? 'CurrentRow' : '' }>
             <td>
@@ -547,7 +553,11 @@ function MovementTableRow({ char, row, current, time, nexttime }: { char:number,
             </td>
             <td>{ time }</td>
             <td>&#xB1;{ row[1] }</td>
-            <td>{ row[2] }</td>
+            <td>
+                {
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+row[2]) }>{ row[2] }</a>
+                }
+            </td>
             <td><i>{ row[3] }</i></td>
         </tr>
     )
