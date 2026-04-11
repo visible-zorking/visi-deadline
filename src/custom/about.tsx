@@ -207,6 +207,14 @@ export function AboutPage()
                     Infocom&#x2019;s Zork hint maps.
                 </p>
                 <p>
+                    Feelie scans courtesy of the{' '}
+                    <ExtWebLink url={ 'https://infodoc.plover.net/manuals/' } text={ 'InfoDoc Project' } />
+                    {' '}and my own collection.
+                    See also the Internet Archive (
+                    <ExtWebLink url={ 'https://archive.org/details/CasebookDeadlineInfocom/' } text={ 'Atari' } />,{' '}
+                    <ExtWebLink url={ 'https://archive.org/details/Casebook_Deadline_Infocom_Apple/' } text={ 'Apple' } />).
+                </p>
+                <p>
                     Deadline itself was originally written by Marc Blank.
                     It is copyright 1982 (etc) by Infocom,
                     then Activision, then renamed to Mediagenic,
