@@ -101,18 +101,19 @@ const movementgoals: MovementRow[][] = [
     ],
 ];
 
+// This doesn't require a context, turns out.
+function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
+    ev.preventDefault();
+    let dat: ZilSourceLoc = { id: id, commentary: true };
+    window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
+}
+
 export function SchedulePage()
 {
     let rctx = useContext(ReactCtx);
     let zstate = rctx.zstate;
     
     let present = zstate.globals[118]; // PRESENT-TIME
-    
-    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
-        ev.preventDefault();
-        let dat: ZilSourceLoc = { id: id, commentary: true };
-        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
-    }
     
     return (
         <div className="ScrollContent">
@@ -284,12 +285,6 @@ function CharacterTableRow({ char, loc, timertn }: { char:number, loc:number, ti
 {
     let locobj = gamedat_object_ids.get(loc);
     let func7 = gamedat_routine_addrs.get(unpack_address(timertn));
-    
-    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
-        ev.preventDefault();
-        let dat: ZilSourceLoc = { id: id, commentary: true };
-        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
-    }
     
     return (
         <tr>
@@ -536,12 +531,6 @@ function MovementTable()
 
 function MovementTableRow({ char, row, current, time, nexttime }: { char:number, row:MovementRow, current:boolean, time:number, nexttime:number|null })
 {
-    function evhan_click_id(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) {
-        ev.preventDefault();
-        let dat: ZilSourceLoc = { id: id, commentary: true };
-        window.dispatchEvent(new CustomEvent('zil-source-location', { detail:dat }));
-    }
-    
     return (
         <tr className={ current ? 'CurrentRow' : '' }>
             <td>
