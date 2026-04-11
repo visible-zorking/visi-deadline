@@ -60,6 +60,9 @@ export function FeeliesPage()
                     the game. For a scan of the &#x201C;Grey Box&#x201D;
                     manual, visit the{' '}
                     <ExtWebLink url={ 'https://infodoc.plover.net/manuals/temp/deadline.pdf' } text={ 'InfoDoc Project' } />.
+                    For high-resolution scans, visit the Internet Archive (
+                    <ExtWebLink url={ 'https://archive.org/details/CasebookDeadlineInfocom/' } text={ 'Atari' } />,{' '}
+                    <ExtWebLink url={ 'https://archive.org/details/Casebook_Deadline_Infocom_Apple/' } text={ 'Apple' } />).
                 </p>
                 <hr />
                 <FeelieLink url={ 'coates-letter.jpg' } width={ 250 } height={ 305 } text={ 'Letter from Warren Coates (Attorney) to the Edindale Police Department' } />
