@@ -170,7 +170,13 @@ export function SchedulePage()
                 character&#x2019;s movement is enabled.
             </p>
             <p>
-                (The last two columns? I&#x2019;m working on it...)
+                The last two columns allow the character to put their
+                normal schedule on hold and respond to an urgent imperative.
+                If &#x201C;pri&#x201D; is set, they are on a priority mission.
+                They will get back to the &#x201C;queued&#x201D; destination
+                once{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:UNPRIORITIZE') }><code>UNPRIORITIZE</code></a>{' '}
+                is called.
             </p>
             <GoalTable />
             <p>
