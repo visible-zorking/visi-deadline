@@ -216,9 +216,28 @@ rtn:I-DUNBAR-SEQ: This handles Dunbar searching the house for Baxter. She travel
 	Once Dunbar and Baxter meet, [rtn:I-DUNBAR-SEQ-2] is queued up in five minutes. (Unless you interrupt them, in which case they stop and wait for you to leave.)
 	### bug if she doesn’t find him the first time?
 
+rtn:I-DUNBAR-SEQ-2: Sends Dunbar off to the [~obj:SHED-ROOM], where she will wait for Baxter; see [rtn:I-DUNBAR-SEQ-D].
+	Also queues Baxter to head outside after ten minutes; see [rtn:I-DUNBAR-SEQ-3].
+
+rtn:I-DUNBAR-SEQ-D: This handles Dunbar’s trip to the [~obj:SHED-ROOM]. She is nervous and may drop the [~obj:STUB] along the way.
+	When both Baxter and Dunbar are in the Shed, [rtn:I-DUNBAR-SEQ-4] begins.
+
+rtn:I-DUNBAR-SEQ-3: Sends Baxter off to the [~obj:NORTH-LAWN]. See [rtn:I-DUNBAR-SEQ-B].
+	
+rtn:I-DUNBAR-SEQ-B: This handles Baxter’s walk to the [~obj:NORTH-LAWN].
+	When he gets there, he will head towards the [~obj:SHED-ROOM]; see [rtn:I-DUNBAR-SEQ-B-2].
+
+rtn:I-DUNBAR-SEQ-B-2: This handles Baxter’s walk to the [~obj:SHED-ROOM].
+	When both Baxter and Dunbar are in the Shed, [rtn:I-DUNBAR-SEQ-4] begins.
+
+rtn:I-DUNBAR-SEQ-4: Handles the meeting between Baxter and Dunbar in the [~obj:SHED-ROOM].
+	This ends after five minutes, or if you interrupt them in the middle of their argument. See [rtn:HEAD-FOR-CLIMAX].
+
 glob:SECRET-MEETING: How long Baxter and Dunbar have been conversing in the shed.
 
 ### MEETING-INTERRUPTED: always set when the meeting ends? only affects ARREST DUNBAR outcome.
+
+rtn:HEAD-FOR-CLIMAX: Like the [comment|~src:ACTIONS-3552] says, this is the big finish. Dunbar heads for [~obj:DUNBAR-ROOM]; Baxter heads for the [~obj:NORTH-LAWN] where he will do his deed.
 
 
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
