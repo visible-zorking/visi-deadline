@@ -155,7 +155,7 @@ glob:LADDER-FLAG: Set if the ladder is in [~obj:IN-ROSES] and leaning against th
 
 glob:LADDER-FLAG-2: Set if the ladder is in [~obj:IN-ORCHARD] and leaning against the [~obj:BEDROOM-BALCONY].
 
-glob:LADDER-POSITIONED: This is set exactly when [glob:LADDER-FLAG] is set, and for the same reason. It is not used and appears to be vestigial.
+glob:LADDER-POSITIONED: This is set exactly when [glob:LADDER-FLAG] is set, and for the same reason. This variable is not used and appears to be vestigial.
 
 
 rtn:I-G-I-G: The timer for McNabb noticing (and raging about) the garden holes. This is queued up when he first enters the [~obj:ROSE-GARDEN].
@@ -176,11 +176,11 @@ glob:ENVELOPE-OPENED: Whether you have opened the envelope. (See also [glob:MR-E
 glob:MR-ENVELOPE: Whether Mrs. Robner *knows* you opened the envelope. (See also [glob:ENVELOPE-OPENED].)
 
 
-glob:NOTE-READ: Whether you have read the impressions on the [~obj:NOTE-PAPER].
+glob:NOTE-READ: Whether you have discovered the impressions on the [~obj:NOTE-PAPER].
 
-glob:B-NOTE: Whether you have shown Baxter the impressions on the [~obj:NOTE-PAPER].
+glob:B-NOTE: Whether you have shown Baxter the impressions discovered on the [~obj:NOTE-PAPER].
 
-glob:B-FOCUS: Whether you have shown Baxtern the [~obj:BAXTER-PAPERS].
+glob:B-FOCUS: Whether you have shown Baxter the [~obj:BAXTER-PAPERS].
 
 
 glob:BOOKS-MOVED: Whether George has disarranged the books in the library. (See also [glob:GEORGE-MOVES-BOOKS].)
