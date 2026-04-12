@@ -293,7 +293,6 @@ function CharacterTableRow({ char, loc, timertn }: { char:number, loc:number, ti
                 {
                     locobj ?
                     <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+locobj.name) }>{ locobj.name }</a>
-                        
                     : '\u2014'
                 }
             </td>
@@ -355,7 +354,9 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             <td>{ charnames[char].name }</td>
             <td>
                 {
-                    obj0 ? obj0.name : '\u2014'
+                    obj0 ?
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+obj0.name) }>{ obj0.name }</a>
+                    : '\u2014'
                 }
             </td>
             <td>
