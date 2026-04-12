@@ -269,6 +269,6 @@ src:VERBS-290: This wry comment does not appear to have ever been used in a rele
 
 rtn:V-ZORK: The `ZORK` command was removed from the grammar early on; no known release recognizes it. This vestige remains.
 
-obj:STAIRS: This room lists itself as a scenery object (the `GLOBAL` property). This doesn’t seem to have any effect, but it doesn’t hurt the game either. It threw my Visible Zorker code for a loop though!
+obj:STAIRS: This room lists itself as a scenery object (the `GLOBAL` property). This doesn’t seem to have any effect, but it doesn’t hurt the game either. It threw my Visible Zorker code for an (infinite) loop though!
 
 rtn:PORTRAITS-F: Phillips is Mrs. Robner’s maiden name (see [here|~src:ACTIONS-1696]). I suspect it is also a very backhanded Zork reference: the Phillips family is the counterpart of the Flatheads.
