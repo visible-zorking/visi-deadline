@@ -361,12 +361,16 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             </td>
             <td>
                 {
-                    obj1 ? obj1.name : '\u2014'
+                    obj1 ?
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+obj1.name) }>{ obj1.name }</a>
+                    : '\u2014'
                 }
             </td>
             <td>
                 {
-                    obj2 ? obj2.name : '\u2014'
+                    obj2 ?
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+obj2.name) }>{ obj2.name }</a>
+                    : '\u2014'
                 }
             </td>
             <td>
@@ -386,7 +390,9 @@ function GoalTableRow({ char,  row }: { char:number, row:number[] })
             </td>
             <td>
                 {
-                    obj6 ? obj6.name : '\u2014'
+                    obj6 ?
+                    <a className="Src_Id" href="#" onClick={ (ev) => evhan_click_id(ev, 'OBJ:'+obj6.name) }>{ obj6.name }</a>
+                    : '\u2014'
                 }
             </td>
         </tr>
