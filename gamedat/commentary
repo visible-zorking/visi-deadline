@@ -151,6 +151,11 @@ rtn:I-WINDOW-LOOK: If you `LOOK OUT WINDOW` in the [~obj:GUEST-ROOM], you can se
 glob:COR-512: This one is conditional. From the [~obj:GUEST-ROOM], you only notice movement on the [~obj:EAST-LAWN] if you explicitly `LOOK OUT WINDOW`. See [rtn:I-WINDOW-LOOK].
 
 
+glob:LADDER-FLAG: Set if the ladder is in [~obj:IN-ROSES] and leaning against the [~obj:LIBRARY-BALCONY].
+
+glob:LADDER-FLAG-2: Set if the ladder is in [~obj:IN-ORCHARD] and leaning against the [~obj:BEDROOM-BALCONY].
+
+
 rtn:I-G-I-G: The timer for McNabb noticing (and raging about) the garden holes. This is queued up when he first enters the [~obj:ROSE-GARDEN].
 
 glob:G-I-G: The time at which McNabb noticed the garden holes.
