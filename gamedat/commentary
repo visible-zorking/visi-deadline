@@ -89,6 +89,8 @@ obj:GLOBAL-WEATHER: This is a generic topic object. It’s loaded up with synony
 
 glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
 
+src:ACTIONS-2709: McNabb will need the ladder in the [~obj:ORCHARD] around noon. (See [I-GARDENER|~src:GOAL-512].) This bit of business appears to be meant to avoid the awkwardness of McNabb grabbing the ladder while it’s off at the police lab.
+
 
 glob:MOVEMENT-GOALS: The day’s schedule for each character.
 	Each character (other than the player and Coates) has a list of movement times and goals. A line `30 10 DINING-ROOM` means that they will wait 30±10 minutes (20 to 40) and then begin moving towards the `DINING-ROOM`.
