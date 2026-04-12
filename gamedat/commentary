@@ -95,6 +95,8 @@ glob:MOVEMENT-GOALS: The day’s schedule for each character.
 
 glob:GOAL-TABLES: The current movement goal of each character. The scheme is explained in the “Schedule” tab.
 
+rtn:IN-MOTION?: Whether a character is moving towards a destination, as determined by [glob:GOAL-TABLES].
+
 rtn:IMOVEMENT: Prepare a character to move towards their next destination. The character’s timer routine calls this when it is time for them to “wake up” and move.
 	This calls [rtn:ESTABLISH-GOAL] to set up their movement. Then they advance one line on their [~glob:MOVEMENT-GOALS] table and set a long timer (30 or 60 minutes or whatever) – the delay until their *next* wake-up call.
 
@@ -196,6 +198,27 @@ rtn:I-GEORGE-HACK: This handles George’s trip to [~obj:GEORGE-ROOM].
 rtn:I-GEORGE-HACK-2: A short timer which handles George hiding in his room, waiting for you to leave so that he can sneak into the [~obj:LIBRARY]. When he reaches the Library, [rtn:I-GEORGE-HACK-3] begins.
 
 rtn:I-GEORGE-HACK-3: This handles George’s search of the [~obj:LIBRARY] and the [~obj:HIDDEN-CLOSET]. When he retrieves the [~obj:NEW-WILL], his destination is set to the [~obj:NORTH-LAWN], where he will [dispose of it|~src:GOAL-606].
+
+
+glob:LOBLO-FLAG: Whether you have shown Dunbar the [~obj:LAB-REPORT] that shows her medication.
+	This kicks off the sequence where Dunbar arranges a meeting with Baxter in the shed. See [rtn:DUNBAR-SEQUENCE].
+
+rtn:I-DUNBAR-ACTIVATE: A short timer that begins when you show Dunbar the [~obj:LAB-REPORT]. It invokes [rtn:DUNBAR-SEQUENCE] if you haven’t already accused her.
+
+rtn:DUNBAR-SEQUENCE: Send Dunbar off looking for Baxter. This is called a few minutes after you show Dunbar the [~obj:LAB-REPORT], or immediately if you `ACCUSE` her at that point.
+	[rtn:I-DUNBAR-SEQ] handles Dunbar’s next moves.
+
+glob:DUNBAR-ACCUSED: Whether [rtn:DUNBAR-SEQUENCE] has begun.
+
+glob:D-S-BAXTER-LOC: The location where Dunbar hopes to find Baxter when she is searching for him. See [rtn:I-DUNBAR-SEQ].
+
+rtn:I-DUNBAR-SEQ: This handles Dunbar searching the house for Baxter. She travels to his last known location ([~glob:D-S-BAXTER-LOC]). If he’s not there, she keeps trying.
+	Once Dunbar and Baxter meet, [rtn:I-DUNBAR-SEQ-2] is queued up in five minutes. (Unless you interrupt them, in which case they stop and wait for you to leave.)
+	### bug if she doesn’t find him the first time?
+
+glob:SECRET-MEETING: How long Baxter and Dunbar have been conversing in the shed.
+
+### MEETING-INTERRUPTED: always set when the meeting ends? only affects ARREST DUNBAR outcome.
 
 
 src:VERBS-6: Yes, I added that comment. This is *not* the original verbs.zil file.
