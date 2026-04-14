@@ -49,3 +49,21 @@
 .FeeliesPage .Feelie {
     text-align: center;
 }
+
+.SolutionPage .Arrest {
+    font-size: 100%;
+    font-family: "Courier Prime";
+}
+
+.SolutionPage .Cond {
+    margin-top: 0.5rem;
+}
+
+.SolutionPage .CondGroup {
+    margin-left: 2rem;
+}
+
+.SolutionPage .Outcome {
+    margin-left: 2rem;
+    font-style: italic;
+}
