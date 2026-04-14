@@ -89,10 +89,22 @@ rtn:OBJECT-PAIR-F: The code which handles an action on two objects at once. (See
 obj:GLOBAL-WEATHER: This is a generic topic object. It’s loaded up with synonyms like `PROBLEM` and `WRONG` so that you can `ASK GEORGE ABOUT PROBLEM` or `ROURKE, WHATS WRONG?`
 	Rourke responds to that last with “I don’t know nothing about no weather,” and now you know why.
 
+src:ACTIONS-835: The logic for `ARREST BAXTER`.
+	For a complete breakdown of the endgame logic, see [SOLUTION].
+
+src:ACTIONS-1193: The logic for `ARREST GEORGE`.
+	For a complete breakdown of the endgame logic, see [SOLUTION].
+
+src:ACTIONS-2305: The logic for `ARREST MRS ROBNER`.
+	For a complete breakdown of the endgame logic, see [SOLUTION].
+
+src:ACTIONS-3162: The logic for `ARREST DUNBAR`.
+	For a complete breakdown of the endgame logic, see [SOLUTION].
+
 SOLUTION: Do you want to see a complete breakdown of the endgame logic?
 	[Yes, I’m sure|SHOW-SOLUTION-TAB].
 
-SHOW-SOLUTION-TAB: A “Solution” tab has been added to the left pane.
+SHOW-SOLUTION-TAB: A “Solution” tab has been added to the right pane.
 
 
 glob:ANALYSIS-OBJ: Whether Duffy’s current task is `FINGERPRINT` or `ANALYZE`.
