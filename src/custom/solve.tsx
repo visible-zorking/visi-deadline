@@ -16,6 +16,7 @@ export function SolvePage()
                     for the Visible Zorker.
                 </p>
                 <ArrestBaxter />
+                <ArrestDunbar />
                 <ArrestGeorge />
                 <ArrestMrsRobner />
                 <ArrestOthers />
@@ -108,6 +109,40 @@ function ArrestBaxter()
     );
 }
 
+function ArrestDunbar()
+{
+    return (
+        <div>
+            <h3 className="Arrest">ARREST DUNBAR</h3>
+            <div className="Cond">
+                Got the <IdRef val="OBJ:LAB-REPORT" />:
+            </div>
+
+            <div className="CondGroup">
+                <div className="Cond">
+                    Argued with Baxter in shed (<IdRef val="GLOB:MEETING-INTERRUPTED" />):
+                </div>
+                <div className="Outcome">
+                    Dunbar found dead during trial!
+                </div>
+                <div className="Cond">
+                    Otherwise:
+                </div>
+                <div className="Outcome">
+                    No motive, only circumstantial evidence.
+                </div>
+            </div>
+            
+            <div className="Cond">
+                Otherwise:
+            </div>
+            <div className="Outcome">
+                <IdRef val="RTN:MURDER-NOT-PROVEN" />.
+            </div>
+        </div>
+    );
+}
+
 function ArrestGeorge()
 {
     return (
@@ -135,7 +170,7 @@ function ArrestMrsRobner()
         <div>
             <h3 className="Arrest">ARREST MRS ROBNER</h3>
             <div className="Cond">
-                Snooped on the phone call or the envelope:
+                Snooped on the phone call (<IdRef val="GLOB:CALL-OVERHEARD" />) or the envelope (<IdRef val="GLOB:ENVELOPE-OPENED" />):
             </div>
             <div className="CondGroup">
                 <div className="Cond">
