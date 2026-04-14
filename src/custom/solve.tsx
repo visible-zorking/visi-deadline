@@ -15,11 +15,11 @@ export function SolvePage()
                     Beware <i>SPOILERS!</i> Even more spoilery than usual
                     for the Visible Zorker.
                 </p>
+                <ArrestBaxterDunbar />
                 <ArrestBaxter />
                 <ArrestDunbar />
-                <ArrestBaxterDunbar />
-                <ArrestGeorge />
                 <ArrestBaxterGeorge />
+                <ArrestGeorge />
                 <ArrestMrsRobner />
                 <ArrestOthers />
             </div>
