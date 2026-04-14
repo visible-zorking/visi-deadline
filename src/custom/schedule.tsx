@@ -244,12 +244,21 @@ export function SchedulePage()
             </p>
             <MovementTable />
             <p>
-                Note that Mrs. Robner&#x2019;s initial trip to the kitchen
-                is not in this table. It's handled by{' '}
-                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'SRC:ACTIONS-2157') }><code>WELCOME</code></a>.
-                Coates is a simple{' '}
-                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>timer routine</a>,
-                since he doesn&#x2019;t move around the house.
+                Of course this table doesn&#x2019;t cover every character
+                action in the game. Many are triggered by your
+                actions, such as Mrs. Robner&#x2019;s initial trip to
+                the kitchen after the{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'SRC:ACTIONS-2157') }><code>WELCOME</code></a> routine.
+                Others are on their own timers, such as Coates&#x2019;s{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-COATES-ARRIVE') }>arrival</a> &#x2014;
+                he doesn&#x2019;t need a schedule because he doesn&#x2019;t
+                move around the house.
+            </p>
+            <p>
+                For the two big action set-pieces, see{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:I-DUNBAR-ACTIVATE') }><code>I-DUNBAR-ACTIVATE</code></a>
+                {' '}and{' '}
+                <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'RTN:GEORGE-HACK') }><code>GEORGE-HACK</code></a>.
             </p>
         </div>
     );
