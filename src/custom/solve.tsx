@@ -17,7 +17,9 @@ export function SolvePage()
                 </p>
                 <ArrestBaxter />
                 <ArrestDunbar />
+                <ArrestBaxterDunbar />
                 <ArrestGeorge />
+                <ArrestBaxterGeorge />
                 <ArrestMrsRobner />
                 <ArrestOthers />
             </div>
@@ -139,6 +141,26 @@ function ArrestDunbar()
             <div className="Outcome">
                 <IdRef val="RTN:MURDER-NOT-PROVEN" />.
             </div>
+        </div>
+    );
+}
+
+function ArrestBaxterDunbar()
+{
+    return (
+        <div>
+            <h3 className="Arrest">ARREST BAXTER AND DUNBAR</h3>
+            <div>###</div>
+        </div>
+    );
+}
+
+function ArrestBaxterGeorge()
+{
+    return (
+        <div>
+            <h3 className="Arrest">ARREST BAXTER AND GEORGE</h3>
+            <div>###</div>
         </div>
     );
 }
