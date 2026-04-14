@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 
 import { ReactCtx } from '../visi/context';
 import { gamedat_ids } from '../visi/gamedat';
@@ -17,6 +17,7 @@ import { SourceFileList } from '../visi/filelist';
 import { AboutPage } from './about';
 import { SchedulePage } from './schedule';
 import { FeeliesPage } from './feelies';
+import { SolvePage } from './solve';
 
 const tab_list = [
     [ 'activity', 'Activity' ],
@@ -28,6 +29,7 @@ const tab_list = [
     [ 'grammar', 'Grammar' ],
     [ 'filelist', 'Files' ],
     [ 'feelies', 'Feelies' ],
+    [ 'solution', 'Solution' ],
     [ 'about', '?' ],
 ];
 
@@ -35,6 +37,8 @@ export function TabbedPane()
 {
     let rctx = useContext(ReactCtx);
 
+    const [ solutionActive, setSolutionActive ] = useState(false);
+    
     const mobiles = [
         gamedat_ids.GARDENER,
         gamedat_ids.BAXTER,
@@ -46,6 +50,9 @@ export function TabbedPane()
     ];
 
     let ells = tab_list.map(([key, label]) => {
+	if (key == 'solution' && !solutionActive) {
+	    return null;
+	}
         let cla = 'TabItem';
         if (key == rctx.tab)
             cla += ' Selected';
@@ -64,6 +71,16 @@ export function TabbedPane()
         );
     });
 
+    useEffect(() => {
+        function evhan_showsolution(ev: Event) {
+	    setSolutionActive(true);
+        };
+        window.addEventListener('show-solution-tab', evhan_showsolution);
+        return () => {
+            window.removeEventListener('show-solution-tab', evhan_showsolution);
+        };
+    }, []);
+    
     let tabcontent;
     switch (rctx.tab) {
     case 'objtree':
@@ -104,6 +121,9 @@ export function TabbedPane()
         break;
     case 'about':
         tabcontent = <AboutPage />;
+        break;
+    case 'solution':
+        tabcontent = <SolvePage />;
         break;
     default:
         tabcontent = <>{ rctx.tab } not implemented</>;

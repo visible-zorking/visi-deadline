@@ -85,6 +85,11 @@ export function map_toggle_doors(zstate: ZStatePlus): ExtraToggle[]
 
 export function show_commentary_hook(topic: string, engine: GnustoEngine): string|null
 {
+    if (topic == 'SHOW-SOLUTION-TAB') {
+	window.dispatchEvent(new Event('show-solution-tab'));
+        return null;
+    }
+    
     return null;
 }
 
