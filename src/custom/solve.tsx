@@ -17,6 +17,8 @@ export function SolvePage()
                 </p>
                 <ArrestBaxter />
                 <ArrestGeorge />
+                <ArrestMrsRobner />
+                <ArrestOthers />
             </div>
         </div>
     );
@@ -122,6 +124,59 @@ function ArrestGeorge()
             </div>
             <div className="Outcome">
                 Insufficient evidence for arrest.
+            </div>
+        </div>
+    );
+}
+
+function ArrestMrsRobner()
+{
+    return (
+        <div>
+            <h3 className="Arrest">ARREST MRS ROBNER</h3>
+            <div className="Cond">
+                Snooped on the phone call or the envelope:
+            </div>
+            <div className="CondGroup">
+                <div className="Cond">
+                    Got the <IdRef val="OBJ:LAB-REPORT" />:
+                </div>
+                <div className="Outcome">
+                    No indictment; no evidence linking her to crime.
+                </div>
+                <div className="Cond">
+                    Otherwise:
+                </div>
+                <div className="Outcome">
+                    <IdRef val="RTN:MURDER-NOT-PROVEN" />.
+                </div>
+            </div>
+            
+            <div className="Cond">
+                Otherwise:
+            </div>
+            <div className="Outcome">
+                Insufficient evidence for arrest.
+            </div>
+        </div>
+    );
+}
+
+function ArrestOthers()
+{
+    return (
+        <div>
+            <h3 className="Arrest">ARREST ROURKE</h3>
+            <div className="Outcome">
+                Insufficient evidence for arrest.
+            </div>
+            <h3 className="Arrest">ARREST MCNABB</h3>
+            <div className="Outcome">
+                Insufficient evidence for arrest.
+            </div>
+            <h3 className="Arrest">ARREST DUFFY</h3>
+            <div className="Outcome">
+                Oh, come on now!  Not trusty Sergeant Duffy!
             </div>
         </div>
     );
