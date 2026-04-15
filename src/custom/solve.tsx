@@ -34,7 +34,7 @@ function ArrestBaxter()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST BAXTER</h3>
+            <ArrestRef suspect="BAXTER" line="ACTIONS-836" />
             <div className="Cond">
                 Dunbar killed <b>and</b>{' '}
                 saw Baxter running from Dunbar&#x2019;s corpse{' '}
@@ -118,7 +118,7 @@ function ArrestDunbar()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST DUNBAR</h3>
+            <ArrestRef suspect="DUNBAR" line="ACTIONS-3163" />
             <div className="Cond">
                 Got the <IdRef val="OBJ:LAB-REPORT" />:
             </div>
@@ -152,7 +152,7 @@ function ArrestBaxterDunbar()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST BAXTER AND DUNBAR</h3>
+            <ArrestRef suspect="BAXTER AND DUNBAR" line="ACTIONS-3903" />
             <div className="Cond">
                 Dunbar killed:
             </div>
@@ -203,7 +203,7 @@ function ArrestBaxterGeorge()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST BAXTER AND GEORGE</h3>
+            <ArrestRef suspect="BAXTER AND GEORGE" line="ACTIONS-3979" />
             <div className="Cond">
                 Got the <IdRef val="OBJ:LAB-REPORT" />:
             </div>
@@ -237,7 +237,7 @@ function ArrestGeorge()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST GEORGE</h3>
+            <ArrestRef suspect="GEORGE" line="ACTIONS-1194" />
             <div className="Cond">
                 Saw the <IdRef val="OBJ:NEW-WILL" /> or caught George in the act of destroying it:
             </div>
@@ -258,7 +258,7 @@ function ArrestMrsRobner()
 {
     return (
         <div>
-            <h3 className="Arrest">ARREST MRS ROBNER</h3>
+            <ArrestRef suspect="MRS ROBNER" line="ACTIONS-2306" />
             <div className="Cond">
                 Snooped on the phone call (<IdRef val="GLOB:CALL-OVERHEARD" />) or the envelope (<IdRef val="GLOB:ENVELOPE-OPENED" />):
             </div>
@@ -324,5 +324,12 @@ function IdRef({ val }: { val:string })
     
     return (
         <a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, val) }><code>{ valname }</code></a>
+    )
+}
+
+function ArrestRef({ suspect, line }: { suspect:string, line:string })
+{
+    return (
+        <h3 className="Arrest"><a href="#" className="Src_Id" onClick={ (ev) => evhan_click_id(ev, 'SRC:'+line) }>ARREST { suspect }</a></h3>
     )
 }
