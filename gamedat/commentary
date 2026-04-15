@@ -101,7 +101,11 @@ src:ACTIONS-2305: The logic for `ARREST MRS ROBNER`.
 src:ACTIONS-3162: The logic for `ARREST DUNBAR`.
 	For a complete breakdown of the endgame logic, see [SOLUTION].
 
-SOLUTION: Do you want to see a complete breakdown of the endgame logic?
+ABOUT-SOLUTION: Okay, secretly there is. But I've put it behind a spoiler block.
+	Are you sure you want to see a complete breakdown of the endgame logic?
+	[Yes, I’m sure|SHOW-SOLUTION-TAB].
+
+SOLUTION: Are you sure you want to see a complete breakdown of the endgame logic?
 	[Yes, I’m sure|SHOW-SOLUTION-TAB].
 
 SHOW-SOLUTION-TAB: A “Solution” tab has been added to the right pane.

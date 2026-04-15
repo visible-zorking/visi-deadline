@@ -151,6 +151,11 @@ export function AboutPage()
                     It also explains some specialized commands you&#x2019;ll
                     need, like <code>FINGERPRINT</code>.
                 </p>
+                <h2>The solution tab</h2>
+                <p>
+                    <Commentary topic={ 'ABOUT-SOLUTION' } />
+                    There is no Solution tab.
+                </p>
                 <h2>Which version is this?</h2>
                 <p>
                     Deadline was the first non-Zork game created by Infocom.
