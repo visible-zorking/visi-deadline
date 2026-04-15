@@ -15,6 +15,9 @@ export function SolvePage()
                     Beware <i>SPOILERS!</i> Even more spoilery than usual
                     for the Visible Zorker.
                 </p>
+                <p>
+                    .<br/>.<br/>.<br/>.
+                </p>
                 <ArrestBaxterDunbar />
                 <ArrestBaxter />
                 <ArrestDunbar />
@@ -42,7 +45,7 @@ function ArrestBaxter()
 
             <div className="CondGroup">
                 <div className="Cond">
-                    Found the <IdRef val="OBJ:BAXTER-PAPERS" /> and the notepad text (<IdRef val="GLOB:NOTE-READ" />):
+                    Found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />):
                 </div>
                 <div className="Outcome">
                     Guilty of both murders.
@@ -160,7 +163,31 @@ function ArrestBaxterGeorge()
     return (
         <div>
             <h3 className="Arrest">ARREST BAXTER AND GEORGE</h3>
-            <div>###</div>
+            <div className="Cond">
+                Got the <IdRef val="OBJ:LAB-REPORT" />:
+            </div>
+
+            <div className="CondGroup">
+                <div className="Cond">
+                    Saw the <IdRef val="OBJ:NEW-WILL" /> or caught George in the act of destroying it, <b>and</b> found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />):
+                </div>
+                <div className="Outcome">
+                    No coherent theory, no indictment.
+                </div>
+                <div className="Cond">
+                    Otherwise:
+                </div>
+                <div className="Outcome">
+                    No connection, only circumstantial evidence.
+                </div>
+            </div>
+            
+            <div className="Cond">
+                Otherwise:
+            </div>
+            <div className="Outcome">
+                Insufficient evidence for arrest.
+            </div>
         </div>
     );
 }
