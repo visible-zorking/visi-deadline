@@ -153,7 +153,48 @@ function ArrestBaxterDunbar()
     return (
         <div>
             <h3 className="Arrest">ARREST BAXTER AND DUNBAR</h3>
-            <div>###</div>
+            <div className="Cond">
+                Dunbar killed:
+            </div>
+            <div className="Outcome">
+                You can&#x2019;t arrest her now!
+            </div>
+            
+            <div className="Cond">
+                Found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />) <b>and</b> the <IdRef val="OBJ:LAB-REPORT" /> <b>and</b> asked Dunbar about the concert (<IdRef val="GLOB:STUB-D" />):
+            </div>
+            <div className="Outcome">
+                Complete solution! See the <IdRef val="RTN:EPILOGUE" /> for the author&#x2019;s summary.
+            </div>
+            
+            <div className="Cond">
+                ...missing the <IdRef val="OBJ:LAB-REPORT" />:
+            </div>
+            <div className="Outcome">
+                No proof of murder.
+            </div>
+            
+            <div className="Cond">
+                ...missing the <IdRef val="OBJ:BAXTER-PAPERS" />:
+            </div>
+            <div className="Outcome">
+                No motive.
+            </div>
+            
+            <div className="Cond">
+                ...didn&#x2019;t read the notepad text (<IdRef val="GLOB:NOTE-READ" />)
+            </div>
+            <div className="Outcome">
+                No connection to the Focus case, so no proof of motive.
+            </div>
+            
+            <div className="Cond">
+                ...didn&#x2019;t ask about the concert (<IdRef val="GLOB:STUB-D" />):
+            </div>
+            <div className="Outcome">
+                No proof Baxter returned to the house after the concert.
+            </div>
+            
         </div>
     );
 }
