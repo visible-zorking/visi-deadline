@@ -26,12 +26,12 @@ export function SolvePage()
                 <p>
                     .<br/>.<br/>.<br/>.
                 </p>
-                <ArrestBaxterDunbar />
+                <ArrestBaxterDunbar legal={ legal } />
                 <ArrestBaxter legal={ legal } />
-                <ArrestDunbar />
-                <ArrestBaxterGeorge />
-                <ArrestGeorge />
-                <ArrestMrsRobner />
+                <ArrestDunbar legal={ legal } />
+                <ArrestBaxterGeorge legal={ legal } />
+                <ArrestGeorge legal={ legal } />
+                <ArrestMrsRobner legal={ legal } />
                 <ArrestOthers />
             </div>
         </div>
@@ -148,7 +148,7 @@ function ArrestBaxter({ legal }: { legal:LegalState })
     );
 }
 
-function ArrestDunbar()
+function ArrestDunbar({ legal }: { legal:LegalState })
 {
     return (
         <div>
@@ -182,7 +182,7 @@ function ArrestDunbar()
     );
 }
 
-function ArrestBaxterDunbar()
+function ArrestBaxterDunbar({ legal }: { legal:LegalState })
 {
     return (
         <div>
@@ -249,7 +249,7 @@ function ArrestBaxterDunbar()
     );
 }
 
-function ArrestBaxterGeorge()
+function ArrestBaxterGeorge({ legal }: { legal:LegalState })
 {
     return (
         <div>
@@ -291,7 +291,7 @@ function ArrestBaxterGeorge()
     );
 }
 
-function ArrestGeorge()
+function ArrestGeorge({ legal }: { legal:LegalState })
 {
     return (
         <div>
@@ -312,7 +312,7 @@ function ArrestGeorge()
     );
 }
 
-function ArrestMrsRobner()
+function ArrestMrsRobner({ legal }: { legal:LegalState })
 {
     return (
         <div>
