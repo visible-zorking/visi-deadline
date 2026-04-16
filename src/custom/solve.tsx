@@ -262,6 +262,20 @@ function ArrestBaxterDunbar({ legal }: { legal:LegalState })
 
 function ArrestBaxterGeorge({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.present_time < 600) {
+        outcome = 0;
+    }
+    else if (legal.lab_report) {
+        if ((legal.new_will_seen || legal.george_run) && legal.baxter_papers && legal.note_read)
+            outcome = 1;
+        else
+            outcome = 2;
+    }
+    else {
+        outcome = 3;
+    }
+    
     return (
         <div>
             <ArrestRef suspect="BAXTER AND GEORGE" line="ACTIONS-3979" />
@@ -269,7 +283,7 @@ function ArrestBaxterGeorge({ legal }: { legal:LegalState })
             <div className="Cond">
                 Before 10:00 am:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 0) }>
                 Too early.
             </div>
             
@@ -281,13 +295,13 @@ function ArrestBaxterGeorge({ legal }: { legal:LegalState })
                 <div className="Cond">
                     Saw the <IdRef val="OBJ:NEW-WILL" /> or caught George in the act of destroying it, <b>and</b> found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />):
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 1) }>
                     No coherent theory, no indictment.
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 2) }>
                     No connection, only circumstantial evidence.
                 </div>
             </div>
@@ -295,7 +309,7 @@ function ArrestBaxterGeorge({ legal }: { legal:LegalState })
             <div className="Cond">
                 Otherwise:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 3) }>
                 Insufficient evidence for arrest.
             </div>
         </div>
