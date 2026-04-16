@@ -10,7 +10,7 @@ import { get_legal_state, LegalState } from './modgame';
 export function SolvePage()
 {
     let rctx = useContext(ReactCtx);
-    let legal_state = get_legal_state(rctx.zstate);
+    let legal = get_legal_state(rctx.zstate);
     
     return (
         <div className="ScrollContent">
@@ -27,7 +27,7 @@ export function SolvePage()
                     .<br/>.<br/>.<br/>.
                 </p>
                 <ArrestBaxterDunbar />
-                <ArrestBaxter />
+                <ArrestBaxter legal={ legal } />
                 <ArrestDunbar />
                 <ArrestBaxterGeorge />
                 <ArrestGeorge />
@@ -38,8 +38,34 @@ export function SolvePage()
     );
 }
 
-function ArrestBaxter()
+function ArrestBaxter({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.dunbar_dead && (legal.baxter_seen || legal.pen_seen)) {
+        if (legal.baxter_papers && legal.note_read)
+            outcome = 0;
+        else
+            outcome = 1;
+    }
+    else if (legal.dunbar_dead) {
+        if (legal.baxter_papers) 
+            outcome = 2;
+        else
+            outcome = 3;
+    }
+    else if (legal.baxter_papers) {
+        if (legal.lab_report)
+            outcome = 4;
+        else
+            outcome = 5;
+    }
+    else if (legal.lab_report) {
+        outcome = 6;
+    }
+    else {
+        outcome = 7;
+    }
+    
     return (
         <div>
             <ArrestRef suspect="BAXTER" line="ACTIONS-836" />
@@ -55,13 +81,13 @@ function ArrestBaxter()
                 <div className="Cond">
                     Found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />):
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 0) }>
                     Guilty of both murders.
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 1) }>
                     Guilty of Dunbar&#x2019;s murder; no motive for Robner.
                 </div>
             </div>
@@ -74,14 +100,14 @@ function ArrestBaxter()
                 <div className="Cond">
                     Found the <IdRef val="OBJ:BAXTER-PAPERS" />:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 2) }>
                     Baxter committed Focus crimes, but not murder;
                     Dunbar probably the killer.
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 3) }>
                     Acquitted; Dunbar was the killer.
                 </div>
             </div>
@@ -94,14 +120,14 @@ function ArrestBaxter()
                 <div className="Cond">
                     Got the <IdRef val="OBJ:LAB-REPORT" />:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 4) }>
                     Had motive and means to enter the house, but no
                     means to administer drug.
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 5) }>
                     <IdRef val="RTN:MURDER-NOT-PROVEN" />.
                 </div>
             </div>
@@ -109,13 +135,13 @@ function ArrestBaxter()
             <div className="Cond">
                 Got the <IdRef val="OBJ:LAB-REPORT" />:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 6) }>
                 No motive, no means to administer drug.
             </div>
             <div className="Cond">
                 Otherwise:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 7) }>
                 No motive and <IdRef val="RTN:MURDER-NOT-PROVEN" />.
             </div>
         </div>
@@ -337,6 +363,14 @@ function ArrestOthers()
             </div>
         </div>
     );
+}
+
+function check(outcome:number, val:number): string
+{
+    if (outcome == val)
+        return "Outcome Current";
+    else
+        return "Outcome";
 }
 
 // This doesn't require a context, turns out.
