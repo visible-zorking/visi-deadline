@@ -89,6 +89,7 @@ export type LegalState = {
     stub_d: number;
     lab_report: number;
     baxter_papers: number;
+    meeting_interrupted: number;
     dunbar_dead: number;
     baxter_seen: number;
     pen_seen: number;
@@ -101,6 +102,7 @@ export function get_legal_state(zstate: ZStatePlus)
     let stub_d = zstate.globals[39];
     let lab_report = zstate.objects[85-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
     let baxter_papers = zstate.objects[144-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
+    let meeting_interrupted = zstate.globals[30];
     let dunbar_dead = zstate.globals[27];
     let baxter_seen = zstate.globals[25];
     let pen_seen = zstate.globals[96];
@@ -111,6 +113,7 @@ export function get_legal_state(zstate: ZStatePlus)
         stub_d,
         lab_report,
         baxter_papers,
+        meeting_interrupted,
         dunbar_dead,
         baxter_seen,
         pen_seen,

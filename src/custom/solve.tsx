@@ -150,6 +150,17 @@ function ArrestBaxter({ legal }: { legal:LegalState })
 
 function ArrestDunbar({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.lab_report) {
+        if (legal.meeting_interrupted) 
+            outcome = 0;
+        else
+            outcome = 1;
+    }
+    else {
+        outcome = 2;
+    }
+    
     return (
         <div>
             <ArrestRef suspect="DUNBAR" line="ACTIONS-3163" />
@@ -161,13 +172,13 @@ function ArrestDunbar({ legal }: { legal:LegalState })
                 <div className="Cond">
                     Argued with Baxter in shed (<IdRef val="GLOB:MEETING-INTERRUPTED" />):
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 0) }>
                     Dunbar found dead during trial!
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 1) }>
                     No motive, only circumstantial evidence.
                 </div>
             </div>
@@ -175,7 +186,7 @@ function ArrestDunbar({ legal }: { legal:LegalState })
             <div className="Cond">
                 Otherwise:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 2) }>
                 <IdRef val="RTN:MURDER-NOT-PROVEN" />.
             </div>
         </div>
