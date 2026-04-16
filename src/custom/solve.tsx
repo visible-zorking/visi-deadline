@@ -195,6 +195,32 @@ function ArrestDunbar({ legal }: { legal:LegalState })
 
 function ArrestBaxterDunbar({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.present_time < 600) {
+        outcome = 0;
+    }
+    else if (legal.dunbar_dead) {
+        outcome = 1;
+    }
+    else if (legal.present_time < 700) {
+        outcome = 2;
+    }
+    else if (legal.baxter_papers && legal.note_read && legal.lab_report && legal.stub_d) {
+        outcome = 3;
+    }
+    else if (!legal.lab_report) {
+        outcome = 4;
+    }
+    else if (!legal.baxter_papers) {
+        outcome = 5;
+    }
+    else if (!legal.note_read) {
+        outcome = 6;
+    }
+    else {
+        outcome = 7;
+    }
+    
     return (
         <div>
             <ArrestRef suspect="BAXTER AND DUNBAR" line="ACTIONS-3903" />
@@ -202,21 +228,21 @@ function ArrestBaxterDunbar({ legal }: { legal:LegalState })
             <div className="Cond">
                 Before 10:00 am:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 0) }>
                 Too early.
             </div>
             
             <div className="Cond">
                 Dunbar killed:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 1) }>
                 You can&#x2019;t arrest her now!
             </div>
             
             <div className="Cond">
                 Before 11:40 am:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 2) }>
                 <Commentary topic="SRC:ACTIONS-3931" />
                 A trifle premature.
             </div>
@@ -224,35 +250,35 @@ function ArrestBaxterDunbar({ legal }: { legal:LegalState })
             <div className="Cond">
                 Found the <IdRef val="OBJ:BAXTER-PAPERS" /> <b>and</b> the notepad text (<IdRef val="GLOB:NOTE-READ" />) <b>and</b> the <IdRef val="OBJ:LAB-REPORT" /> <b>and</b> asked Dunbar about the concert (<IdRef val="GLOB:STUB-D" />):
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 3) }>
                 Complete solution! See the <IdRef val="RTN:EPILOGUE" /> for the author&#x2019;s summary.
             </div>
             
             <div className="Cond">
                 ...missing the <IdRef val="OBJ:LAB-REPORT" />:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 4) }>
                 No proof of murder.
             </div>
             
             <div className="Cond">
                 ...missing the <IdRef val="OBJ:BAXTER-PAPERS" />:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 5) }>
                 No motive.
             </div>
             
             <div className="Cond">
                 ...didn&#x2019;t read the notepad text (<IdRef val="GLOB:NOTE-READ" />)
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 6) }>
                 No connection to the Focus case, so no proof of motive.
             </div>
             
             <div className="Cond">
                 ...didn&#x2019;t ask about the concert (<IdRef val="GLOB:STUB-D" />):
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 7) }>
                 No proof Baxter returned to the house after the concert.
             </div>
             
