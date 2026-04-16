@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ZilSourceLoc } from '../visi/main';
+import { Commentary } from '../visi/widgets';
 
 export function SolvePage()
 {
@@ -153,11 +154,27 @@ function ArrestBaxterDunbar()
     return (
         <div>
             <ArrestRef suspect="BAXTER AND DUNBAR" line="ACTIONS-3903" />
+            
+            <div className="Cond">
+                Before 10:00 am:
+            </div>
+            <div className="Outcome">
+                Too early.
+            </div>
+            
             <div className="Cond">
                 Dunbar killed:
             </div>
             <div className="Outcome">
                 You can&#x2019;t arrest her now!
+            </div>
+            
+            <div className="Cond">
+                Before 11:40 am:
+            </div>
+            <div className="Outcome">
+                <Commentary topic="SRC:ACTIONS-3931" />
+                A trifle premature.
             </div>
             
             <div className="Cond">
@@ -204,6 +221,14 @@ function ArrestBaxterGeorge()
     return (
         <div>
             <ArrestRef suspect="BAXTER AND GEORGE" line="ACTIONS-3979" />
+            
+            <div className="Cond">
+                Before 10:00 am:
+            </div>
+            <div className="Outcome">
+                Too early.
+            </div>
+            
             <div className="Cond">
                 Got the <IdRef val="OBJ:LAB-REPORT" />:
             </div>
@@ -292,15 +317,15 @@ function ArrestOthers()
     return (
         <div>
             <h3 className="Arrest">ARREST ROURKE</h3>
-            <div className="Outcome">
+            <div className="Outcome Current">
                 Insufficient evidence for arrest.
             </div>
             <h3 className="Arrest">ARREST MCNABB</h3>
-            <div className="Outcome">
+            <div className="Outcome Current">
                 Insufficient evidence for arrest.
             </div>
             <h3 className="Arrest">ARREST DUFFY</h3>
-            <div className="Outcome">
+            <div className="Outcome Current">
                 Oh, come on now!  Not trusty Sergeant Duffy!
             </div>
         </div>
