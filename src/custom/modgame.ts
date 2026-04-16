@@ -86,9 +86,13 @@ export function map_toggle_doors(zstate: ZStatePlus): ExtraToggle[]
 export type LegalState = {
     present_time: number;
     note_read: number;
+    call_overheard: number;
+    envelope_opened: number;
     stub_d: number;
     lab_report: number;
     baxter_papers: number;
+    new_will_seen: number;
+    george_run: number;
     meeting_interrupted: number;
     dunbar_dead: number;
     baxter_seen: number;
@@ -99,9 +103,13 @@ export function get_legal_state(zstate: ZStatePlus)
 {
     let present_time = zstate.globals[118];
     let note_read = zstate.globals[93];
+    let call_overheard = zstate.globals[60];
+    let envelope_opened = zstate.globals[58];
     let stub_d = zstate.globals[39];
     let lab_report = zstate.objects[85-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
     let baxter_papers = zstate.objects[144-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
+    let new_will_seen = zstate.globals[69];
+    let george_run = zstate.globals[72];
     let meeting_interrupted = zstate.globals[30];
     let dunbar_dead = zstate.globals[27];
     let baxter_seen = zstate.globals[25];
@@ -110,9 +118,13 @@ export function get_legal_state(zstate: ZStatePlus)
     return {
         present_time,
         note_read,
+        call_overheard,
+        envelope_opened,
         stub_d,
         lab_report,
         baxter_papers,
+        new_will_seen,
+        george_run,
         meeting_interrupted,
         dunbar_dead,
         baxter_seen,
