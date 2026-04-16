@@ -83,10 +83,44 @@ export function map_toggle_doors(zstate: ZStatePlus): ExtraToggle[]
     ];
 }
 
+export type LegalState = {
+    present_time: number;
+    note_read: number;
+    stub_d: number;
+    lab_report: number;
+    baxter_papers: number;
+    dunbar_dead: number;
+    baxter_seen: number;
+    pen_seen: number;
+};
+
+export function get_legal_state(zstate: ZStatePlus)
+{
+    let present_time = zstate.globals[118];
+    let note_read = zstate.globals[93];
+    let stub_d = zstate.globals[39];
+    let lab_report = zstate.objects[85-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
+    let baxter_papers = zstate.objects[144-1].attrs & 0x02; // LAB-REPORT & TOUCHBIT
+    let dunbar_dead = zstate.globals[27];
+    let baxter_seen = zstate.globals[25];
+    let pen_seen = zstate.globals[96];
+
+    return {
+        present_time,
+        note_read,
+        stub_d,
+        lab_report,
+        baxter_papers,
+        dunbar_dead,
+        baxter_seen,
+        pen_seen,
+    };
+}
+
 export function show_commentary_hook(topic: string, engine: GnustoEngine): string|null
 {
     if (topic == 'SHOW-SOLUTION-TAB') {
-	window.dispatchEvent(new Event('show-solution-tab'));
+        window.dispatchEvent(new Event('show-solution-tab'));
         return null;
     }
     
