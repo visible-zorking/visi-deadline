@@ -304,19 +304,25 @@ function ArrestBaxterGeorge({ legal }: { legal:LegalState })
 
 function ArrestGeorge({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.new_will_seen || legal.george_run)
+        outcome = 0;
+    else
+        outcome = 1;
+    
     return (
         <div>
             <ArrestRef suspect="GEORGE" line="ACTIONS-1194" />
             <div className="Cond">
                 Saw the <IdRef val="OBJ:NEW-WILL" /> or caught George in the act of destroying it:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 0) }>
                 Acquitted.
             </div>
             <div className="Cond">
                 Otherwise:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 1) }>
                 Insufficient evidence for arrest.
             </div>
         </div>
@@ -325,6 +331,17 @@ function ArrestGeorge({ legal }: { legal:LegalState })
 
 function ArrestMrsRobner({ legal }: { legal:LegalState })
 {
+    let outcome;
+    if (legal.call_overheard || legal.envelope_opened) {
+        if (legal.lab_report)
+            outcome = 0;
+        else
+            outcome = 1;
+    }
+    else {
+        outcome = 2;
+    }
+    
     return (
         <div>
             <ArrestRef suspect="MRS ROBNER" line="ACTIONS-2306" />
@@ -335,13 +352,13 @@ function ArrestMrsRobner({ legal }: { legal:LegalState })
                 <div className="Cond">
                     Got the <IdRef val="OBJ:LAB-REPORT" />:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 0) }>
                     No indictment; no evidence linking her to crime.
                 </div>
                 <div className="Cond">
                     Otherwise:
                 </div>
-                <div className="Outcome">
+                <div className={ check(outcome, 1) }>
                     <IdRef val="RTN:MURDER-NOT-PROVEN" />.
                 </div>
             </div>
@@ -349,7 +366,7 @@ function ArrestMrsRobner({ legal }: { legal:LegalState })
             <div className="Cond">
                 Otherwise:
             </div>
-            <div className="Outcome">
+            <div className={ check(outcome, 2) }>
                 Insufficient evidence for arrest.
             </div>
         </div>
