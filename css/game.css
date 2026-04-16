@@ -50,6 +50,10 @@
     text-align: center;
 }
 
+.SolutionPage {
+    padding-bottom: 1rem;
+}
+
 .SolutionPage .Arrest {
     margin-top: 2rem;
     font-size: 100%;
@@ -68,3 +72,11 @@
     margin-left: 2rem;
     font-style: italic;
 }
+
+.SolutionPage .Current {
+    background: #FFDD88;
+}
+.DarkTheme .SolutionPage .Current {
+    background: #705000;
+}
+
