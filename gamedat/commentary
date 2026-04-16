@@ -101,6 +101,9 @@ src:ACTIONS-2305: The logic for `ARREST MRS ROBNER`.
 src:ACTIONS-3162: The logic for `ARREST DUNBAR`.
 	For a complete breakdown of the endgame logic, see [SOLUTION].
 
+src:ACTIONS-3931: This message fires if you `ARREST BAXTER AND DUNBAR` between 10:00 and 11:40 am. It shouldn’t be necessary, as it’s not possible to get the [~obj:BAXTER-PAPERS] before the will reading, but I guess they wanted to be careful.
+	*Bug:* This ends the game, even though it says there is no arrest. (The logic falls through to [~rtn:CASE-OVER] instead of returning.)
+
 ABOUT-SOLUTION: Okay, secretly there is. But I’ve put it behind a spoiler block.
 	Are you sure you want to see a complete breakdown of the endgame logic?
 	[Yes, I’m sure|SHOW-SOLUTION-TAB].
