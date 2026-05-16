@@ -235,7 +235,7 @@ export function AboutPage()
                 <p>
                     Aside from the above, the Visible Zorker is copyright
                     2025-2026 by Andrew Plotkin. MIT license;{' '}
-                    <ExtWebLink url={ 'https://github.com/visible-zorking/visi-zork3' } text={ 'Github repo' } />.
+                    <ExtWebLink url={ 'https://github.com/visible-zorking/visi-deadline' } text={ 'Github repo' } />.
                 </p>
                 <h2>Patreon supporters</h2>
                 <ul className="PatreonList">
