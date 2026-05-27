@@ -116,6 +116,9 @@ export function AboutPage()
                     shows all the game&#x2019;s global variables.
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'timers') }>Timers</a>{' '}
                     shows the table of timed events.
+                    {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'schedule') }>Schedule</a>{' '}
+                    shows the tables that determine what the characters do
+                    all day.
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'grammar') }>Grammar</a>{' '}
                     shows the parse table.
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'map') }>Map</a>{' '}
