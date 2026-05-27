@@ -143,7 +143,7 @@ rtn:ESTABLISH-GOAL: Set up a character’s [~glob:GOAL-TABLES] entry to move the
 rtn:INT-WAIT: Run the game time forward by `N` minutes. Returns true if the full time elapsed, or false if the player chose to stop waiting (because of some observed action).
 	This is used by a couple of actions that take more than one minute: `EXAMINE CAREFULLY`, `EXAMINE ROOM`. If you don’t wait the full interval, the `EXAMINE` action fails.
 
-prop:LINE: The transit line which a given room is on or adjacent too. See [~prop:STATION].
+prop:LINE: The transit line which a given room is on or adjacent to. See [~prop:STATION].
 
 prop:STATION: The transit-line room which is, or is adjacent to, a given room. See [~prop:LINE].
 	([~obj:GUEST-ROOM] and [~obj:GEORGE-BATH] are not adjacent to their `STATION` rooms. This seems to be a mistake, but it doesn’t matter because NPCs never travel to those rooms.)
