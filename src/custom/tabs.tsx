@@ -50,9 +50,9 @@ export function TabbedPane()
     ];
 
     let ells = tab_list.map(([key, label]) => {
-	if (key == 'solution' && !solutionActive) {
-	    return null;
-	}
+        if (key == 'solution' && !solutionActive) {
+            return null;
+        }
         let cla = 'TabItem';
         if (key == rctx.tab)
             cla += ' Selected';
@@ -73,7 +73,7 @@ export function TabbedPane()
 
     useEffect(() => {
         function evhan_showsolution(ev: Event) {
-	    setSolutionActive(true);
+            setSolutionActive(true);
         };
         window.addEventListener('show-solution-tab', evhan_showsolution);
         return () => {
