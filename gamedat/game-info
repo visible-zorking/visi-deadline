@@ -498,7 +498,7 @@ Global 147 P-ADJN  WORD
 Global 148 P-ADJ
 Global 149 P-NAM
 Global 150 P-GWIMBIT
-Global 151 P-SLOCBITS
+Global 151 P-SLOCBITS  SLOCBITS
 Global 152 P-NUMBER
 Global 153 QUOTE-FLAG
 Global 154 P-NCN
@@ -548,15 +548,20 @@ Global 197 VERBS  table created from SYNTAX
 
 # Argument type info for routines that are hard to guess.
 
+RoutineType - ACLAUSE-WIN WORD
 RoutineType - CLAUSE - - WORD
-RoutineType - GWIM - - PREP
+RoutineType - CLAUSE-ADD WORD
+RoutineType - CLAUSE-COPY TABLE TABLE WORD
+RoutineType - DO-SL OBJ SLOCBITS SLOCBITS
+RoutineType - GWIM ATTRZ SLOCBITS PREP
+RoutineType - ITAKE-CHECK TABLE SLOCBITS
 RoutineType - LKP OBJ TABLE
 RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
 RoutineType - SYNTAX-FOUND GLINE
 RoutineType - V-CLIMB-UP PROP
-RoutineType - WT? WORD - -
+RoutineType - WT? WORD PSTYPE P1TYPE
 
 RoutineType - CARRY-CHECK OBJ
 RoutineType - COM-CHECK OBJ
